@@ -1,51 +1,74 @@
-# AI Court Orders — Data Pipeline & Analysis
+# AI Court Orders Explorer
 
-Data pipeline for tracking court orders and opinions on AI use in legal proceedings. Powers the [AI Court Orders Explorer](https://legalhack.io/explorer) on legalhack.io.
+Has your judge issued an AI standing order? What happens when attorneys use ChatGPT to draft filings?
 
-## Data Sources
+This is a searchable database of **730+ court orders and opinions on AI use in legal proceedings**, from May 2023 to present. Search by judge, state, court, order type, or outcome — with free links to original sources on CourtListener. No Westlaw or Lexis required.
 
-| Source | Used for | Access |
-|--------|----------|--------|
-| [Ropes & Gray AI Court Order Tracker](https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker) | **Primary** — court orders & opinions (Sitecore API) | JSON API |
-| [Legal AI Governance](https://legalaigovernance.com/) | Bar opinions refresh (`bar_opinions.json`) | JSON |
-| [CourtListener](https://www.courtlistener.com/) | Free-link replacement for paywalled (Lexis) links + coverage cross-check | REST API |
+**[Search the database →](https://legalhack.io/explorer)** | **[Charts & trends →](https://legalhack.io/data/charts)** | Companion to the [LegalRealist AI Landscape](https://legalrealist.ai) series ([analysis post](https://legalrealist.ai/posts/31-ai-court-orders-explorer/))
+
+## What's in the data
+
+**736 entries** across **61 jurisdictions** (May 2023 – May 2026):
+
+| Type | Count |
+|------|-------|
+| Judicial Opinions | 547 |
+| Standing Orders | 121 |
+| Administrative Orders | 35 |
+| Local Rules | 29 |
+| Practice Directions | 4 |
+
+**Outcomes tracked:**
+
+| Consequence | Count |
+|-------------|-------|
+| Warning issued | 288 |
+| Sanctions on attorney | 145 |
+| Sanctions on party | 93 |
+
+Each entry includes judge name, court, state, date, order type, AI type (generative AI vs other), who it applies to, a plain-English summary, disclosure/verification requirements, and consequence.
+
+## Data sources
+
+| Source | What it provides |
+|--------|-----------------|
+| [Ropes & Gray AI Court Order Tracker](https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker) | Primary source — court orders & opinions via Sitecore API |
+| [LegalAIGovernance](https://legalaigovernance.com/) | Bar opinions (`bar_opinions.json`) |
+| [CourtListener](https://www.courtlistener.com/) | Free-link replacement for paywalled Lexis citations |
+
+All data sourced from public court records. The pipeline deduplicates on date + state + judge, converts entries via AI with regex fallback, and replaces paywalled links with free alternatives where available.
+
+## Why this exists
+
+Courts are issuing AI orders at an accelerating pace — standing orders requiring disclosure, opinions sanctioning attorneys for AI-generated hallucinated citations, local rules mandating verification. But there's no single place to search them by judge, jurisdiction, or outcome.
+
+This project fills that gap: a free, searchable, regularly updated database with direct links to source documents. If you're advising a client on AI disclosure obligations, preparing for a hearing before a specific judge, or researching the sanctions landscape, this is the starting point.
 
 ## Updating the data
 
 ```bash
 export OPENROUTER_API_KEY="…"   # required: AI conversion of new entries
-export CL_API_KEY="…"           # optional: CourtListener link replacement / cross-check
+export CL_API_KEY="…"           # optional: CourtListener link replacement
 
-python3 scripts/update.py             # incremental: fetch R&G, append new entries, swap Lexis→CL links
-python3 scripts/update.py --backfill  # one-time: replace Lexis links across ALL existing entries
-./scripts/weekly_update.sh            # wrapper that runs update.py
+python3 scripts/update.py             # incremental: fetch new entries, swap Lexis→CL links
+python3 scripts/update.py --backfill  # one-time: replace Lexis links across all existing entries
 ```
 
-`update.py` is the **canonical pipeline**. It:
-1. Loads existing `explorer_data.json` and **appends** only new entries (never regenerates — existing records are preserved)
-2. Fetches the R&G Sitecore API, dedups on `YYYY-MM` + state + judge, converts new entries via OpenRouter AI (regex fallback), stores **full `YYYY-MM-DD` dates**
-3. Replaces Lexis paywalled links with free CourtListener links
-4. Writes `data/processed/explorer_data.json` **and** mirrors it to `charts/data/explorer_data.json` (the deploy source)
-5. Runs a CourtListener cross-check and logs possible-missing cases to `data/processed/cl_review.json` (review queue — not auto-merged)
+The pipeline is incremental — it appends new entries without regenerating existing records. New entries are fetched from the R&G Sitecore API, deduplicated, converted to the explorer schema via OpenRouter AI (with regex fallback), and written to `data/processed/explorer_data.json`.
 
-## Output
+## Output files
 
-- **`data/processed/explorer_data.json`** — court orders & opinions for the explorer (also mirrored to `charts/data/`)
+- **`data/processed/explorer_data.json`** — the full dataset (also mirrored to `charts/data/`)
 - **`data/processed/bar_opinions.json`** — state bar AI guidance
-- **`charts/explorer.html`** — the explorer app (hand-maintained; see brand-header note below)
-- **`charts/*.html`** — standalone Plotly charts
-- Generated intermediates/logs in `data/processed/` (batch files, `cl_review.json`, search queues, etc.) are gitignored.
+- **`charts/explorer.html`** — the explorer web app
+- **`charts/*.html`** — standalone Plotly trend charts
 
-## Hosting note: brand header
+## For developers
 
-`charts/explorer.html` includes an optional **legalhack.io brand header** (logo + site nav) at the top of `<body>`, marked by the comment block:
+The explorer is a single-page HTML app (`charts/explorer.html`) with no build step — just HTML + vanilla JS + Plotly. The data pipeline is Python.
 
-```
-<!-- legalhack.io BRAND HEADER (optional) ... -->  …  <!-- END legalhack.io BRAND HEADER -->
-```
-
-It's self-contained (inline styles) and references the site logo by absolute path, so it only renders correctly when hosted on legalhack.io. **To run the explorer standalone elsewhere, delete that block.**
+When hosted on legalhack.io, the explorer includes a brand header (marked by HTML comments). To run standalone elsewhere, delete that block.
 
 ## License
 
-Data sourced from public court records via [Ropes & Gray](https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker), [Legal AI Governance](https://legalaigovernance.com/), and [CourtListener](https://www.courtlistener.com/). Scripts and analysis are open source.
+Data sourced from public court records via [Ropes & Gray](https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker), [LegalAIGovernance](https://legalaigovernance.com/), and [CourtListener](https://www.courtlistener.com/). Scripts and analysis are open source.
