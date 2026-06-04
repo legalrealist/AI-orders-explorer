@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Court Orders Explorer</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- ============================================================
+     legalhack.io BRAND HEADER (optional)
+     Adds the legalhack.io logo + site nav above the explorer when
+     hosted at legalhack.io. Self-contained (inline styles, no theme
+     CSS); references the site logo by absolute path.
+     To run the explorer standalone elsewhere, delete this whole
+     block down to "END legalhack.io BRAND HEADER".
+     ============================================================ -->
+<div style="background:#ffffff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;font-family:-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <a href="/en" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="/user/themes/quark/images/logo/LH_logo.svg" alt="legalhack.io" style="height:30px;width:auto;">
+  </a>
+  <nav style="display:flex;gap:28px;font-size:15px;font-weight:500;">
+    <a href="/en" style="color:#3a414e;text-decoration:none;">Home</a>
+    <a href="/en/code" style="color:#3a414e;text-decoration:none;">Code</a>
+    <a href="/en/data" style="color:#3a414e;text-decoration:none;">Data</a>
+  </nav>
+</div>
+<!-- END legalhack.io BRAND HEADER -->
+<!-- GRAV-EXTRACT-START -->
+
+<div class="ex" id="exApp">
+
+<div class="ex-hero">
+  <div class="search-wrap">
+    <span class="search-icon">&#x1F50D;</span>
+    <input class="hero-search" type="text" id="exHeroSearch" placeholder="Search judges, courts, states, or cases..." autocomplete="off">
+    <button id="heroSearchClear" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;display:none;padding:4px 8px;" title="Clear search">&times;</button>
+  </div>
+</div>
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="judges" id="judgesTabBtn">Judges</button>
+  <button class="tab-btn" data-tab="bar-opinions" id="barTabBtn">Bar Opinions</button>
+</div>
+<div id="judgesView" class="judges-view active">
+<div class="ex-stats" id="exStats" style="display:none;"></div>
+
+<div class="map-toggle" id="mapToggle"><span class="toggle-arrow" id="toggleArrow">&#9660;</span> AI Court Orders by State</div>
+<div class="ex-map-wrap" id="exMapWrap">
+  <div class="ex-map-svg-container" id="exMapContainer">
+    <div class="ex-map-tooltip" id="exMapTooltip"></div>
+  </div>
+  <div class="ex-map-legend">
+    <span>Fewer orders</span>
+    <div class="legend-bar"></div>
+    <span>More orders</span>
+  </div>
+</div>
+<div class="ex-filters" id="exFilters">
+  <div class="ex-filters-row">
+    <div class="ex-categories" id="exCategories"></div>
+    <select id="fType"><option value="">All Types</option><option value="Standing Order">Standing Orders</option><option value="Local Rules">Local Rules</option><option value="Administrative Order">Admin Orders</option><option value="Judicial Opinion">Opinions</option></select>
+    <select id="fState"><option value="">All States</option></select>
+    <select id="fJudge"><option value="">Filter by judge...</option></select>
+    <button class="more-filters-btn" id="moreFiltersBtn" onclick="this.classList.toggle('open');document.getElementById('moreFiltersRow').classList.toggle('open');">More Filters <span class="mf-arrow">&#9662;</span></button>
+    <input type="hidden" id="fDateFrom">
+    <input type="hidden" id="fDateTo">
+  </div>
+  <div class="ex-filters-row more-filters-row" id="moreFiltersRow">
+    <select id="fOutcome"><option value="">All Outcomes</option><option value="sanctions_attorney">Sanctions (Attorney)</option><option value="sanctions_party">Sanctions (Party)</option><option value="warning">Warning</option><option value="none">No Consequence</option></select>
+    <select id="fTag"><option value="">All Sectors</option></select>
+    <select id="fSanctionType"><option value="">All Sanction Types</option></select>
+  </div>
+  <div class="ex-filters-row">
+    <span class="chip" data-f="req_disclose">Requires Disclosure</span>
+    <span class="chip" data-f="prohibited">Prohibits AI</span>
+    <span class="chip" data-f="at_filings">Filings/Drafting</span>
+    <span class="chip" data-f="at_research">Research</span>
+    <span class="chip" data-f="at_consequences">Consequences</span>
+    <span class="ex-count" id="exCount"></span>
+  </div>
+</div>
+<div class="ex-filter-chips" id="exFilterChips"></div>
+
+<div class="ex-bipanel" id="exBipanel">
+  <div class="ex-left">
+    <div class="ex-list" id="exList"></div>
+  </div>
+  <div class="ex-detail" id="exDetail"><div class="d-empty">
+    <div style="font-size:32px;margin-bottom:12px;opacity:0.3">&#x2696;</div>
+    <div style="font-size:15px;margin-bottom:16px">Search for a judge or click from the list</div>
+    <div style="text-align:left;max-width:280px;margin:0 auto;font-size:13px;color:#94a3b8;line-height:1.8">
+      <div><strong style="color:#2563eb" id="emptyStanding">…</strong> standing orders tracked</div>
+      <div><strong style="color:#dc2626" id="emptySanctions">…</strong> sanctions cases documented</div>
+      <div><strong style="color:#475569" id="emptyJurisdictions">…</strong> jurisdictions covered</div>
+      <div style="margin-top:8px;font-size:12px;color:#cbd5e1">Search by judge, court, state, or case name</div>
+    </div>
+  </div></div>
+</div>
+
+<div class="ex-footer">
+  Data from <a href="https://legalrealist.ai" target="_blank">LegalRealist AI</a> combining
+  <a href="https://law.duke.edu/dclt/rails/" target="_blank">RAILS (Duke Law)</a> &amp;
+  <a href="https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker" target="_blank">Ropes &amp; Gray</a>.
+  All links point to free, publicly accessible sources.
+  <a href="https://github.com/legalrealist" target="_blank">GitHub</a>
+  <span id="exLastUpdated" style="display:block;margin-top:4px;font-size:11px;color:#94a3b8;"></span>
+</div>
+</div><!-- /judgesView -->
+
+<div id="barOpinionsView" class="bar-opinions-view">
+  <div class="bar-map-container">
+    <svg id="barMapSvg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="bar-map-legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#1e40af;"></div> Formal</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#60a5fa;"></div> Informal</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#bfdbfe;"></div> Pending</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#e2e8f0;"></div> None</div>
+    </div>
+  </div>
+  <div class="bar-controls">
+    <input class="bar-search" type="text" id="barSearch" placeholder="Search state, opinion, rules...">
+    <select id="barStatusFilter">
+      <option value="">All Statuses</option>
+      <option value="formal">Formal</option>
+      <option value="informal">Informal</option>
+      <option value="pending">Pending</option>
+      <option value="none">None</option>
+    </select>
+    <label style="display:flex;align-items:center;gap:4px;font-size:12px;color:#64748b;cursor:pointer;white-space:nowrap;"><input type="checkbox" id="barHideNone" style="cursor:pointer;"> Hide states with no opinion</label>
+    <span class="bar-count" id="barCount"></span>
+  </div>
+  <div class="bar-list" id="barList"></div>
+  <div class="bar-attribution">
+    Data source: <a href="https://legalaigovernance.com" target="_blank" rel="noopener">Legal AI Governance</a> (legalaigovernance.com). Primary sources linked per entry.
+  </div>
+  <div class="bar-map-tooltip" id="barTooltip"></div>
+</div>
+
+</div>
+
+<script type="module" src="./src/main.js"></script>
+<!-- GRAV-EXTRACT-END -->
+</body>
+</html>

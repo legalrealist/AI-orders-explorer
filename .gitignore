@@ -4,6 +4,10 @@ __pycache__/
 *.pyc
 .env
 
+# Vite build output and dependencies
+charts/node_modules/
+# charts/dist/ is committed — Hostinger serves from it
+
 # Generated pipeline intermediates / logs (not source). Final outputs
 # (explorer_data.json, bar_opinions.json), the *_clean.csv sources, and
 # enrichments/examples.json few-shot file stay tracked.

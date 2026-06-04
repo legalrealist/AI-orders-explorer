@@ -5,12 +5,12 @@
 Options -Indexes
 
 # Load the explorer at the directory root
-DirectoryIndex index.html charts/explorer.html
+DirectoryIndex index.html charts/dist/index.html
 
 # Block the source/tooling directories from being served
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^(scripts|data)/ - [R=404,L]
+  RewriteRule ^(scripts|data|charts/node_modules|charts/src)/ - [R=404,L]
   RewriteRule (^|/)\.git - [R=404,L]
 </IfModule>
 
