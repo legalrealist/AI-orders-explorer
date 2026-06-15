@@ -20,33 +20,70 @@ def test_storage_url():
     assert cl_resolve.storage_url('') == ''
 
 
-def test_opinion_link_direct():
-    rec = {'link': 'https://www.courtlistener.com/opinion/555/x/', 'name': 'A v. B', 'summary': ''}
-    fetch = make_fetch({'/opinions/555/': {'local_path': 'recap/y/2.pdf'}})
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
+def test_case_matches_strict():
+    rec = {'name': 'Geddes v. LoanCare', 'summary': ''}
+    assert cl_resolve.case_matches(rec, 'Geddes v. LoanCare, LLC')   # both parties
+    assert not cl_resolve.case_matches(rec, 'Geddes v. Smith')       # only one party
+    assert not cl_resolve.case_matches(rec, 'Jones v. Anderson')     # neither
+
+
+def test_opinion_link_verified():
+    rec = {'link': 'https://www.courtlistener.com/opinion/555/x/',
+           'name': 'Geddes v. LoanCare', 'summary': ''}
+    fetch = make_fetch({
+        '/opinions/555/': {'local_path': 'recap/y/2.pdf',
+                           'cluster': 'https://x/api/rest/v4/clusters/9/'},
+        '/clusters/9/': {'case_name': 'Geddes v. LoanCare, LLC'},
+    })
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
     assert url.endswith('recap/y/2.pdf') and method == 'opinion'
+    assert cname == 'Geddes v. LoanCare, LLC'
 
 
-def test_docket_chain():
+def test_docket_chain_verified():
     rec = {'link': 'https://www.courtlistener.com/docket/63/coomer-v-lindell/',
            'name': 'Coomer v. Lindell', 'summary': ''}
     fetch = make_fetch({
-        '/dockets/63/': {'clusters': ['https://x/api/rest/v4/clusters/10/']},
-        '/clusters/10/': {'sub_opinions': ['https://x/api/rest/v4/opinions/77/']},
+        '/dockets/63/': {'case_name': 'Coomer v. Lindell',
+                         'clusters': ['https://x/api/rest/v4/clusters/10/']},
+        '/clusters/10/': {'case_name': 'Coomer v. Lindell',
+                          'sub_opinions': ['https://x/api/rest/v4/opinions/77/']},
         '/opinions/77/': {'local_path': 'recap/z/3.pdf'},
     })
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
     assert url.endswith('recap/z/3.pdf') and method == 'docket'
+
+
+def test_wrong_case_docket_rejected_then_search():
+    # The record's docket link resolves to the WRONG case; verification rejects
+    # it and a verified search finds the right one.
+    rec = {'link': 'https://www.courtlistener.com/docket/1/wrong/',
+           'name': 'Geddes v. LoanCare', 'summary': ''}
+    fetch = make_fetch({
+        '/dockets/1/': {'case_name': 'Unrelated v. Party',
+                        'clusters': ['https://x/api/rest/v4/clusters/2/']},
+        '/clusters/2/': {'case_name': 'Unrelated v. Party',
+                         'sub_opinions': ['https://x/api/rest/v4/opinions/3/']},
+        '/opinions/3/': {'local_path': 'recap/wrong.pdf'},
+        '/search/': {'results': [{'caseName': 'Geddes v. LoanCare, LLC', 'cluster_id': 99}]},
+        '/clusters/99/': {'case_name': 'Geddes v. LoanCare, LLC',
+                          'sub_opinions': ['https://x/api/rest/v4/opinions/88/']},
+        '/opinions/88/': {'local_path': 'recap/right.pdf'},
+    })
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
+    assert url.endswith('recap/right.pdf') and method == 'search'
+    assert cname == 'Geddes v. LoanCare, LLC'
 
 
 def test_search_verified_match():
     rec = {'link': 'https://law.justia.com/x', 'name': 'Shore v. Dorel Juvenile', 'summary': ''}
     fetch = make_fetch({
-        '/search/': {'results': [{'caseName': 'Shore v. Dorel Juvenile Group', 'cluster_id': 99}]},
-        '/clusters/99/': {'sub_opinions': ['https://x/opinions/88/']},
-        '/opinions/88/': {'local_path': 'recap/s/4.pdf'},
+        '/search/': {'results': [{'caseName': 'Shore v. Dorel Juvenile Group', 'cluster_id': 5}]},
+        '/clusters/5/': {'case_name': 'Shore v. Dorel Juvenile Group',
+                         'sub_opinions': ['https://x/opinions/6/']},
+        '/opinions/6/': {'local_path': 'recap/s/4.pdf'},
     })
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
     assert url.endswith('recap/s/4.pdf') and method == 'search'
 
 
@@ -57,40 +94,37 @@ def test_search_rejects_wrong_case():
         '/clusters/1/': {'sub_opinions': ['https://x/opinions/2/']},
         '/opinions/2/': {'local_path': 'recap/wrong.pdf'},
     })
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
-    assert url == ''  # name mismatch -> not used
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
+    assert url == '' and method == ''
 
 
-def test_opinion_404_falls_through_to_search():
-    rec = {'link': 'https://www.courtlistener.com/opinion/999/x/',
-           'name': 'Real Case Here', 'summary': 'In Real Co v. Other, the court ruled.'}
+def test_summary_search_for_rg_record():
+    # R&G record: name is "Court – Judge"; case lives in the summary.
+    rec = {'link': 'https://advance.lexis.com/x',
+           'name': 'D. Mass. – Judge Leo T. Sorokin',
+           'summary': 'In Shore v. Dorel, the attorney used hallucinated citations.'}
     fetch = make_fetch({
-        '/opinions/999/': lambda p: (_ for _ in ()).throw(urllib.error.HTTPError(p, 404, 'nf', {}, None)),
-        '/search/': {'results': [{'caseName': 'Real Case Here', 'cluster_id': 5}]},
-        '/clusters/5/': {'sub_opinions': ['https://x/opinions/6/']},
-        '/opinions/6/': {'local_path': 'recap/found.pdf'},
+        '/search/': {'results': [{'caseName': 'Shore v. Dorel Juvenile Group', 'cluster_id': 7}]},
+        '/clusters/7/': {'case_name': 'Shore v. Dorel Juvenile Group',
+                         'sub_opinions': ['https://x/opinions/8/']},
+        '/opinions/8/': {'local_path': 'recap/rg.pdf'},
     })
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
-    assert url.endswith('recap/found.pdf') and method == 'search'
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
+    assert url.endswith('recap/rg.pdf') and method == 'search'
 
 
 def test_no_local_path_returns_empty():
-    rec = {'link': 'https://www.courtlistener.com/opinion/7/x/', 'name': 'X', 'summary': ''}
-    fetch = make_fetch({'/opinions/7/': {'local_path': None}, '/search/': {'results': []}})
-    url, method = cl_resolve.resolve_pdf_url(rec, fetch)
+    rec = {'link': 'https://www.courtlistener.com/opinion/7/x/',
+           'name': 'Geddes v. LoanCare', 'summary': ''}
+    fetch = make_fetch({'/opinions/7/': {'local_path': None, 'cluster': ''},
+                        '/search/': {'results': []}})
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
     assert url == '' and method == ''
 
 
 def test_search_query_from_name_or_summary():
     assert cl_resolve.search_query({'name': 'Geddes v. LoanCare', 'summary': ''}) == 'Geddes v. LoanCare'
-    # R&G record: name is Court-Judge, case is in the summary
     rec = {'name': 'D. Mass. – Judge Leo T. Sorokin',
            'summary': 'In Shore v. Dorel Juvenile Grp., the attorney ...'}
     assert cl_resolve.search_query(rec) == 'Shore v. Dorel'
     assert cl_resolve.search_query({'name': 'Standing Order', 'summary': 'no case here'}) == ''
-
-
-def test_name_matches():
-    rec = {'name': 'Geddes v. LoanCare', 'summary': ''}
-    assert cl_resolve.name_matches(rec, 'Krista Geddes v. LoanCare LLC')
-    assert not cl_resolve.name_matches(rec, 'Smith v. Jones')

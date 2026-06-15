@@ -101,14 +101,15 @@ def main():
             break
         ckey = pdf_archive.stable_key(rec, rec.get('link', ''))
         if ckey in cache:
-            url = cache[ckey]
+            ent = cache[ckey]
+            url, cname = (ent.get('url', ''), ent.get('case', ''))
         else:
             try:
-                url, method = cl_resolve.resolve_pdf_url(rec, fetch)
+                url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
             except Exception as e:
                 print(f'  [{i}] resolve error: {e}', flush=True)
-                url = ''
-            cache[ckey] = url
+                url, cname = '', ''
+            cache[ckey] = {'url': url, 'case': cname}
             if len(cache) % 10 == 0:
                 json.dump(cache, open(CACHE, 'w'))
 
@@ -125,7 +126,8 @@ def main():
         if ok:
             rec['pdf'] = pdf_archive.BASE_URL + key + '.pdf'
             manifest[key] = {'key': key, 'name': rec.get('name', '')[:60],
-                             'source_url': url, 'pdf': rec['pdf'], 'sha1': sha1, 'bytes': n}
+                             'matched_case': cname, 'source_url': url,
+                             'pdf': rec['pdf'], 'sha1': sha1, 'bytes': n}
             done += 1
             if done % 20 == 0:
                 _write(exp, manifest, cache)
