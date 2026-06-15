@@ -31,10 +31,13 @@ MIRROR = 'charts/data/explorer_data.json'
 MANIFEST = 'data/processed/pdf_manifest.json'
 CACHE = 'data/processed/cl_resolve_cache.json'
 
-# Seconds between API calls. Default is conservative for the free tier; lower it
-# (e.g. CL_RATE_DELAY=0.3) once on a paid CourtListener tier with a higher limit.
+# Seconds between API calls. Tier 2 sustains 150/hr -> ~24s; Tier 4 -> ~12s.
 BASE_DELAY = float(os.environ.get('CL_RATE_DELAY', '1.3'))
+# Stop after this many API calls so a run stays under the daily cap (0 = no cap).
+# Tier 2 = 600/day; set MAX_CALLS=550 to leave headroom and re-run next day.
+MAX_CALLS = int(os.environ.get('MAX_CALLS', '0'))
 _last = [0.0]
+_calls = [0]
 
 
 def throttle():
@@ -48,6 +51,7 @@ def fetch(path):
     """GET a CL API path as JSON, throttled, with 429 backoff."""
     for attempt in range(5):
         throttle()
+        _calls[0] += 1
         req = urllib.request.Request('https://www.courtlistener.com' + path,
                                      headers={'Authorization': f'Token {KEY}',
                                               'User-Agent': linkcheck._USER_AGENT})
@@ -91,6 +95,10 @@ def main():
     for i, rec in enumerate(todo):
         if rec.get('pdf'):
             continue
+        if MAX_CALLS and _calls[0] >= MAX_CALLS:
+            print(f'  call cap {MAX_CALLS} reached ({_calls[0]} calls) — '
+                  f're-run to continue (resumable)', flush=True)
+            break
         ckey = pdf_archive.stable_key(rec, rec.get('link', ''))
         if ckey in cache:
             url = cache[ckey]
