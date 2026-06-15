@@ -109,9 +109,14 @@ def recover(records, results):
                 stats['by_key'] += 1
 
         if not original:
-            # No source match. Preserve the current link as the original only
-            # when it is itself a paywalled source link (Lexis/Westlaw).
-            if rec['link_source'] in ('lexis', 'westlaw'):
+            # No source match. Keep an already-set original_link (e.g. provenance
+            # set by the LAG converter); else preserve the current link only when
+            # it is itself a paywalled source link (Lexis/Westlaw).
+            preset = rec.get('original_link')
+            if preset:
+                original = preset
+                stats['preset'] = stats.get('preset', 0) + 1
+            elif rec['link_source'] in ('lexis', 'westlaw'):
                 original = link
                 stats['from_self'] += 1
             else:

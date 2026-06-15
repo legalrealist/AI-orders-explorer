@@ -70,6 +70,15 @@ def test_rails_record_no_match_gets_empty_original():
     assert rec['link_source'] == 'other'
 
 
+def test_preset_original_link_preserved_when_no_source_match():
+    # LAG converter sets original_link; recover must not blank it.
+    rec = {'_rg_id': None, 'date': '2024-01-01', 'state': 'Texas',
+           'judge': 'Unknown', 'link': 'https://x.s3.amazonaws.com/doc.pdf',
+           'original_link': 'https://x.s3.amazonaws.com/doc.pdf'}
+    linkrecover.recover([rec], SRC)
+    assert rec['original_link'] == 'https://x.s3.amazonaws.com/doc.pdf'
+
+
 def test_norm_judge_strips_titles():
     assert linkrecover._norm_judge('Chief Magistrate Judge William Matthewman') == \
         linkrecover._norm_judge('William Matthewman')

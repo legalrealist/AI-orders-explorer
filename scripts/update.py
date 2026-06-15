@@ -37,8 +37,11 @@ CL_API_KEY = os.environ.get('CL_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 OPENROUTER_MODEL = os.environ.get('OPENROUTER_MODEL', 'deepseek/deepseek-v4-flash')
 
-# Local cleanup modules (schema contract, link recovery, normalization).
+# Local cleanup + ingestion modules.
 sys.path.insert(0, SCRIPT_DIR)
+import lag_cases  # noqa: E402
+import lag_convert  # noqa: E402
+import lag_merge  # noqa: E402
 import linkrecover  # noqa: E402
 import normalize  # noqa: E402
 import schema  # noqa: E402
@@ -634,9 +637,26 @@ def main():
             for i, e in enumerate(existing):
                 e['id'] = i
 
-    # 6. Save (only if new entries were added)
+    # 5b. Ingest LAG/RAILS court-order cases (fetch + convert + merge).
+    lag_ingested = False
+    try:
+        print('\nIngesting LAG/RAILS court-order cases...')
+        lag_env = lag_cases.fetch_cases()
+        lag_cases.save_cached(lag_env)
+        lag_recs = lag_convert.convert_all(lag_cases.items(lag_env))
+        existing, review, lag_stats = lag_merge.merge_lag(existing, lag_recs)
+        print(f'  LAG: {lag_stats}')
+        if review:
+            with open(os.path.join(DATA_DIR, 'review_needed.json'), 'w', encoding='utf-8') as f:
+                json.dump(review, f, indent=2)
+            print(f'  {len(review)} near-matches -> review_needed.json')
+        lag_ingested = True
+    except Exception as e:
+        print(f'  WARN: LAG ingestion failed: {e} — continuing with R&G only')
+
+    # 6. Save (when R&G entries were added or LAG ingestion ran).
     n_added = len(new_entries)
-    if n_added:
+    if n_added or lag_ingested:
         # Durability: recover original links, normalize to canonical schema,
         # and validate before writing. Preserves original_link (never destroyed
         # by CL replacement) and reclassifies link_source.
@@ -654,7 +674,7 @@ def main():
             f.write(payload)
         with open(os.path.join(CHARTS_DATA_DIR, 'explorer_data.json'), 'w', encoding='utf-8') as f:
             f.write(payload)
-        print(f'Saved: {len(existing)} total entries (+{n_added} new)')
+        print(f'Saved: {len(existing)} total entries (+{n_added} new R&G, LAG merged={lag_ingested})')
     else:
         print(f'No changes: {len(existing)} total entries')
 
