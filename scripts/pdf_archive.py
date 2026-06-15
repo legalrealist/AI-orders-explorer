@@ -12,10 +12,39 @@ The fetcher is injectable so tests never touch the network.
 import hashlib
 import os
 import re
+import subprocess
 import urllib.request
 
 import lag_cases
 import linkcheck
+
+# Markers of a bot-challenge / verification page served (or rendered) as a PDF.
+_CHALLENGE_MARKERS = (
+    'verify you are human', 'verifying you are human', 'checking your browser',
+    'just a moment', 'cloudflare', 'ray id', 'enable javascript',
+    'javascript is required', 'please enable javascript', 'attention required',
+    'access denied', 'are you a robot', 'human verification', 'ddos protection',
+    'needs to review the security', 'performance & security by', 'unusual traffic',
+)
+
+
+def text_is_challenge(text):
+    low = (text or '').lower()
+    return any(m in low for m in _CHALLENGE_MARKERS)
+
+
+def is_challenge_pdf(path):
+    """True if the PDF's text is a bot-challenge/verification page.
+
+    Uses pdftotext when available; if it's not installed, returns False (don't
+    block downloads on a missing tool — the markers are the signal, not the tool).
+    """
+    try:
+        out = subprocess.run(['pdftotext', '-l', '2', path, '-'],
+                             capture_output=True, timeout=20)
+        return text_is_challenge((out.stdout or b'').decode('utf-8', 'ignore'))
+    except Exception:
+        return False
 
 BASE_URL = 'https://legalhack.io/orders/'
 
@@ -75,6 +104,9 @@ def download_pdf(url, dest, fetch=default_fetch):
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     with open(dest, 'wb') as f:
         f.write(data)
+    if is_challenge_pdf(dest):
+        os.remove(dest)
+        return False, '', 0, 'challenge/verification page'
     return True, hashlib.sha1(data).hexdigest(), len(data), ''
 
 

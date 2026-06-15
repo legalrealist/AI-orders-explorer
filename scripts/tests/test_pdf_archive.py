@@ -74,6 +74,20 @@ def test_archive_idempotent_reuses_file(tmp_path):
     assert calls == []  # second run reused the existing file
 
 
+def test_text_is_challenge():
+    assert pdf_archive.text_is_challenge('Just a moment... Verifying you are human. Cloudflare Ray ID 8x')
+    assert pdf_archive.text_is_challenge('Please enable JavaScript and cookies to continue')
+    assert not pdf_archive.text_is_challenge('IT IS HEREBY ORDERED that counsel shall verify all citations.')
+
+
+def test_download_pdf_rejects_challenge_page(tmp_path, monkeypatch):
+    dest = str(tmp_path / 'x.pdf')
+    monkeypatch.setattr(pdf_archive, 'is_challenge_pdf', lambda p: True)
+    ok, _, _, err = pdf_archive.download_pdf('http://x/a.pdf', dest, fetch=lambda u: PDF_BYTES)
+    assert not ok and 'challenge' in err
+    assert not os.path.exists(dest)
+
+
 def test_archive_failed_download_leaves_pdf_empty(tmp_path):
     recs = [rec(original_link='https://x/a.pdf')]
 
