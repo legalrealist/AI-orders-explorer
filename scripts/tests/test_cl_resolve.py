@@ -63,7 +63,7 @@ def test_search_rejects_wrong_case():
 
 def test_opinion_404_falls_through_to_search():
     rec = {'link': 'https://www.courtlistener.com/opinion/999/x/',
-           'name': 'Real Case Here', 'summary': ''}
+           'name': 'Real Case Here', 'summary': 'In Real Co v. Other, the court ruled.'}
     fetch = make_fetch({
         '/opinions/999/': lambda p: (_ for _ in ()).throw(urllib.error.HTTPError(p, 404, 'nf', {}, None)),
         '/search/': {'results': [{'caseName': 'Real Case Here', 'cluster_id': 5}]},
@@ -79,6 +79,15 @@ def test_no_local_path_returns_empty():
     fetch = make_fetch({'/opinions/7/': {'local_path': None}, '/search/': {'results': []}})
     url, method = cl_resolve.resolve_pdf_url(rec, fetch)
     assert url == '' and method == ''
+
+
+def test_search_query_from_name_or_summary():
+    assert cl_resolve.search_query({'name': 'Geddes v. LoanCare', 'summary': ''}) == 'Geddes v. LoanCare'
+    # R&G record: name is Court-Judge, case is in the summary
+    rec = {'name': 'D. Mass. – Judge Leo T. Sorokin',
+           'summary': 'In Shore v. Dorel Juvenile Grp., the attorney ...'}
+    assert cl_resolve.search_query(rec) == 'Shore v. Dorel'
+    assert cl_resolve.search_query({'name': 'Standing Order', 'summary': 'no case here'}) == ''
 
 
 def test_name_matches():

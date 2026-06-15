@@ -61,8 +61,23 @@ def _docket_pdf(docket_id, fetch):
     return ''
 
 
+_CASE_RE = re.compile(r"\b([A-Z][\w.'-]+(?:\s+[A-Z][\w.'-]+){0,3}\s+v\.?\s+[A-Z][\w.'-]+)")
+
+
+def search_query(record):
+    """Best case-name query: the record name if it's a case, else from summary."""
+    name = record.get('name', '') or ''
+    if ' v' in name.lower() and _CASE_RE.search(name):
+        return name
+    m = _CASE_RE.search(record.get('summary', '') or '')
+    if not m:
+        return ''
+    # Strip a common leading "In " / "Matter of " opener the regex may absorb.
+    return re.sub(r'^(In|Matter of)\s+', '', m.group(1))
+
+
 def _search_pdf(record, fetch):
-    q = record.get('name', '')
+    q = search_query(record)
     if not q:
         return ''
     d = fetch('/api/rest/v4/search/?type=o&q=' + urllib.parse.quote(q))

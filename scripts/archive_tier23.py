@@ -82,7 +82,7 @@ def main():
         src = (r.get('link', '') + r.get('original_link', '')).lower()
         if 'courtlistener.com/docket' in src or 'courtlistener.com/opinion' in src:
             return True
-        return bool(_re.search(r'\bv\.?\s', r.get('name', '') or ''))  # a case name
+        return bool(cl_resolve.search_query(r))  # case name in name or summary
 
     todo = [r for r in exp if not r.get('pdf') and resolvable(r)]
     print(f'tier2/3: {len(todo)} records to resolve (of {len(exp)})', flush=True)
