@@ -1050,13 +1050,6 @@
     "error": "HTTPError: HTTP Error 404: Not Found"
   },
   {
-    "key": "c-75d6c9cf3b61",
-    "name": "Pleadings Using Generative Artificial Intelligence",
-    "source_url": "https://www.txnb.uscourts.gov/sites/txnb/files/news/General%20Order%202023-03%20Pleadings%20Using%20Generative%20Artificial%20Intelligence-signed.pdf",
-    "pdf": "https://legalhack.io/orders/c-75d6c9cf3b61.pdf",
-    "bytes": 228473
-  },
-  {
     "key": "c-cde5f5ff3243",
     "name": "Standing Order Re: Artificial Intelligence (\"AI\") in Cases A",
     "source_url": "https://www.paed.uscourts.gov/sites/paed/files/documents/locrules/standord/Standing%20Order%20Re%20Artificial%20Intelligence%206.6.pdf",
@@ -1090,13 +1083,6 @@
     "source_url": "https://www.yukoncourts.ca/sites/default/files/2023-06/GENERAL-29%20Use%20of%20AI.pdf",
     "pdf": "https://legalhack.io/orders/c-dda9c2aa678e.pdf",
     "bytes": 10138
-  },
-  {
-    "key": "c-d4d16489fc72",
-    "name": "N.D. Tex. (Bankruptcy) \u2013 All Judges",
-    "source_url": "https://www.txnb.uscourts.gov/sites/txnb/files/news/General%20Order%202023-03%20Pleadings%20Using%20Generative%20Artificial%20Intelligence-signed.pdf",
-    "pdf": "https://legalhack.io/orders/c-d4d16489fc72.pdf",
-    "bytes": 228473
   },
   {
     "key": "c-5ad84595860f",
