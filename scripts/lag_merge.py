@@ -31,6 +31,25 @@ _PARTY_RE = re.compile(
     r"([A-Z][\w.'-]+(?:\s+[A-Z][\w.'-]+)*)\s+v\.?\s+([A-Z][\w.'-]+)")
 _DOCKET_RE = re.compile(r"\b(\d{1,2}:\d{2}-[a-z]{2,4}-\d{3,6})\b", re.I)
 
+# Common words that are not distinctive party surnames.
+_NOT_SURNAME = {
+    'district', 'court', 'state', 'people', 'united', 'states', 'department',
+    'county', 'board', 'city', 'company', 'commission', 'corporation', 'matter',
+    'estate', 'trust', 'university', 'school', 'health', 'services', 'national',
+    'america', 'american', 'first', 'group', 'association', 'authority', 'bank',
+}
+
+
+def distinctive_surnames(name):
+    """Distinctive (4+ letter, non-generic) tokens from a case name."""
+    out = set()
+    for part in re.split(r'\bv\.?\b', name or '', maxsplit=1):
+        for tok in re.findall(r"[A-Z][a-z]{3,}", part):
+            low = tok.lower()
+            if low not in _NOT_SURNAME:
+                out.add(low)
+    return out
+
 
 def extract_parties(text):
     m = _PARTY_RE.search(text or '')
@@ -95,12 +114,12 @@ def merge_lag(existing, lag_records):
 
     review = []
     stats = {'matched_docket': 0, 'matched_party': 0, 'matched_legacy': 0,
-             'rails_only': 0, 'review': 0,
+             'matched_summary': 0, 'rails_only': 0, 'review': 0,
              'existing_total': len(existing), 'lag_total': len(lag_records)}
     added = []
 
     for lag in lag_records:
-        match = _find_match(lag, by_docket, by_party, by_legacy, stats)
+        match = _find_match(lag, by_docket, by_party, by_legacy, by_date_state, stats)
         if match:
             if match.get('source') == 'rg':
                 match['source'] = 'both'
@@ -125,7 +144,7 @@ def merge_lag(existing, lag_records):
     return merged, review, stats
 
 
-def _find_match(lag, by_docket, by_party, by_legacy, stats):
+def _find_match(lag, by_docket, by_party, by_legacy, by_date_state, stats):
     blob = _lag_blob(lag)
     docket = extract_docket(lag.get('summary', '')) or extract_docket(blob)
     if docket and docket in by_docket:
@@ -143,6 +162,17 @@ def _find_match(lag, by_docket, by_party, by_legacy, stats):
     if lk[0] and lk[2] and lk in by_legacy:
         stats['matched_legacy'] += 1
         return by_legacy[lk]
+
+    # Tier 4: same date+state and a distinctive party surname appears in a
+    # candidate's summary — resolves cross-source naming differences.
+    if lk[0] and lk[1]:
+        surs = distinctive_surnames(lag.get('name', ''))
+        if surs:
+            for cand in by_date_state.get((lk[0], lk[1]), []):
+                summ = (cand.get('summary', '') or '').lower()
+                if any(s in summ for s in surs):
+                    stats['matched_summary'] += 1
+                    return cand
     return None
 
 

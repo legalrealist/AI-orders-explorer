@@ -119,6 +119,29 @@ def test_idempotent():
     assert twice[0]['source'] == 'both'
 
 
+def test_summary_surname_match_resolves_dup():
+    # R&G name is "Court – Judge" (no parties), but its summary names the case.
+    existing = [rg(0, '2026-04-09', 'Louisiana', 'Judge John Kolwe',
+                   name='Bankr. W.D. La. – Judge John Kolwe',
+                   summary='In re Troylond Malon Wise, the court sanctioned counsel.')]
+    lagrecs = [lag(0, '2026-04-09', 'Louisiana', '', name='In re Troylond Malon Wise')]
+    merged, review, stats = lag_merge.merge_lag(existing, lagrecs)
+    assert len(merged) == 1
+    assert merged[0]['source'] == 'both'
+    assert stats['matched_summary'] == 1
+    assert stats['review'] == 0
+
+
+def test_summary_match_requires_distinctive_surname():
+    # Only generic words shared -> not a match, stays a review near-match.
+    existing = [rg(0, '2026-04-09', 'Texas', 'Judge X',
+                   name='Court', summary='The State of Texas district court ruled.')]
+    lagrecs = [lag(0, '2026-04-09', 'Texas', 'Judge Y', name='State v. County')]
+    merged, review, stats = lag_merge.merge_lag(existing, lagrecs)
+    assert stats['matched_summary'] == 0
+    assert len(merged) == 2
+
+
 def test_idempotent_rails_add():
     # A LAG case added as rails on run 1 must match itself on run 2 (no dup).
     existing = [rg(0, '2026-01-01', 'Texas', 'Judge A', name='RG thing')]
@@ -133,6 +156,7 @@ def test_counts_reconcile():
     lagrecs = [lag(0, '2026-01-01', 'Texas', 'Judge A'),
                lag(1, '2026-03-03', 'Utah', 'Judge C')]
     merged, _, stats = lag_merge.merge_lag(existing, lagrecs)
-    matched = stats['matched_docket'] + stats['matched_party'] + stats['matched_legacy']
+    matched = (stats['matched_docket'] + stats['matched_party']
+               + stats['matched_legacy'] + stats['matched_summary'])
     assert matched + stats['rails_only'] == stats['lag_total']
     assert len(merged) == stats['existing_total'] + stats['rails_only']
