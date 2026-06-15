@@ -80,42 +80,80 @@ def _date_close(record_date, cl_date, days=31):
     return abs((a - b).days) <= days
 
 
-def _opinion_local_path(opinion_id, fetch):
+# AI relevance — every record here is an AI order, so the correct document
+# mentions AI. Used to disambiguate multiple same-day rulings in one case.
+_AI_RE = re.compile(
+    r'\b(a\.?i\.?|artificial intelligence|chat\s?gpt|gpt-?\d?|generative|'
+    r'hallucinat|fabricat|large language model|llm|gen\s?ai|co-?counsel|'
+    r'copilot|claude|gemini|bard|nonexistent (?:case|citation))\b', re.I)
+
+
+def _ai_score(text):
+    return len(_AI_RE.findall(text or ''))
+
+
+def _opinion(opinion_id, fetch):
     o = fetch(f'/api/rest/v4/opinions/{opinion_id}/')
-    return storage_url(o.get('local_path')), o.get('cluster', '')
+    return storage_url(o.get('local_path')), o.get('cluster', ''), (o.get('plain_text') or '')
 
 
 def _cluster(cluster_url, fetch):
     return fetch(f'/api/rest/v4/clusters/{_id_from(cluster_url)}/')
 
 
-def _cluster_pdf(cluster_url, fetch, record):
-    """Return (pdf_url, case_name) only if the cluster matches the record's
-    case name AND decision date — i.e. it is the same document."""
+def _best_pdf_in_cluster(cluster_json, fetch):
+    """Pick the AI-most-relevant sub-opinion PDF (preference, not hard filter)."""
+    best_url, best_score, fallback = '', -1, ''
+    for sub in (cluster_json.get('sub_opinions') or [])[:2]:
+        url, _, text = _opinion(_id_from(sub), fetch)
+        if not url:
+            continue
+        if not fallback:
+            fallback = url
+        s = _ai_score(text)
+        if s > best_score:
+            best_url, best_score = url, s
+        if best_score > 0:
+            break  # confident AI hit — stop scanning siblings
+    if best_score > 0:
+        return best_url, best_score
+    return fallback, 0
+
+
+def _cluster_candidate(cluster_url, fetch, record):
+    """(url, case_name, ai_score) if the cluster matches the record's case+date, else None."""
     c = _cluster(cluster_url, fetch)
     cname = c.get('case_name', '')
     if not case_matches(record, cname):
-        return '', cname
+        return None
     if not _date_close(record.get('date'), c.get('date_filed')):
-        return '', cname  # right case, wrong ruling in it
-    for sub in c.get('sub_opinions', []) or []:
-        url, _ = _opinion_local_path(_id_from(sub), fetch)
-        if url:
-            return url, cname
-    return '', cname
+        return None  # right case, wrong ruling
+    url, score = _best_pdf_in_cluster(c, fetch)
+    return (url, cname, score) if url else None
+
+
+def _pick_best(cluster_urls, fetch, record):
+    """Among case+date-matching clusters, prefer the AI-relevant one."""
+    fallback = None
+    for cu in cluster_urls[:4]:
+        cand = _cluster_candidate(cu, fetch, record)
+        if not cand:
+            continue
+        if cand[2] > 0:               # AI-positive document — confident
+            return cand[0], cand[1]
+        if fallback is None:
+            fallback = cand
+    return (fallback[0], fallback[1]) if fallback else ('', '')
 
 
 def _docket_pdf(docket_id, fetch, record):
     d = fetch(f'/api/rest/v4/dockets/{docket_id}/')
-    for cl in d.get('clusters', []) or []:
-        url, cname = _cluster_pdf(cl, fetch, record)
-        if url:
-            return url, cname
-    return '', d.get('case_name', '')
+    return _pick_best(d.get('clusters', []) or [], fetch, record)
 
 
 def _opinion_pdf_via_link(opinion_id, fetch, record):
-    url, cluster_url = _opinion_local_path(opinion_id, fetch)
+    # The record's own link points to a specific opinion; verify case + date.
+    url, cluster_url, _ = _opinion(opinion_id, fetch)
     if not url or not cluster_url:
         return '', ''
     c = _cluster(cluster_url, fetch)
@@ -132,13 +170,9 @@ def _search_pdf(record, fetch):
     if not q:
         return '', ''
     d = fetch('/api/rest/v4/search/?type=o&q=' + urllib.parse.quote(q))
-    for res in (d.get('results') or [])[:5]:
-        cid = res.get('cluster_id')
-        if cid:
-            url, cname = _cluster_pdf(f'/api/rest/v4/clusters/{cid}/', fetch, record)
-            if url:
-                return url, cname
-    return '', ''
+    cluster_urls = [f'/api/rest/v4/clusters/{r["cluster_id"]}/'
+                    for r in (d.get('results') or [])[:5] if r.get('cluster_id')]
+    return _pick_best(cluster_urls, fetch, record)
 
 
 def resolve_pdf_url(record, fetch, allow_search=True):

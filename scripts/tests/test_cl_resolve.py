@@ -105,6 +105,32 @@ def test_date_mismatch_rejects_then_finds_right_ruling():
     assert url.endswith('recap/rightdate.pdf') and method == 'search'
 
 
+def test_ai_content_disambiguates_same_day_rulings():
+    # Same case, same date, two rulings; pick the one whose text is about AI.
+    rec = {'link': 'https://www.courtlistener.com/docket/1/x/',
+           'name': 'Smith v. Jones', 'summary': '', 'date': '2026-03-01'}
+    fetch = make_fetch({
+        '/dockets/1/': {'clusters': ['https://x/api/rest/v4/clusters/A/',
+                                     'https://x/api/rest/v4/clusters/B/']},
+        '/clusters/A/': {'case_name': 'Smith v. Jones', 'date_filed': '2026-03-01',
+                         'sub_opinions': ['https://x/opinions/10/']},
+        '/opinions/10/': {'local_path': 'recap/scheduling.pdf',
+                          'plain_text': 'Order setting a status conference next month.'},
+        '/clusters/B/': {'case_name': 'Smith v. Jones', 'date_filed': '2026-03-01',
+                         'sub_opinions': ['https://x/opinions/11/']},
+        '/opinions/11/': {'local_path': 'recap/ai_sanctions.pdf',
+                          'plain_text': 'Counsel cited nonexistent cases produced by '
+                                        'ChatGPT, a generative artificial intelligence tool.'},
+    })
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
+    assert url.endswith('recap/ai_sanctions.pdf') and method == 'docket'
+
+
+def test_ai_score():
+    assert cl_resolve._ai_score('used ChatGPT and generative AI to hallucinate citations') >= 3
+    assert cl_resolve._ai_score('a routine scheduling order') == 0
+
+
 def test_date_close():
     assert cl_resolve._date_close('2026-04-22', '2026-04-20')      # within window
     assert not cl_resolve._date_close('2026-04-22', '2024-01-01')  # different ruling
