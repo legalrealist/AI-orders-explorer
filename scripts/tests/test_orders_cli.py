@@ -104,6 +104,8 @@ def test_court_match_alias_and_substring():
     assert oc.court_match('S.D.N.Y.', 'sdny')      # abbreviation alias
     assert oc.court_match('Supreme Court of Montana', 'Montana')  # substring
     assert not oc.court_match('N.D. Cal.', 'S.D.N.Y.')
+    # bankruptcy court for the same district must NOT match the district filter
+    assert not oc.court_match('U.S. Bankruptcy Court, Southern District of New York', 'S.D.N.Y.')
 
 
 def test_filter_court_unifies_spellings():
@@ -114,6 +116,30 @@ def test_filter_court_unifies_spellings():
     ]
     got = {r['id'] for r in oc.apply_filters(recs, {'court': 'S.D.N.Y.'})}
     assert got == {1, 2}   # both SDNY spellings, not the N.D. Cal. record
+
+
+def test_judge_match_title_insensitive():
+    assert oc.judge_match('Chief Judge Pamela Pepper', 'Judge Pamela Pepper')
+    assert oc.judge_match('Magistrate Judge Anthony P. Patti', 'Anthony P. Patti')
+    assert oc.judge_match('Judge Nina Y. Wang', 'Wang')
+    assert not oc.judge_match('Judge Nina Y. Wang', 'Castel')
+    assert not oc.judge_match('', 'Wang')          # empty judge must not match anything
+    assert not oc.judge_match('All Judges', 'Wang')
+
+
+def test_applies_to_matches_multivalue():
+    assert oc.applies_match('Attorneys,Pro Se Litigants', 'Attorneys')
+    assert oc.applies_match('Attorneys,Pro Se Litigants', 'Pro Se Litigants')
+    assert not oc.applies_match('Any Parties', 'Attorneys')
+
+
+def test_filter_judge_and_applies_to():
+    recs = [
+        {'id': 1, 'judge': 'Chief Judge Pamela Pepper', 'applies_to': 'Attorneys,Pro Se Litigants'},
+        {'id': 2, 'judge': 'Judge Other Person', 'applies_to': 'Any Parties'},
+    ]
+    assert {r['id'] for r in oc.apply_filters(recs, {'judge': 'Pamela Pepper'})} == {1}
+    assert {r['id'] for r in oc.apply_filters(recs, {'applies_to': 'Attorneys'})} == {1}
 
 
 def test_facet_excludes_placeholders_by_default():

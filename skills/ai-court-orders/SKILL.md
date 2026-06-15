@@ -37,9 +37,14 @@ python3 scripts/orders_cli.py bar [<state>]                   # state bar AI opi
 
 **Filters** (on `search` / `list`): `--judge`, `--court`, `--state`, `--type`, `--consequence`, `--ai-type`, `--applies-to`, `--source`, `--jurisdiction`, `--tag`, `--date-from YYYY-MM-DD`, `--date-to YYYY-MM-DD`, `--has-pdf`, `--has-link`, `--count` (print only the match count), `--limit N`, `--full`.
 
-- **`--court` is alias- and substring-aware** — court values aren't normalized in the data (`S.D.N.Y.` and `U.S. District Court, Southern District of New York` both occur). `--court "S.D.N.Y."`, `--court sdny`, and `--court "southern district of new york"` all match both spellings, so you won't under-report. The other filters are exact (case-insensitive).
+- **`--court`** is normalized in the data (each federal district has one canonical spelling, e.g. `S.D.N.Y.`) and the filter is also alias-aware (`sdny`, `southern district of new york` all work); bankruptcy/appeals courts for the same district are kept distinct.
+- **`--judge`** is title-insensitive substring match — `--judge "Pamela Pepper"` matches `Chief Judge Pamela Pepper`, `--judge Wang` matches `Judge Nina Y. Wang`.
+- **`--applies-to`** matches multi-value records — `--applies-to Attorneys` matches `Attorneys,Pro Se Litigants`.
+- `--state`, `--type`, `--consequence`, `--ai-type`, `--source`, `--jurisdiction` are exact (case-insensitive) — values are fully normalized enums.
 - **`--count`** answers "how many X" without counting the array yourself.
 - **`facets`** drops court-wide placeholders (`All Judges`, `District Wide`) and empty values by default, so `facets judge` ranks real jurists; pass `--all` to include placeholders.
+
+**Known data gaps (agents: filters skip empty values):** ~164 records (17%) have no `judge`, ~28 no `state_abbr`, a few no `applies_to` — these are holes in the upstream source, not bugs. A `--judge`/`--state` filter naturally excludes records whose field is empty. Use `stats` to see totals.
 
 **Enums:**
 - `type`: `Judicial Opinion`, `Standing Order`, `Local Rules`, `Administrative Order`, `Practice Direction`

@@ -89,3 +89,39 @@ def test_bad_string_field_coerced():
     rec['judge'] = None
     normalize.normalize_record(rec)
     assert rec['judge'] == ''
+
+
+def _court(court, state):
+    r = base()
+    r['court'] = court
+    r['state'] = state
+    return r
+
+
+def test_normalize_courts_collapses_dual_spelling():
+    recs = [_court('S.D.N.Y.', 'New York'),
+            _court('U.S. District Court, Southern District of New York', 'New York')]
+    normalize.normalize_courts(recs)
+    assert {r['court'] for r in recs} == {'S.D.N.Y.'}
+
+
+def test_normalize_courts_drops_division_suffix():
+    recs = [_court('N.D. Ill.', 'Illinois'),
+            _court('U.S. District Court, Northern District of Illinois, Eastern Division', 'Illinois')]
+    normalize.normalize_courts(recs)
+    assert {r['court'] for r in recs} == {'N.D. Ill.'}
+
+
+def test_normalize_courts_leaves_state_and_bankruptcy_courts():
+    recs = [_court('Supreme Court of Montana', 'Montana'),
+            _court('Bankr. W.D. La.', 'Louisiana'),
+            _court('Court of Appeal of Florida', 'Florida')]
+    before = [r['court'] for r in recs]
+    normalize.normalize_courts(recs)
+    assert [r['court'] for r in recs] == before
+
+
+def test_normalize_courts_keeps_distinct_districts_separate():
+    recs = [_court('N.D. Cal.', 'California'), _court('S.D. Cal.', 'California')]
+    normalize.normalize_courts(recs)
+    assert {r['court'] for r in recs} == {'N.D. Cal.', 'S.D. Cal.'}

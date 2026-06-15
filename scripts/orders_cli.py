@@ -30,13 +30,39 @@ _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _LOCAL_DIR = os.path.join(os.path.dirname(_SCRIPT_DIR), 'data', 'processed')
 _UA = 'ai-court-orders-cli/1.0'
 
-# Filter flag -> record field (exact match, case-insensitive). `court` is handled
-# separately with alias + substring matching (court values aren't normalized).
+# Filter flag -> record field (exact match, case-insensitive). court, judge, and
+# applies_to are handled separately: court is alias-aware, judge is title-
+# insensitive, applies_to is multi-value — exact match under-reports on all three.
 _EXACT = {
-    'judge': 'judge', 'state': 'state', 'type': 'type',
-    'consequence': 'consequence', 'ai_type': 'ai_type', 'applies_to': 'applies_to',
-    'source': 'source', 'jurisdiction': 'jurisdiction',
+    'state': 'state', 'type': 'type', 'consequence': 'consequence',
+    'ai_type': 'ai_type', 'source': 'source', 'jurisdiction': 'jurisdiction',
 }
+
+
+def _njudge(j):
+    """Drop titles (Chief/Magistrate/Senior/Justice/Judge…) and punctuation."""
+    s = (j or '').lower()
+    prev = None
+    while s != prev:
+        prev = s
+        s = re.sub(r'^(chief|senior|presiding|district|acting|magistrate|hon\.?|'
+                   r'honorable|justice|judge)\s+', '', s).strip()
+    return re.sub(r'[^a-z0-9]+', '', s)
+
+
+def judge_match(judge, query):
+    if not query:
+        return True
+    nj, nq = _njudge(judge), _njudge(query)
+    return bool(nj) and bool(nq) and nq in nj  # query is a substring of the (titled) judge
+
+
+def applies_match(applies, query):
+    if not query:
+        return True
+    q = query.strip().lower()
+    return any(q == p.strip().lower() or q in p.strip().lower()
+               for p in (applies or '').split(','))
 
 # Court aliases: the dataset stores the same court two ways (e.g. "S.D.N.Y." and
 # "U.S. District Court, Southern District of New York"), so an exact filter
@@ -82,6 +108,11 @@ def _canon_court(text):
     n = _ncourt(text)
     if n in COURT_ALIASES:
         return COURT_ALIASES[n]
+    low = (text or '').lower()
+    # Don't fold specialized courts (bankruptcy, appeals) into a district alias
+    # just because they name the same district.
+    if 'bankr' in low or 'court of appeals' in low or 'appellate' in low:
+        return n
     for k, v in COURT_ALIASES.items():
         if len(k) >= 12 and k in n:   # long-form phrase contained in the court text
             return v
@@ -153,6 +184,10 @@ def apply_filters(records, filters):
         if not ok:
             continue
         if filters.get('court') and not court_match(r.get('court'), filters['court']):
+            continue
+        if filters.get('judge') and not judge_match(r.get('judge'), filters['judge']):
+            continue
+        if filters.get('applies_to') and not applies_match(r.get('applies_to'), filters['applies_to']):
             continue
         df, dt = filters.get('date_from'), filters.get('date_to')
         d = r.get('date', '') or ''
