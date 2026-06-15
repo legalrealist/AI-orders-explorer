@@ -87,6 +87,32 @@ def test_search_verified_match():
     assert url.endswith('recap/s/4.pdf') and method == 'search'
 
 
+def test_date_mismatch_rejects_then_finds_right_ruling():
+    # Same case has two rulings; the record's date picks the right document.
+    rec = {'link': 'https://www.courtlistener.com/docket/1/x/',
+           'name': 'Geddes v. LoanCare', 'summary': '', 'date': '2026-04-22'}
+    fetch = make_fetch({
+        '/dockets/1/': {'clusters': ['https://x/api/rest/v4/clusters/2/']},
+        '/clusters/2/': {'case_name': 'Geddes v. LoanCare, LLC', 'date_filed': '2024-01-01',
+                         'sub_opinions': ['https://x/opinions/3/']},   # right case, WRONG date
+        '/opinions/3/': {'local_path': 'recap/wrongdate.pdf'},
+        '/search/': {'results': [{'caseName': 'Geddes v. LoanCare, LLC', 'cluster_id': 9}]},
+        '/clusters/9/': {'case_name': 'Geddes v. LoanCare, LLC', 'date_filed': '2026-04-20',
+                         'sub_opinions': ['https://x/opinions/8/']},   # right case + date
+        '/opinions/8/': {'local_path': 'recap/rightdate.pdf'},
+    })
+    url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
+    assert url.endswith('recap/rightdate.pdf') and method == 'search'
+
+
+def test_date_close():
+    assert cl_resolve._date_close('2026-04-22', '2026-04-20')      # within window
+    assert not cl_resolve._date_close('2026-04-22', '2024-01-01')  # different ruling
+    assert cl_resolve._date_close('2026-04', '2026-04-30')         # month precision
+    assert not cl_resolve._date_close('2026-04', '2026-06-01')
+    assert cl_resolve._date_close('2026-04-22', '')                # missing -> allow
+
+
 def test_search_rejects_wrong_case():
     rec = {'link': 'https://law.justia.com/x', 'name': 'Shore v. Dorel', 'summary': ''}
     fetch = make_fetch({

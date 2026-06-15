@@ -59,6 +59,27 @@ def case_matches(record, case_name):
     return bool(qt) and qt <= _toks(case_name)
 
 
+def _date_close(record_date, cl_date, days=31):
+    """True if the CL decision date matches the record's date (same document).
+
+    Allows a window for tracker-vs-court date drift; month-precision record
+    dates match on year-month. Missing dates can't disprove a match -> allow,
+    so case-name verification still governs.
+    """
+    rd, cd = (record_date or '')[:10], (cl_date or '')[:10]
+    if not rd or not cd:
+        return True
+    if len(rd) == 7:  # YYYY-MM precision
+        return cd[:7] == rd
+    try:
+        from datetime import date
+        a = date(*map(int, rd.split('-')))
+        b = date(*map(int, cd.split('-')))
+    except (ValueError, TypeError):
+        return True
+    return abs((a - b).days) <= days
+
+
 def _opinion_local_path(opinion_id, fetch):
     o = fetch(f'/api/rest/v4/opinions/{opinion_id}/')
     return storage_url(o.get('local_path')), o.get('cluster', '')
@@ -68,9 +89,15 @@ def _cluster(cluster_url, fetch):
     return fetch(f'/api/rest/v4/clusters/{_id_from(cluster_url)}/')
 
 
-def _cluster_pdf(cluster_url, fetch):
+def _cluster_pdf(cluster_url, fetch, record):
+    """Return (pdf_url, case_name) only if the cluster matches the record's
+    case name AND decision date — i.e. it is the same document."""
     c = _cluster(cluster_url, fetch)
     cname = c.get('case_name', '')
+    if not case_matches(record, cname):
+        return '', cname
+    if not _date_close(record.get('date'), c.get('date_filed')):
+        return '', cname  # right case, wrong ruling in it
     for sub in c.get('sub_opinions', []) or []:
         url, _ = _opinion_local_path(_id_from(sub), fetch)
         if url:
@@ -78,21 +105,25 @@ def _cluster_pdf(cluster_url, fetch):
     return '', cname
 
 
-def _docket_pdf(docket_id, fetch):
+def _docket_pdf(docket_id, fetch, record):
     d = fetch(f'/api/rest/v4/dockets/{docket_id}/')
-    cname = d.get('case_name', '')
     for cl in d.get('clusters', []) or []:
-        url, _ = _cluster_pdf(cl, fetch)
+        url, cname = _cluster_pdf(cl, fetch, record)
         if url:
             return url, cname
-    return '', cname
+    return '', d.get('case_name', '')
 
 
-def _opinion_pdf_via_link(opinion_id, fetch):
+def _opinion_pdf_via_link(opinion_id, fetch, record):
     url, cluster_url = _opinion_local_path(opinion_id, fetch)
-    if not url:
+    if not url or not cluster_url:
         return '', ''
-    cname = _cluster(cluster_url, fetch).get('case_name', '') if cluster_url else ''
+    c = _cluster(cluster_url, fetch)
+    cname = c.get('case_name', '')
+    if not case_matches(record, cname):
+        return '', cname
+    if not _date_close(record.get('date'), c.get('date_filed')):
+        return '', cname
     return url, cname
 
 
@@ -102,23 +133,21 @@ def _search_pdf(record, fetch):
         return '', ''
     d = fetch('/api/rest/v4/search/?type=o&q=' + urllib.parse.quote(q))
     for res in (d.get('results') or [])[:5]:
-        cn = res.get('caseName', '')
-        if not case_matches(record, cn):
-            continue
         cid = res.get('cluster_id')
         if cid:
-            url, _ = _cluster_pdf(f'/api/rest/v4/clusters/{cid}/', fetch)
+            url, cname = _cluster_pdf(f'/api/rest/v4/clusters/{cid}/', fetch, record)
             if url:
-                return url, cn
+                return url, cname
     return '', ''
 
 
 def resolve_pdf_url(record, fetch, allow_search=True):
     """Return (storage_pdf_url, method, matched_case_name) or ('', '', '').
 
-    Docket/opinion links are accepted only when the resolved case_name passes
-    case_matches against the record; otherwise resolution falls through to a
-    verified name search.
+    A candidate is accepted only when the CL cluster matches the record's case
+    name AND decision date (same document) — verified inside _cluster_pdf /
+    _opinion_pdf_via_link. A record's own docket/opinion link that fails either
+    check falls through to a verified name search.
     """
     link = record.get('link', '') or ''
     orig = record.get('original_link', '') or ''
@@ -127,16 +156,16 @@ def resolve_pdf_url(record, fetch, allow_search=True):
         m = re.search(r'/opinion/(\d+)/', src)
         if m:
             try:
-                url, cname = _opinion_pdf_via_link(m.group(1), fetch)
-                if url and case_matches(record, cname):
+                url, cname = _opinion_pdf_via_link(m.group(1), fetch, record)
+                if url:
                     return url, 'opinion', cname
             except Exception:
                 pass
         m = re.search(r'/docket/(\d+)/', src)
         if m:
             try:
-                url, cname = _docket_pdf(m.group(1), fetch)
-                if url and case_matches(record, cname):
+                url, cname = _docket_pdf(m.group(1), fetch, record)
+                if url:
                     return url, 'docket', cname
             except Exception:
                 pass
