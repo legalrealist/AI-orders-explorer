@@ -25067,7 +25067,262 @@
     "_rg_id": null
   },
   {
-    "id": 736,
+    "name": "D. Mass. – Judge Leo T. Sorokin",
+    "judge": "Judge Leo T. Sorokin",
+    "court": "D. Mass.",
+    "state": "Massachusetts",
+    "state_abbr": "MA",
+    "date": "2026-05-12",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Attorneys",
+    "summary": "In Shore v. Dorel Juvenile Grp., Inc., No. 25-11232-LTS (D. Mass. May 12, 2026), the attorney for plaintiffs used ChatGPT and Claude to finalize a jointly drafted opposition brief “with the intent to improve the brief’s writing style and coherence,” but failed to verify the substantive accuracy of the revisions, disclose the GenAI use to co-counsel, or provide a redline of his changes to co-counsel. The GenAI tools purportedly “re-wrote some of the quotations,” introducing fabricated quotations attributed to real cases, and the brief ultimately contained “nearly two dozen fabricated quotations, misquotations, or incorrect legal citations.” When defense counsel pointed out the fabrications in their reply brief, none of the attorneys sought to correct their submission prior to the court’s order to show cause. However, noting the “seriousness with which the lawyers responded to the show-cause order,” including attending CLE classes, offering to paying defense counsel’s fees for their reply without direction from the court, and adopting a new GenAI policy, the court ultimately struck the opposition brief and permitted plaintiffs to file a revised opposition. The court also ordered the primarily responsible attorney to pay $2,500 to the defendant and to file a status report on remedial measures, but declined to impose further sanctions on the two co-counsel firms in light of their “quite appropriate[]” respective roles and responses. In particular, the co-counsel firms had pre-existing policies prohibiting GenAI use for drafting and requiring active tracking of GenAI misuse cases, and counsel proactively disclosed eight additional fabricated quotations beyond the two the court had identified — demonstrating the candor and swift accountability the court credited.",
+    "reqs": {},
+    "consequence": "sanctions_attorney",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Applies to AI Used for Filings/Drafting",
+      "Court-Imposed Consequences - Attorneys/Law Firms"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/69077069-702f-4c52-960d-e3e78c456de4/?context=1519217",
+    "source": "rg",
+    "jurisdiction": "US",
+    "sanction_types": {
+      "types": [],
+      "amount_sought": null,
+      "amount_awarded": null
+    },
+    "_rg_id": "27cb2ca5-e806-4a8f-9491-176c6e50b891",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/69077069-702f-4c52-960d-e3e78c456de4/?context=1519217",
+    "id": 736
+  },
+  {
+    "name": "Fed. Cir. – Judge Timothy Dyk | Judge Kara Stoll | Judge Leonard Stark",
+    "judge": "Judge Timothy Dyk | Judge Kara Stoll | Judge Leonard Stark",
+    "court": "Fed. Cir.",
+    "state": "Federal",
+    "state_abbr": "FED",
+    "date": "2026-05-13",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Any Parties",
+    "summary": "In Jones v. Dep't of the Army, 2026 U.S. App. LEXIS 13687 (Fed. Cir. May 13, 2026), the pro se petitioner included citations in his brief and a prior motion for sanctions that “appear to reference cases that do not exist, or at the least contain significant errors, apparently resulting from the use of artificial intelligence.”  The respondent also identified additional “apparently fraudulent citations” in the petitioner’s brief, and the petitioner “d[id] not attempt to explain or justify the inclusion of these citations” in his reply.   The court warned that “[t]he use of these false citations is sanctionable” and that “repetition of this conduct can result in serious consequences, potentially including dismissal of his petition for review.” The court determined the appeal on unrelated grounds.",
+    "reqs": {
+      "warning": true
+    },
+    "consequence": "warning",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Suggests Cautious Use of AI",
+      "Applies to AI Used for Filings/Drafting"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/743a39ad-4730-4932-9971-30b62ab84a11/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "_rg_id": "9eebf005-53a4-452f-b0ee-f2dd9b4111b7",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/743a39ad-4730-4932-9971-30b62ab84a11/?context=1000516",
+    "sanction_types": {
+      "amount_awarded": null,
+      "amount_sought": null,
+      "types": []
+    },
+    "id": 737
+  },
+  {
+    "name": "W.D. Okla. – Judge David L. Russell",
+    "judge": "Judge David L. Russell",
+    "court": "W.D. Okla.",
+    "state": "Oklahoma",
+    "state_abbr": "OK",
+    "date": "2026-05-13",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Attorneys",
+    "summary": "In Doe v. Mount St. Mary High Sch. Corp. of Okla., 2026 U.S. Dist. LEXIS 106280 (W.D. Okla. May 13, 2026), the attorney for plaintiffs filed a response brief containing “case citations to nonexistent authority, inaccurate quotations, and case citations that do not stand for the proposition indicated.” When the errors were identified, counsel filed a motion that “deflected responsibility,” “offered an absurd explanation for the inclusion of fake cases,” and included statements that “proved to be false.” The court further noted that this was “not an isolated occurrence,” as the same attorney had submitted a brief with similar errors in another action pending before the same judge.  At the show cause hearing, counsel “acknowledged that she used AI tools without performing the essential step of personally reviewing the cited authority” and apologized.  Finding violations of Fed. R. Civ. P. 11(b)(2) and (b)(3), the court issued a public reprimand, ordered counsel to notify her clients, and ordered her to self-report the incident to the state bar disciplinary authority. In determining not to issue monetary sanctions, the court noted that the misconduct “occurred in conjunction with a discovery motion” for which “attorneys’ fees will be awarded,” that a monetary sanction had already been assessed against counsel in the related action, and that the non-monetary consequences imposed were “the least severe sanction adequate to deter and punish” the conduct, consonant with the purpose of Rule 11.",
+    "reqs": {},
+    "consequence": "sanctions_attorney",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Applies to AI Used for Filings/Drafting",
+      "Court-Imposed Consequences - Attorneys/Law Firms"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/cd2f3fdd-09f1-4b48-ad0b-2c5a219676c4/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "sanction_types": {
+      "types": [],
+      "amount_sought": null,
+      "amount_awarded": null
+    },
+    "_rg_id": "7dd4ec6b-c33c-4306-aeac-9a51c3ac2dd7",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/cd2f3fdd-09f1-4b48-ad0b-2c5a219676c4/?context=1000516",
+    "id": 738
+  },
+  {
+    "name": "Court of Appeal of Florida – Judge Patricia Kelly | Judge Susan H. Rothstein-Youakim | Judge Suzanne Labrit",
+    "judge": "Judge Patricia Kelly | Judge Susan H. Rothstein-Youakim | Judge Suzanne Labrit",
+    "court": "Court of Appeal of Florida",
+    "state": "Florida",
+    "state_abbr": "FL",
+    "date": "2026-05-13",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Any Parties",
+    "summary": "In Gleason v. Marcus, 2026 Fla. App. LEXIS 3648 (Fla. 2d DCA May 13, 2026), the pro se plaintiff filed appellate briefs that “cite[d] numerous cases that do not exist” and “frequently quote[d] case law for propositions that appear nowhere in the cases cited.” Citing its own recent precedent cautioning against the use of GenAI, the court warned that “This technology is very good at sounding right, but less adept at being right” and that “blind reliance” on it is “unwise, unacceptable, and sanctionable.” The court warned the plaintiff that future GenAI misuse “will not receive favorable treatment” and reminded “all litigants—both pro se and represented—that they must ensure the accuracy of their filings or risk the consequences.” The court affirmed the dismissal of the complaint on other grounds.",
+    "reqs": {
+      "warning": true
+    },
+    "consequence": "warning",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Suggests Cautious Use of AI",
+      "Applies to AI Used for Filings/Drafting"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/d06bbc2c-1628-4295-a937-8d00acd0cd8c/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "_rg_id": "856dbc73-efc5-49c0-9655-bb1ee6cf4a82",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/d06bbc2c-1628-4295-a937-8d00acd0cd8c/?context=1000516",
+    "sanction_types": {
+      "amount_awarded": null,
+      "amount_sought": null,
+      "types": []
+    },
+    "id": 739
+  },
+  {
+    "name": "E.D. Mich. – Magistrate Judge Anthony Patti",
+    "judge": "Magistrate Judge Anthony P. Patti",
+    "court": "E.D. Mich.",
+    "state": "Michigan",
+    "state_abbr": "MI",
+    "date": "2026-05-13",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Attorneys",
+    "summary": "In Johnson v. Experian Info. Sols., 2026 U.S. Dist. LEXIS 107105 (E.D. Mich. May 13, 2026), the pro se plaintiff filed several motions that “appear[ed] to be based on advice Plaintiff [received] from use of [GenAI].” The court noted that the plaintiff had several other pending motions which could potentially violate the Court’s local rules due to “inaccurate reliance on AI” and cautioned the plaintiff to “carefully consider the pending motions” and whether it would be “prudent to withdraw any motions to avoid any possible imposition of sanctions.” The court warned that “AI cannot give legal advice” and that “in many cases, its use in legal research has led to glaring misstatements of law and related sanctions,” citing prior authority from the same district. The court denied the plaintiff’s evidentiary motions on unrelated grounds.",
+    "reqs": {},
+    "consequence": null,
+    "applicableTo": [
+      "Generative AI Usage",
+      "Applies to AI Used for Filings/Drafting"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/920f7a82-180a-426b-82c2-479a00f7dfc8/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "_rg_id": "ca793892-88ad-4b96-a234-efbbf9d21e44",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/920f7a82-180a-426b-82c2-479a00f7dfc8/?context=1000516",
+    "sanction_types": {
+      "amount_awarded": null,
+      "amount_sought": null,
+      "types": []
+    },
+    "id": 740
+  },
+  {
+    "name": "E.D. Wash. – Judge Stan Bastian",
+    "judge": "Judge Stan Bastian",
+    "court": "E.D. Wash.",
+    "state": "Washington",
+    "state_abbr": "WA",
+    "date": "2026-05-13",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Any Parties",
+    "summary": "In Walden v. White Star Invs. LLC, No. 1:24-cv-03172-SAB, 2026 U.S. Dist. LEXIS 106178 (E.D. Wash. May 13, 2026), the pro se plaintiffs cited a case to support a proposition the case had “nothing to do with” in their motion to disqualify the defendant’s counsel.  The court warned the plaintiffs “not to overly rely on the use of [GenAI] such as ChatGPT, as the use of AI-generated citations that lack merit may result in sanctions.”  Judge Bastian denied the plaintiffs’ motion to disqualify counsel and granted the defendant’s motion to dismiss on other grounds.",
+    "reqs": {
+      "warning": true
+    },
+    "consequence": "warning",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Suggests Cautious Use of AI",
+      "Applies to AI Used for Filings/Drafting"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/43d5ff9c-13dd-4c64-ab78-1f7ac7eeb269/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "_rg_id": "57112ba1-b914-44ca-a6e4-147863b5b0a0",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/43d5ff9c-13dd-4c64-ab78-1f7ac7eeb269/?context=1000516",
+    "sanction_types": {
+      "amount_awarded": null,
+      "amount_sought": null,
+      "types": []
+    },
+    "id": 741
+  },
+  {
+    "name": "N.Y. App. Div., 1st Dept. – Justice Saliann Scarpulla",
+    "judge": "Justice Saliann Scarpulla | Justice Martin Shulman | Justice Julio Rodriguez III | Justice Marsha D. Michael | Justice Margaret A. Chan",
+    "court": "N.Y. App. Div., 1st Dept.",
+    "state": "New York",
+    "state_abbr": "NY",
+    "date": "2026-05-14",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Attorneys",
+    "summary": "In Matter of Lewis, 2026 N.Y. App. Div. LEXIS 3256 (N.Y. App. Div. May 14, 2026), the Attorney Grievance Committee for the First Judicial Department of New York sought the immediate suspension of respondent, an attorney whose draft for a client (another attorney who had hired respondent to assist with research and drafting) was “replete with citations to non-existent cases,” which a federal court attributed to GenAI hallucinations. The draft resulted in a $1,500 fine against the client attorney (who had submitted the respondent’s work product without checking the citations or substance) and an order to report the drafting attorney to disciplinary authorities. When the Committee opened an investigation, the respondent refused to appear for a scheduled examination under oath, characterized the investigation as “a racist attack and a form of racial and gender harassment,” demanded the Committee “cease and desist” from further communications, and claimed to have “resigned” from the bar without submitting the required application. The court found that the attorney’s “failure to appear for an [examination under oath] as directed by a judicial subpoena” and her “fail[ure] to respond to the [Committee’s] lawful demands for documents and information” constituted “conduct immediately threatening the public interest.” The court granted the motion for immediate suspension, effective immediately and “until further order” of the court.",
+    "reqs": {},
+    "consequence": "sanctions_attorney",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Applies to AI Used for Filings/Drafting",
+      "Court-Imposed Consequences - Attorneys/Law Firms"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/9b13ef05-026b-4b3e-a80f-b15e04c07c0a/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "sanction_types": {
+      "types": [],
+      "amount_sought": null,
+      "amount_awarded": null
+    },
+    "_rg_id": "e3680cee-b1d6-4ced-ac62-df175d117dbb",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/9b13ef05-026b-4b3e-a80f-b15e04c07c0a/?context=1000516",
+    "id": 742
+  },
+  {
+    "name": "S.D. Ohio – Judge Douglas R. Cole",
+    "judge": "Judge Douglas R. Cole",
+    "court": "S.D. Ohio",
+    "state": "Ohio",
+    "state_abbr": "OH",
+    "date": "2026-05-15",
+    "type": "Judicial Opinion",
+    "ai_type": "Gen AI",
+    "applies_to": "Any Parties",
+    "summary": "In Brock v. Hamilton County JFS, 2026 U.S. Dist. LEXIS 108000 (S.D. Ohio May 15, 2026), the pro se plaintiff filed objections to a magistrate judge’s supplemental report and recommendation that relied on what the court said “appears” to be hallucinated case law. The court was left with “the distinct impression that [plaintiff] is using artificial intelligence tools to craft her objections and is not checking the resulting citations with care,” as the plaintiff cited a case for a proposition it did not support. The court warned the plaintiff that “if future filings contain misstatements about the contents of precedent, the Court will not hesitate to sanction her.” The court dismissed the case without prejudice on unrelated grounds.",
+    "reqs": {
+      "warning": true
+    },
+    "consequence": "warning",
+    "applicableTo": [
+      "Generative AI Usage",
+      "Suggests Cautious Use of AI",
+      "Applies to AI Used for Filings/Drafting"
+    ],
+    "link": "https://advance.lexis.com/api/permalink/f1377a5d-8134-4f5b-8d03-9781d4377394/?context=1000516",
+    "source": "rg",
+    "jurisdiction": "US",
+    "_rg_id": "e0493ba2-988c-45dd-a386-db1d4112e843",
+    "link_source": "lexis",
+    "original_link": "https://advance.lexis.com/api/permalink/f1377a5d-8134-4f5b-8d03-9781d4377394/?context=1000516",
+    "sanction_types": {
+      "amount_awarded": null,
+      "amount_sought": null,
+      "types": []
+    },
+    "id": 743
+  },
+  {
+    "id": 744,
     "name": "Primerica Life Insurance Co. v. Finlayson",
     "judge": "",
     "court": "U.S. District Court, District of Utah",
@@ -25097,7 +25352,7 @@
     "_rg_id": null
   },
   {
-    "id": 737,
+    "id": 745,
     "name": "In re Prince Global Holdings Limited, et al.",
     "judge": "",
     "court": "U.S. Bankruptcy Court, Southern District of New York",
@@ -25126,7 +25381,7 @@
     "_rg_id": null
   },
   {
-    "id": 738,
+    "id": 746,
     "name": "White v. Walmart, Inc.",
     "judge": "",
     "court": "U.S. District Court, Southern District of Indiana, Indianapolis Division",
@@ -25156,7 +25411,7 @@
     "_rg_id": null
   },
   {
-    "id": 739,
+    "id": 747,
     "name": "Rodriguez v. Rodriguez",
     "judge": "",
     "court": "Florida Sixth District Court of Appeal",
@@ -25186,7 +25441,7 @@
     "_rg_id": null
   },
   {
-    "id": 740,
+    "id": 748,
     "name": "Brooks v. Lowe's Home Centers, LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Louisiana, Alexandria Division",
@@ -25216,7 +25471,7 @@
     "_rg_id": null
   },
   {
-    "id": 741,
+    "id": 749,
     "name": "Gamez v. County of Fresno",
     "judge": "",
     "court": "U.S. District Court, Eastern District of California",
@@ -25246,7 +25501,7 @@
     "_rg_id": null
   },
   {
-    "id": 742,
+    "id": 750,
     "name": "In re Philips Recalled CPAP, Bi-Level PAP, and Mechanical Ventilator Products Liability Litigation (Gravelyn Transfer Order)",
     "judge": "",
     "court": "United States Judicial Panel on Multidistrict Litigation (transferee: W.D. Pa.)",
@@ -25276,7 +25531,7 @@
     "_rg_id": null
   },
   {
-    "id": 743,
+    "id": 751,
     "name": "In re Kathleen A. Rabon",
     "judge": "",
     "court": "U.S. Bankruptcy Court, District of Connecticut",
@@ -25306,7 +25561,7 @@
     "_rg_id": null
   },
   {
-    "id": 744,
+    "id": 752,
     "name": "Modern Floor Specialists, Inc. v. City of Los Angeles",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -25336,7 +25591,7 @@
     "_rg_id": null
   },
   {
-    "id": 745,
+    "id": 753,
     "name": "United States v. Farris",
     "judge": "",
     "court": "U.S. Court of Appeals for the Sixth Circuit",
@@ -25366,7 +25621,7 @@
     "_rg_id": null
   },
   {
-    "id": 746,
+    "id": 754,
     "name": "Colbert v. County of Riverside",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -25396,7 +25651,7 @@
     "_rg_id": null
   },
   {
-    "id": 747,
+    "id": 755,
     "name": "Mohamed Hussain et al. v. Mansoor Quraishi et al.",
     "judge": "Judge Graff",
     "court": "Superior Court of Connecticut, Judicial District of Tolland at Rockville",
@@ -25426,7 +25681,7 @@
     "_rg_id": null
   },
   {
-    "id": 748,
+    "id": 756,
     "name": "Morgan v. V2X, Inc.",
     "judge": "Judge Dominguez Braswell",
     "court": "U.S. District Court, District of Colorado",
@@ -25455,7 +25710,7 @@
     "_rg_id": null
   },
   {
-    "id": 749,
+    "id": 757,
     "name": "Williams v. Chicago Board of Education",
     "judge": "",
     "court": "U.S. District Court, Northern District of Illinois, Eastern Division",
@@ -25484,7 +25739,7 @@
     "_rg_id": null
   },
   {
-    "id": 750,
+    "id": 758,
     "name": "McCarthy v. United States Drug Enforcement Administration",
     "judge": "",
     "court": "U.S. Court of Appeals for the Third Circuit",
@@ -25514,7 +25769,7 @@
     "_rg_id": null
   },
   {
-    "id": 751,
+    "id": 759,
     "name": "Mission Critical Project Services, Inc.",
     "judge": "",
     "court": "U.S. Government Accountability Office",
@@ -25543,7 +25798,7 @@
     "_rg_id": null
   },
   {
-    "id": 752,
+    "id": 760,
     "name": "Segui v. Moniz",
     "judge": "",
     "court": "U.S. District Court, District of Arizona",
@@ -25573,7 +25828,7 @@
     "_rg_id": null
   },
   {
-    "id": 753,
+    "id": 761,
     "name": "Jane Doe, et al. v. Lincoln Consolidated Schools, et al.",
     "judge": "Judge McMillion",
     "court": "U.S. District Court, Eastern District of Michigan, Southern Division",
@@ -25603,7 +25858,7 @@
     "_rg_id": null
   },
   {
-    "id": 754,
+    "id": 762,
     "name": "Lopez v. Mead Johnson Nutrition Company",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -25633,7 +25888,7 @@
     "_rg_id": null
   },
   {
-    "id": 755,
+    "id": 763,
     "name": "Prisbrey v. Prisbrey",
     "judge": "",
     "court": "Utah Court of Appeals",
@@ -25662,7 +25917,7 @@
     "_rg_id": null
   },
   {
-    "id": 756,
+    "id": 764,
     "name": "Riddle Aggregates, LLC, Ornstein-Schuler, LLC, Tax Matters Partner v. Commissioner",
     "judge": "Judge Kerrigan",
     "court": "United States Tax Court",
@@ -25691,7 +25946,7 @@
     "_rg_id": null
   },
   {
-    "id": 757,
+    "id": 765,
     "name": "Appeals of DSME Construction Co., Ltd.",
     "judge": "",
     "court": "Armed Services Board of Contract Appeals (ASBCA)",
@@ -25720,7 +25975,7 @@
     "_rg_id": null
   },
   {
-    "id": 758,
+    "id": 766,
     "name": "In re Eric Chibueze Nwaubani",
     "judge": "",
     "court": "U.S. Court of Appeals for the Fourth Circuit",
@@ -25752,7 +26007,7 @@
     "_rg_id": null
   },
   {
-    "id": 759,
+    "id": 767,
     "name": "Nai v. National Asset Mortgage, LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Michigan, Southern Division",
@@ -25782,7 +26037,7 @@
     "_rg_id": null
   },
   {
-    "id": 760,
+    "id": 768,
     "name": "Brown v. State of Mississippi",
     "judge": "",
     "court": "Court of Appeals of Mississippi",
@@ -25812,7 +26067,7 @@
     "_rg_id": null
   },
   {
-    "id": 761,
+    "id": 769,
     "name": "M7 Indústria e Comércio de Compensados e Laminados Ltda. v. U.S. Structural Plywood Integrity Coalition",
     "judge": "",
     "court": "U.S. District Court, Southern District of New York",
@@ -25842,7 +26097,7 @@
     "_rg_id": null
   },
   {
-    "id": 762,
+    "id": 770,
     "name": "Hatch v. College Ave Student Loans",
     "judge": "",
     "court": "U.S. District Court, Northern District of Illinois, Eastern Division",
@@ -25872,7 +26127,7 @@
     "_rg_id": null
   },
   {
-    "id": 763,
+    "id": 771,
     "name": "Ford v. Troy City School District",
     "judge": "",
     "court": "U.S. District Court, Northern District of New York",
@@ -25902,7 +26157,7 @@
     "_rg_id": null
   },
   {
-    "id": 764,
+    "id": 772,
     "name": "Medal v. Amazon.com Services LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Washington",
@@ -25932,7 +26187,7 @@
     "_rg_id": null
   },
   {
-    "id": 765,
+    "id": 773,
     "name": "Put A Bird On It, LLC v. Seattle Arena Holdings, LLC",
     "judge": "Judge Feldman",
     "court": "Washington Court of Appeals, Division One",
@@ -25962,7 +26217,7 @@
     "_rg_id": null
   },
   {
-    "id": 766,
+    "id": 774,
     "name": "Estate of Khallid Muhammad et al. v. Tupac Shakur Estate et al.",
     "judge": "Judge Staton",
     "court": "U.S. District Court, Central District of California",
@@ -25991,7 +26246,7 @@
     "_rg_id": null
   },
   {
-    "id": 767,
+    "id": 775,
     "name": "Thomas v. The Quikrete Companies, LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Texas, San Antonio Division",
@@ -26021,7 +26276,7 @@
     "_rg_id": null
   },
   {
-    "id": 768,
+    "id": 776,
     "name": "In re Termination of Parental Rights as to H.K.",
     "judge": "",
     "court": "Arizona Court of Appeals",
@@ -26053,7 +26308,7 @@
     "_rg_id": null
   },
   {
-    "id": 769,
+    "id": 777,
     "name": "Lee v. Capital One Bank (USA), N.A.",
     "judge": "Judge Pead",
     "court": "U.S. District Court, District of Utah",
@@ -26082,7 +26337,7 @@
     "_rg_id": null
   },
   {
-    "id": 770,
+    "id": 778,
     "name": "Zeus Realty Group LLC v. 1032 N Sycamore Owner LA, LLC",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -26112,7 +26367,7 @@
     "_rg_id": null
   },
   {
-    "id": 771,
+    "id": 779,
     "name": "Matter of Adapt Forward, LLC",
     "judge": "",
     "court": "U.S. Government Accountability Office",
@@ -26141,7 +26396,7 @@
     "_rg_id": null
   },
   {
-    "id": 772,
+    "id": 780,
     "name": "Kennon v. Ashley",
     "judge": "",
     "court": "U.S. District Court, District of Kansas",
@@ -26171,7 +26426,7 @@
     "_rg_id": null
   },
   {
-    "id": 773,
+    "id": 781,
     "name": "In re Social Media Adolescent Addiction/Personal Injury Products Liability Litigation",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -26201,7 +26456,7 @@
     "_rg_id": null
   },
   {
-    "id": 774,
+    "id": 782,
     "name": "Creditors Adjustment Bureau, Inc. v. All Season Power LLC",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -26231,7 +26486,7 @@
     "_rg_id": null
   },
   {
-    "id": 775,
+    "id": 783,
     "name": "Matter of: G2 Ops, Inc.",
     "judge": "",
     "court": "U.S. Government Accountability Office",
@@ -26260,7 +26515,7 @@
     "_rg_id": null
   },
   {
-    "id": 776,
+    "id": 784,
     "name": "In re: Telexfree Securities Litigation",
     "judge": "",
     "court": "U.S. District Court, District of Massachusetts",
@@ -26290,7 +26545,7 @@
     "_rg_id": null
   },
   {
-    "id": 777,
+    "id": 785,
     "name": "Lindsey Newell v. The Law Offices of Travis R. Walker, P.A.",
     "judge": "",
     "court": "U.S. District Court, Southern District of Florida",
@@ -26322,7 +26577,7 @@
     "_rg_id": null
   },
   {
-    "id": 778,
+    "id": 786,
     "name": "CVTEK, LLC",
     "judge": "",
     "court": "U.S. Government Accountability Office",
@@ -26351,7 +26606,7 @@
     "_rg_id": null
   },
   {
-    "id": 779,
+    "id": 787,
     "name": "Legarza v. Northern Star (Alaska), Inc.",
     "judge": "Judge Holland",
     "court": "U.S. District Court, District of Alaska",
@@ -26380,7 +26635,7 @@
     "_rg_id": null
   },
   {
-    "id": 780,
+    "id": 788,
     "name": "TQJ, LLC v. Esquivel",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -26410,7 +26665,7 @@
     "_rg_id": null
   },
   {
-    "id": 781,
+    "id": 789,
     "name": "Dodds v. Bridges",
     "judge": "",
     "court": "U.S. Court of Appeals for the Tenth Circuit",
@@ -26439,7 +26694,7 @@
     "_rg_id": null
   },
   {
-    "id": 782,
+    "id": 790,
     "name": "Alberti v. District of Columbia",
     "judge": "Judge Boasberg",
     "court": "U.S. District Court for the District of Columbia",
@@ -26469,7 +26724,7 @@
     "_rg_id": null
   },
   {
-    "id": 783,
+    "id": 791,
     "name": "Avenue Capital Group, LLC v. Strum",
     "judge": "",
     "court": "Supreme Court of the State of New York, New York County",
@@ -26499,7 +26754,7 @@
     "_rg_id": null
   },
   {
-    "id": 784,
+    "id": 792,
     "name": "Peter L. Clinco, Deceased, C. M. Barone-Clinco, Successor in Interest, and C. M. Barone-Clinco v. Commissioner of Internal Revenue",
     "judge": "Judge Holmes",
     "court": "United States Tax Court",
@@ -26529,7 +26784,7 @@
     "_rg_id": null
   },
   {
-    "id": 785,
+    "id": 793,
     "name": "Cummins v. Becerra",
     "judge": "",
     "court": "U.S. District Court, Eastern District of California",
@@ -26559,7 +26814,7 @@
     "_rg_id": null
   },
   {
-    "id": 786,
+    "id": 794,
     "name": "Valve Corporation v. Rothschild",
     "judge": "",
     "court": "U.S. District Court, Western District of Washington, at Seattle",
@@ -26589,7 +26844,7 @@
     "_rg_id": null
   },
   {
-    "id": 787,
+    "id": 795,
     "name": "Arkansas Department of Human Services v. April Ward and Minor Child",
     "judge": "",
     "court": "Supreme Court of Arkansas",
@@ -26619,7 +26874,7 @@
     "_rg_id": null
   },
   {
-    "id": 788,
+    "id": 796,
     "name": "Holmes v. University of Texas at Austin",
     "judge": "",
     "court": "U.S. District Court, Western District of Texas, Austin Division",
@@ -26649,7 +26904,7 @@
     "_rg_id": null
   },
   {
-    "id": 789,
+    "id": 797,
     "name": "In re the Matter of Abiud Rosas Carreon v. Maria G. Rosas Rivera",
     "judge": "Judge Fabian",
     "court": "Court of Appeals of Arizona, Division 1",
@@ -26679,7 +26934,7 @@
     "_rg_id": null
   },
   {
-    "id": 790,
+    "id": 798,
     "name": "LeDoux v. Outliers, Inc.",
     "judge": "",
     "court": "U.S. District Court, Western District of Washington",
@@ -26708,7 +26963,7 @@
     "_rg_id": null
   },
   {
-    "id": 791,
+    "id": 799,
     "name": "Sophia Madigan v. Graco Inc.",
     "judge": "Judge Tostrud",
     "court": "U.S. District Court, District of Minnesota",
@@ -26737,7 +26992,7 @@
     "_rg_id": null
   },
   {
-    "id": 792,
+    "id": 800,
     "name": "Offen Petroleum, LLC v. L&J Express, LLC",
     "judge": "",
     "court": "U.S. District Court, District of Arizona",
@@ -26769,7 +27024,7 @@
     "_rg_id": null
   },
   {
-    "id": 793,
+    "id": 801,
     "name": "1S REO Opportunity 1, LLC v. 223 Howard LLC",
     "judge": "",
     "court": "U.S. District Court, Eastern District of New York",
@@ -26798,7 +27053,7 @@
     "_rg_id": null
   },
   {
-    "id": 794,
+    "id": 802,
     "name": "Kizzie Sims & Estate of Gregory Neil Davis v. Board of County Commissioners",
     "judge": "Judge Russell",
     "court": "U.S. District Court, Western District of Oklahoma",
@@ -26827,7 +27082,7 @@
     "_rg_id": null
   },
   {
-    "id": 795,
+    "id": 803,
     "name": "Matter of Bramstedt Surgical Inc.",
     "judge": "",
     "court": "U.S. Government Accountability Office",
@@ -26856,7 +27111,7 @@
     "_rg_id": null
   },
   {
-    "id": 796,
+    "id": 804,
     "name": "Mbow v. Mackert",
     "judge": "",
     "court": "U.S. District Court, District of Maryland",
@@ -26886,7 +27141,7 @@
     "_rg_id": null
   },
   {
-    "id": 797,
+    "id": 805,
     "name": "Kaufman v. Upton",
     "judge": "",
     "court": "U.S. District Court, District of Massachusetts",
@@ -26918,7 +27173,7 @@
     "_rg_id": null
   },
   {
-    "id": 798,
+    "id": 806,
     "name": "Yue v. Reaction Labs, LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Texas, Austin Division",
@@ -26948,7 +27203,7 @@
     "_rg_id": null
   },
   {
-    "id": 799,
+    "id": 807,
     "name": "Alzado-Lotz v. Bock",
     "judge": "",
     "court": "U.S. District Court, District of Colorado",
@@ -26977,7 +27232,7 @@
     "_rg_id": null
   },
   {
-    "id": 800,
+    "id": 808,
     "name": "Hodges v. Meridian Waste Acquisitions, LLC (consolidated with Rieske v. Accounting Fulfillment Services, LLC)",
     "judge": "Judge Corrigan",
     "court": "U.S. District Court, Middle District of Florida, Jacksonville Division",
@@ -27009,7 +27264,7 @@
     "_rg_id": null
   },
   {
-    "id": 801,
+    "id": 809,
     "name": "North Atlantic Operating Company, Inc., et al. v. Indiana Import, LLC, et al.",
     "judge": "Judge Dinsmore",
     "court": "U.S. District Court, Southern District of Indiana",
@@ -27038,7 +27293,7 @@
     "_rg_id": null
   },
   {
-    "id": 802,
+    "id": 810,
     "name": "Lopez Hernandez v. Lundy",
     "judge": "",
     "court": "U.S. District Court, Eastern District of California",
@@ -27068,7 +27323,7 @@
     "_rg_id": null
   },
   {
-    "id": 803,
+    "id": 811,
     "name": "Kjoller v. Superior Court of Nevada County (People real party in interest)",
     "judge": "",
     "court": "California Supreme Court (directing Third District Court of Appeal)",
@@ -27098,7 +27353,7 @@
     "_rg_id": null
   },
   {
-    "id": 804,
+    "id": 812,
     "name": "Saber v. Navy Federal Credit Union",
     "judge": "",
     "court": "Pennsylvania Superior Court",
@@ -27127,7 +27382,7 @@
     "_rg_id": null
   },
   {
-    "id": 805,
+    "id": 813,
     "name": "Collins v. Nova Association Management Partners LLC",
     "judge": "",
     "court": "U.S. District Court, Western District of Washington",
@@ -27157,7 +27412,7 @@
     "_rg_id": null
   },
   {
-    "id": 806,
+    "id": 814,
     "name": "Heiting v. I Am Beyond LLC",
     "judge": "",
     "court": "Superior Court of California, County of Los Angeles",
@@ -27187,7 +27442,7 @@
     "_rg_id": null
   },
   {
-    "id": 807,
+    "id": 815,
     "name": "Gharavi v. Google LLC",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -27217,7 +27472,7 @@
     "_rg_id": null
   },
   {
-    "id": 808,
+    "id": 816,
     "name": "Wurtenberg v. The City of New York",
     "judge": "",
     "court": "Supreme Court of the State of New York, New York County",
@@ -27247,7 +27502,7 @@
     "_rg_id": null
   },
   {
-    "id": 809,
+    "id": 817,
     "name": "Garibay-Robledo v. Noem",
     "judge": "",
     "court": "U.S. District Court, Northern District of Texas, Abilene Division",
@@ -27277,7 +27532,7 @@
     "_rg_id": null
   },
   {
-    "id": 810,
+    "id": 818,
     "name": "McPhaul v. College Hills OPCO, LLC",
     "judge": "",
     "court": "U.S. District Court, District of Kansas",
@@ -27307,7 +27562,7 @@
     "_rg_id": null
   },
   {
-    "id": 811,
+    "id": 819,
     "name": "Washburn v. Houston",
     "judge": "",
     "court": "Arizona Court of Appeals, Division One",
@@ -27339,7 +27594,7 @@
     "_rg_id": null
   },
   {
-    "id": 812,
+    "id": 820,
     "name": "Burnett v. The City of New York",
     "judge": "",
     "court": "Supreme Court of the State of New York, New York County",
@@ -27369,7 +27624,7 @@
     "_rg_id": null
   },
   {
-    "id": 813,
+    "id": 821,
     "name": "Hildebrandt v. siParadigm LLC",
     "judge": "Judge Semper",
     "court": "U.S. District Court, District of New Jersey",
@@ -27399,7 +27654,7 @@
     "_rg_id": null
   },
   {
-    "id": 814,
+    "id": 822,
     "name": "Labatt USA Operating Co., LLC v. Friends Beverage Group, LLC",
     "judge": "",
     "court": "Supreme Court of New York, New York County",
@@ -27429,7 +27684,7 @@
     "_rg_id": null
   },
   {
-    "id": 815,
+    "id": 823,
     "name": "Pauliah v. University of Mississippi Medical Center",
     "judge": "",
     "court": "U.S. District Court, Southern District of Mississippi, Northern Division",
@@ -27461,7 +27716,7 @@
     "_rg_id": null
   },
   {
-    "id": 816,
+    "id": 824,
     "name": "Ringer v. Bank of America, N.A.",
     "judge": "",
     "court": "U.S. District Court, Northern District of Georgia, Atlanta Division",
@@ -27493,7 +27748,7 @@
     "_rg_id": null
   },
   {
-    "id": 817,
+    "id": 825,
     "name": "In re S.A., D.H., and B.M., Minors",
     "judge": "",
     "court": "Appellate Court of Illinois, Second District",
@@ -27523,7 +27778,7 @@
     "_rg_id": null
   },
   {
-    "id": 818,
+    "id": 826,
     "name": "Billups v. Louisville Municipal School District",
     "judge": "",
     "court": "U.S. District Court, Northern District of Mississippi, Aberdeen Division",
@@ -27553,7 +27808,7 @@
     "_rg_id": null
   },
   {
-    "id": 819,
+    "id": 827,
     "name": "Patrick Joseph Groulx v. CSL Limited",
     "judge": "",
     "court": "Michigan Court of Appeals",
@@ -27583,7 +27838,7 @@
     "_rg_id": null
   },
   {
-    "id": 820,
+    "id": 828,
     "name": "Wireless Investors LLC v. Semtech Incorporated, et al.",
     "judge": "Judge Humetewa",
     "court": "U.S. District Court, District of Arizona",
@@ -27613,7 +27868,7 @@
     "_rg_id": null
   },
   {
-    "id": 821,
+    "id": 829,
     "name": "Russel Williams Home Services LLC v. Minleon International (USA) Limited LLC",
     "judge": "Judge Neary",
     "court": "U.S. District Court, Middle District of Pennsylvania",
@@ -27643,7 +27898,7 @@
     "_rg_id": null
   },
   {
-    "id": 822,
+    "id": 830,
     "name": "Angelica E. Cruz et al. v. United States of America",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -27673,7 +27928,7 @@
     "_rg_id": null
   },
   {
-    "id": 823,
+    "id": 831,
     "name": "PRM Group, Inc. v. Paralegal Bootcamp LLC",
     "judge": "",
     "court": "U.S. District Court, District of Maryland",
@@ -27703,7 +27958,7 @@
     "_rg_id": null
   },
   {
-    "id": 824,
+    "id": 832,
     "name": "Valencia / Case Lombardi (1st Cir. Haw.) sanctions matter",
     "judge": "",
     "court": "First Circuit Court of Hawaii (Honolulu)",
@@ -27732,7 +27987,7 @@
     "_rg_id": null
   },
   {
-    "id": 825,
+    "id": 833,
     "name": "Russell v. Mells",
     "judge": "",
     "court": "District Court of Appeal of Florida, Second District",
@@ -27764,7 +28019,7 @@
     "_rg_id": null
   },
   {
-    "id": 826,
+    "id": 834,
     "name": "Sharky's Sports Bar v. Village of Mt. Morris, Illinois",
     "judge": "",
     "court": "U.S. District Court, Northern District of Illinois, Western Division",
@@ -27794,7 +28049,7 @@
     "_rg_id": null
   },
   {
-    "id": 827,
+    "id": 835,
     "name": "South Side Area School Dist. v. Pa. HRC",
     "judge": "",
     "court": "Pennsylvania Commonwealth Court",
@@ -27823,7 +28078,7 @@
     "_rg_id": null
   },
   {
-    "id": 828,
+    "id": 836,
     "name": "Dusablon v. Gibbs",
     "judge": "",
     "court": "U.S. District Court, Southern District of New York",
@@ -27853,7 +28108,7 @@
     "_rg_id": null
   },
   {
-    "id": 829,
+    "id": 837,
     "name": "Associated Builders and Contractors, Inc., Eastern Pennsylvania Chapter v. Bucks County Community College",
     "judge": "",
     "court": "Commonwealth Court of Pennsylvania",
@@ -27883,7 +28138,7 @@
     "_rg_id": null
   },
   {
-    "id": 830,
+    "id": 838,
     "name": "In re Nupeutics Natural, Inc.; Gladstone v. Peatross",
     "judge": "",
     "court": "United States Bankruptcy Court, Southern District of California",
@@ -27915,7 +28170,7 @@
     "_rg_id": null
   },
   {
-    "id": 831,
+    "id": 839,
     "name": "Jordan v. Chicago Housing Authority",
     "judge": "Judge Cushing",
     "court": "Circuit Court of Cook County, Illinois, County Department, Law Division",
@@ -27947,7 +28202,7 @@
     "_rg_id": null
   },
   {
-    "id": 832,
+    "id": 840,
     "name": "Black Oak Capital BOCA, LLC v. Paul Evans, LLC",
     "judge": "Judge Barlow",
     "court": "U.S. District Court, District of Utah",
@@ -27977,7 +28232,7 @@
     "_rg_id": null
   },
   {
-    "id": 833,
+    "id": 841,
     "name": "Jason M. Hatfield, P.A. v. Pirani",
     "judge": "",
     "court": "U.S. District Court, Western District of Arkansas",
@@ -28009,7 +28264,7 @@
     "_rg_id": null
   },
   {
-    "id": 834,
+    "id": 842,
     "name": "Hill v. Oklahoma County Criminal Justice Authority",
     "judge": "Judge DeGiusti",
     "court": "U.S. District Court, Western District of Oklahoma",
@@ -28039,7 +28294,7 @@
     "_rg_id": null
   },
   {
-    "id": 835,
+    "id": 843,
     "name": "Gutierrez v. Lorenzo Food Group, Inc.",
     "judge": "Judge Padin",
     "court": "U.S. District Court, District of New Jersey",
@@ -28068,7 +28323,7 @@
     "_rg_id": null
   },
   {
-    "id": 836,
+    "id": 844,
     "name": "Kilinc v. PMMUE Eduservices Private Limited",
     "judge": "",
     "court": "U.S. District Court, Southern District of New York",
@@ -28098,7 +28353,7 @@
     "_rg_id": null
   },
   {
-    "id": 837,
+    "id": 845,
     "name": "Raymond Alan Shields v. First Financial Corporation",
     "judge": "Judge Brothers",
     "court": "Sixth Circuit Court for Davidson County, Tennessee",
@@ -28128,7 +28383,7 @@
     "_rg_id": null
   },
   {
-    "id": 838,
+    "id": 846,
     "name": "Ekeocha v. U.S. Department of State",
     "judge": "Judge Contreras",
     "court": "U.S. District Court for the District of Columbia",
@@ -28158,7 +28413,7 @@
     "_rg_id": null
   },
   {
-    "id": 839,
+    "id": 847,
     "name": "Paredes Guevara v. A&P Restaurant Corp.",
     "judge": "",
     "court": "U.S. District Court, Southern District of New York",
@@ -28188,7 +28443,7 @@
     "_rg_id": null
   },
   {
-    "id": 840,
+    "id": 848,
     "name": "Gittemeier v. Liberty Mutual Personal Insurance Company",
     "judge": "",
     "court": "U.S. District Court, Eastern District of Missouri",
@@ -28220,7 +28475,7 @@
     "_rg_id": null
   },
   {
-    "id": 841,
+    "id": 849,
     "name": "Neal v. Frayer",
     "judge": "Judge Hurson",
     "court": "U.S. District Court, District of Maryland",
@@ -28250,7 +28505,7 @@
     "_rg_id": null
   },
   {
-    "id": 842,
+    "id": 850,
     "name": "Matter of Matos",
     "judge": "",
     "court": "New York Supreme Court, Appellate Division, First Department",
@@ -28282,7 +28537,7 @@
     "_rg_id": null
   },
   {
-    "id": 843,
+    "id": 851,
     "name": "Richard LaRoche v. Darla Sterett (LaRoche)",
     "judge": "",
     "court": "Vermont Supreme Court",
@@ -28312,7 +28567,7 @@
     "_rg_id": null
   },
   {
-    "id": 844,
+    "id": 852,
     "name": "Jacob Doe v. The University of North Carolina System, et al.",
     "judge": "",
     "court": "U.S. District Court, Western District of North Carolina, Asheville Division",
@@ -28342,7 +28597,7 @@
     "_rg_id": null
   },
   {
-    "id": 845,
+    "id": 853,
     "name": "United States v. Czartorski",
     "judge": "",
     "court": "U.S. District Court, Western District of Kentucky, Louisville Division",
@@ -28372,7 +28627,7 @@
     "_rg_id": null
   },
   {
-    "id": 846,
+    "id": 854,
     "name": "David v. George Chiala Farms, Inc.",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -28402,7 +28657,7 @@
     "_rg_id": null
   },
   {
-    "id": 847,
+    "id": 855,
     "name": "In the Interest of M. O. W.",
     "judge": "",
     "court": "Court of Appeals of Texas, Austin",
@@ -28432,7 +28687,7 @@
     "_rg_id": null
   },
   {
-    "id": 848,
+    "id": 856,
     "name": "Parker v. Costco Wholesale Corp.",
     "judge": "",
     "court": "U.S. District Court, Western District of Washington",
@@ -28464,7 +28719,7 @@
     "_rg_id": null
   },
   {
-    "id": 849,
+    "id": 857,
     "name": "Rivera-Carrasquillo v. United States",
     "judge": "",
     "court": "U.S. District Court, District of Puerto Rico",
@@ -28493,7 +28748,7 @@
     "_rg_id": null
   },
   {
-    "id": 850,
+    "id": 858,
     "name": "Jamison Warfield v. W.N. Morehouse Truck Line, Inc.",
     "judge": "Judge Corker",
     "court": "U.S. District Court, Eastern District of Tennessee, Northeastern Division",
@@ -28522,7 +28777,7 @@
     "_rg_id": null
   },
   {
-    "id": 851,
+    "id": 859,
     "name": "Hernandez v. Kunes",
     "judge": "",
     "court": "U.S. District Court, Middle District of Pennsylvania",
@@ -28551,7 +28806,7 @@
     "_rg_id": null
   },
   {
-    "id": 852,
+    "id": 860,
     "name": "Isaacs v. Novartis Pharmaceuticals Corporation",
     "judge": "",
     "court": "U.S. District Court, District of New Jersey",
@@ -28581,7 +28836,7 @@
     "_rg_id": null
   },
   {
-    "id": 853,
+    "id": 861,
     "name": "Wheat v. Vichie",
     "judge": "Judge Frank",
     "court": "New York Supreme Court, New York County",
@@ -28610,7 +28865,7 @@
     "_rg_id": null
   },
   {
-    "id": 854,
+    "id": 862,
     "name": "Iowa Supreme Court Attorney Disciplinary Board v. Pazdernik",
     "judge": "",
     "court": "Iowa Supreme Court",
@@ -28642,7 +28897,7 @@
     "_rg_id": null
   },
   {
-    "id": 855,
+    "id": 863,
     "name": "County of Los Angeles v. Niblett",
     "judge": "",
     "court": "California Court of Appeal, Second District, Division One",
@@ -28672,7 +28927,7 @@
     "_rg_id": null
   },
   {
-    "id": 856,
+    "id": 864,
     "name": "Goldman v. Arizona Board of Regents",
     "judge": "",
     "court": "U.S. District Court, District of Arizona",
@@ -28702,7 +28957,7 @@
     "_rg_id": null
   },
   {
-    "id": 857,
+    "id": 865,
     "name": "Boston v. Williams (In re Loletha Hale, Esq.)",
     "judge": "Judge Ray",
     "court": "U.S. District Court, Northern District of Georgia, Atlanta Division",
@@ -28732,7 +28987,7 @@
     "_rg_id": null
   },
   {
-    "id": 858,
+    "id": 866,
     "name": "Green Building Initiative, Inc. v. Green Globe International, Inc.",
     "judge": "",
     "court": "U.S. District Court for the District of Oregon",
@@ -28761,7 +29016,7 @@
     "_rg_id": null
   },
   {
-    "id": 859,
+    "id": 867,
     "name": "Crowder v. Yussman",
     "judge": "",
     "court": "Kentucky Court of Appeals",
@@ -28791,7 +29046,7 @@
     "_rg_id": null
   },
   {
-    "id": 860,
+    "id": 868,
     "name": "Appeals of Huffman Construction, LLC",
     "judge": "",
     "court": "Armed Services Board of Contract Appeals",
@@ -28820,7 +29075,7 @@
     "_rg_id": null
   },
   {
-    "id": 861,
+    "id": 869,
     "name": "Alexandria Jones v. District of Columbia Office of Unified Communications",
     "judge": "Judge Contreras",
     "court": "U.S. District Court, District of Columbia",
@@ -28850,7 +29105,7 @@
     "_rg_id": null
   },
   {
-    "id": 862,
+    "id": 870,
     "name": "N-Bar Trade, Inc. v. Amazon.com Services LLC",
     "judge": "Judge Contreras",
     "court": "U.S. District Court, District of Columbia",
@@ -28880,7 +29135,7 @@
     "_rg_id": null
   },
   {
-    "id": 863,
+    "id": 871,
     "name": "Arch Insurance Company v. A3 Development, LLC",
     "judge": "",
     "court": "U.S. District Court, Southern District of Florida",
@@ -28910,7 +29165,7 @@
     "_rg_id": null
   },
   {
-    "id": 864,
+    "id": 872,
     "name": "Creech v. City of Raleigh",
     "judge": "",
     "court": "North Carolina Court of Appeals",
@@ -28939,7 +29194,7 @@
     "_rg_id": null
   },
   {
-    "id": 865,
+    "id": 873,
     "name": "Mundy v. Clickstop, Inc.",
     "judge": "",
     "court": "District Court of Nebraska, Douglas County",
@@ -28971,7 +29226,7 @@
     "_rg_id": null
   },
   {
-    "id": 866,
+    "id": 874,
     "name": "Smith v. Trump",
     "judge": "",
     "court": "U.S. District Court, District of Columbia",
@@ -29001,7 +29256,7 @@
     "_rg_id": null
   },
   {
-    "id": 867,
+    "id": 875,
     "name": "Puig Valdes v. All3Media America, LLC",
     "judge": "",
     "court": "Los Angeles County Superior Court",
@@ -29033,7 +29288,7 @@
     "_rg_id": null
   },
   {
-    "id": 868,
+    "id": 876,
     "name": "Stephanie Tovar v. United Pacific; Everest Premier Insurance Co.",
     "judge": "",
     "court": "California Workers' Compensation Appeals Board",
@@ -29065,7 +29320,7 @@
     "_rg_id": null
   },
   {
-    "id": 869,
+    "id": 877,
     "name": "United States v. Glennie Antonio McGee",
     "judge": "",
     "court": "U.S. District Court, Southern District of Alabama",
@@ -29097,7 +29352,7 @@
     "_rg_id": null
   },
   {
-    "id": 870,
+    "id": 878,
     "name": "Jakes v. Youngblood",
     "judge": "",
     "court": "U.S. District Court, Western District of Pennsylvania",
@@ -29129,7 +29384,7 @@
     "_rg_id": null
   },
   {
-    "id": 871,
+    "id": 879,
     "name": "Support Community, Inc. v. MPH International LLC",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -29159,7 +29414,7 @@
     "_rg_id": null
   },
   {
-    "id": 872,
+    "id": 880,
     "name": "Tovar v. American Automatic Fire Suppression, Inc.",
     "judge": "Judge Caietti",
     "court": "Superior Court of California, County of San Diego",
@@ -29189,7 +29444,7 @@
     "_rg_id": null
   },
   {
-    "id": 873,
+    "id": 881,
     "name": "People v. Alvarez",
     "judge": "",
     "court": "California Court of Appeal, Fourth Appellate District, Division One",
@@ -29221,7 +29476,7 @@
     "_rg_id": null
   },
   {
-    "id": 874,
+    "id": 882,
     "name": "Khoury et al. v. Intermountain Health Care, Inc.",
     "judge": "",
     "court": "U.S. District Court, District of Utah",
@@ -29250,7 +29505,7 @@
     "_rg_id": null
   },
   {
-    "id": 875,
+    "id": 883,
     "name": "Lofton v. Grove Farms",
     "judge": "",
     "court": "Circuit Court of DeSoto County, Mississippi",
@@ -29282,7 +29537,7 @@
     "_rg_id": null
   },
   {
-    "id": 876,
+    "id": 884,
     "name": "Shaporov v. PIPPD P.O. Matthew Levine",
     "judge": "",
     "court": "U.S. District Court, District of New Jersey",
@@ -29312,7 +29567,7 @@
     "_rg_id": null
   },
   {
-    "id": 877,
+    "id": 885,
     "name": "Kenisha Black v. Mississippi Dept. of Rehabilitation Services & Howard",
     "judge": "",
     "court": "U.S. District Court, Southern District of Mississippi",
@@ -29344,7 +29599,7 @@
     "_rg_id": null
   },
   {
-    "id": 878,
+    "id": 886,
     "name": "Vision Management Group, LLC v. Constant Aviation, LLC",
     "judge": "Judge Barker",
     "court": "U.S. District Court, Northern District of Ohio",
@@ -29374,7 +29629,7 @@
     "_rg_id": null
   },
   {
-    "id": 879,
+    "id": 887,
     "name": "Gibralter, LLC v. DMS Flowers, LLC",
     "judge": "",
     "court": "U.S. District Court, Eastern District of California",
@@ -29404,7 +29659,7 @@
     "_rg_id": null
   },
   {
-    "id": 880,
+    "id": 888,
     "name": "Facey v. Fisher",
     "judge": "Judge Rosado",
     "court": "New York Supreme Court, New York County",
@@ -29434,7 +29689,7 @@
     "_rg_id": null
   },
   {
-    "id": 881,
+    "id": 889,
     "name": "United States v. Brewer",
     "judge": "",
     "court": "U.S. District Court, Middle District of Florida, Orlando Division",
@@ -29464,7 +29719,7 @@
     "_rg_id": null
   },
   {
-    "id": 882,
+    "id": 890,
     "name": "CommNV, LLC v. Uprise, LLC",
     "judge": "",
     "court": "Second Judicial District Court of the State of Nevada, Washoe County",
@@ -29496,7 +29751,7 @@
     "_rg_id": null
   },
   {
-    "id": 883,
+    "id": 891,
     "name": "Hill v. Workday, Inc.",
     "judge": "",
     "court": "U.S. District Court, Northern District of California",
@@ -29526,7 +29781,7 @@
     "_rg_id": null
   },
   {
-    "id": 884,
+    "id": 892,
     "name": "In re Whitehall Pharmacy LLC",
     "judge": "",
     "court": "U.S. Bankruptcy Court, Eastern District of Arkansas",
@@ -29556,7 +29811,7 @@
     "_rg_id": null
   },
   {
-    "id": 885,
+    "id": 893,
     "name": "Lewis v. Entergy Mississippi, LLC",
     "judge": "",
     "court": "U.S. District Court, Southern District of Mississippi, Northern Division",
@@ -29586,7 +29841,7 @@
     "_rg_id": null
   },
   {
-    "id": 886,
+    "id": 894,
     "name": "Davis v. Marion County Superior Court Juvenile Detention Center",
     "judge": "",
     "court": "U.S. District Court, Southern District of Indiana, Indianapolis Division",
@@ -29618,7 +29873,7 @@
     "_rg_id": null
   },
   {
-    "id": 887,
+    "id": 895,
     "name": "Multiphone Latin America Inc. v. Millicom International Cellular S.A.",
     "judge": "",
     "court": "U.S. District Court, Southern District of Florida",
@@ -29650,7 +29905,7 @@
     "_rg_id": null
   },
   {
-    "id": 888,
+    "id": 896,
     "name": "Thackston v. Driscoll",
     "judge": "",
     "court": "U.S. District Court, Western District of Texas",
@@ -29680,7 +29935,7 @@
     "_rg_id": null
   },
   {
-    "id": 889,
+    "id": 897,
     "name": "Pennantia, LLC v. Rose Cay Maritime, LLC",
     "judge": "",
     "court": "U.S. District Court, Southern District of New York",
@@ -29710,7 +29965,7 @@
     "_rg_id": null
   },
   {
-    "id": 890,
+    "id": 898,
     "name": "Betancourt Gómez v. Colegio de Profesionales de la Enfermería de Puerto Rico",
     "judge": "Judge Ortiz Modestti",
     "court": "Tribunal de Primera Instancia, Sala Superior de San Juan (Puerto Rico)",
@@ -29742,7 +29997,7 @@
     "_rg_id": null
   },
   {
-    "id": 891,
+    "id": 899,
     "name": "Chenco Engineering & Consulting GmbH v. Do-Fluoride New Materials Co. Ltd.",
     "judge": "Judge Brailsford",
     "court": "U.S. District Court, District of Idaho",
@@ -29771,7 +30026,7 @@
     "_rg_id": null
   },
   {
-    "id": 892,
+    "id": 900,
     "name": "In re R.L.",
     "judge": "",
     "court": "Appellate Court of Illinois, Fourth District",
@@ -29801,7 +30056,7 @@
     "_rg_id": null
   },
   {
-    "id": 893,
+    "id": 901,
     "name": "Xu v. Nasser (In re Nasser)",
     "judge": "Judge Hage",
     "court": "United States Bankruptcy Court, Eastern District of Michigan, Southern Division",
@@ -29831,7 +30086,7 @@
     "_rg_id": null
   },
   {
-    "id": 894,
+    "id": 902,
     "name": "Nora v. M & A Transport, Inc.",
     "judge": "Judge Morgan",
     "court": "U.S. District Court, Eastern District of Louisiana",
@@ -29863,7 +30118,7 @@
     "_rg_id": null
   },
   {
-    "id": 895,
+    "id": 903,
     "name": "Hocog v. Cook-Huynh",
     "judge": "Judge Iriarte",
     "court": "Superior Court of Guam",
@@ -29893,7 +30148,7 @@
     "_rg_id": null
   },
   {
-    "id": 896,
+    "id": 904,
     "name": "In re S.M., a Minor",
     "judge": "",
     "court": "Illinois Appellate Court, Fourth District",
@@ -29925,7 +30180,7 @@
     "_rg_id": null
   },
   {
-    "id": 897,
+    "id": 905,
     "name": "Pineda v. Campos",
     "judge": "",
     "court": "Arizona Court of Appeals, Division One",
@@ -29955,7 +30210,7 @@
     "_rg_id": null
   },
   {
-    "id": 898,
+    "id": 906,
     "name": "In re A.S.",
     "judge": "Judge Knecht",
     "court": "Appellate Court of Illinois, Fourth District",
@@ -29985,7 +30240,7 @@
     "_rg_id": null
   },
   {
-    "id": 899,
+    "id": 907,
     "name": "Robbins v. Martin Law Firm, P.L.",
     "judge": "",
     "court": "U.S. District Court, Middle District of Florida, Fort Myers Division",
@@ -30015,7 +30270,7 @@
     "_rg_id": null
   },
   {
-    "id": 900,
+    "id": 908,
     "name": "Vita Law Offices, P.C. v. Lockridge Grindal Nauen P.L.L.P.",
     "judge": "",
     "court": "U.S. District Court, District of Massachusetts",
@@ -30045,7 +30300,7 @@
     "_rg_id": null
   },
   {
-    "id": 901,
+    "id": 909,
     "name": "In re Baby Boy and A.H., Minors",
     "judge": "",
     "court": "Appellate Court of Illinois, Fourth District",
@@ -30077,7 +30332,7 @@
     "_rg_id": null
   },
   {
-    "id": 902,
+    "id": 910,
     "name": "ByoPlanet International, LLC v. Johansson",
     "judge": "",
     "court": "U.S. District Court, Southern District of Florida",
@@ -30109,7 +30364,7 @@
     "_rg_id": null
   },
   {
-    "id": 903,
+    "id": 911,
     "name": "Kessler v. City of Atwater",
     "judge": "",
     "court": "U.S. District Court, Eastern District of California",
@@ -30139,7 +30394,7 @@
     "_rg_id": null
   },
   {
-    "id": 904,
+    "id": 912,
     "name": "Iowa Sup. Ct. Att'y Disciplinary Bd. v. Turner (reinstatement)",
     "judge": "",
     "court": "Iowa Supreme Court Attorney Disciplinary Board",
@@ -30168,7 +30423,7 @@
     "_rg_id": null
   },
   {
-    "id": 905,
+    "id": 913,
     "name": "Kaur v. Desso",
     "judge": "",
     "court": "U.S. District Court, Northern District of New York",
@@ -30200,7 +30455,7 @@
     "_rg_id": null
   },
   {
-    "id": 906,
+    "id": 914,
     "name": "Coomer v. Lindell",
     "judge": "",
     "court": "U.S. District Court, District of Colorado",
@@ -30232,7 +30487,7 @@
     "_rg_id": null
   },
   {
-    "id": 907,
+    "id": 915,
     "name": "Shahid v. Esaam",
     "judge": "",
     "court": "Georgia Court of Appeals, First Division",
@@ -30264,7 +30519,7 @@
     "_rg_id": null
   },
   {
-    "id": 908,
+    "id": 916,
     "name": "Dastou v. Holmes",
     "judge": "Judge Goldenberg",
     "court": "Massachusetts Superior Court, Middlesex County",
@@ -30294,7 +30549,7 @@
     "_rg_id": null
   },
   {
-    "id": 909,
+    "id": 917,
     "name": "Mintvest Capital, LTD v. NYDIG Trust Company",
     "judge": "Judge Lopez",
     "court": "U.S. District Court, District of Puerto Rico",
@@ -30326,7 +30581,7 @@
     "_rg_id": null
   },
   {
-    "id": 910,
+    "id": 918,
     "name": "Garner v. Kadince",
     "judge": "",
     "court": "Utah Court of Appeals",
@@ -30358,7 +30613,7 @@
     "_rg_id": null
   },
   {
-    "id": 911,
+    "id": 919,
     "name": "United States v. Burke",
     "judge": "",
     "court": "U.S. District Court, Middle District of Florida, Tampa Division",
@@ -30388,7 +30643,7 @@
     "_rg_id": null
   },
   {
-    "id": 912,
+    "id": 920,
     "name": "Flowz Digital LLC v. Dalal",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -30418,7 +30673,7 @@
     "_rg_id": null
   },
   {
-    "id": 913,
+    "id": 921,
     "name": "Truong v. Flint Hills Resources, LLC",
     "judge": "",
     "court": "U.S. District Court, Southern District of Texas, Corpus Christi Division",
@@ -30448,7 +30703,7 @@
     "_rg_id": null
   },
   {
-    "id": 914,
+    "id": 922,
     "name": "Bevins v. Colgate-Palmolive Co.",
     "judge": "Judge Baylson",
     "court": "U.S. District Court, Eastern District of Pennsylvania",
@@ -30478,7 +30733,7 @@
     "_rg_id": null
   },
   {
-    "id": 915,
+    "id": 923,
     "name": "D'Angelo v. Vaught",
     "judge": "",
     "court": "Illinois Appellate Court",
@@ -30510,7 +30765,7 @@
     "_rg_id": null
   },
   {
-    "id": 916,
+    "id": 924,
     "name": "Enzor / Bennington DUI matter (Vt.)",
     "judge": "",
     "court": "Vermont Superior Court, Bennington Unit (Criminal Division)",
@@ -30539,7 +30794,7 @@
     "_rg_id": null
   },
   {
-    "id": 917,
+    "id": 925,
     "name": "Loyer v. Wayne County, Michigan",
     "judge": "",
     "court": "U.S. District Court, Eastern District of Michigan, Southern Division",
@@ -30569,7 +30824,7 @@
     "_rg_id": null
   },
   {
-    "id": 918,
+    "id": 926,
     "name": "Nguyen v. Savage Enterprises",
     "judge": "",
     "court": "U.S. District Court, Eastern District of Arkansas, Central Division",
@@ -30601,7 +30856,7 @@
     "_rg_id": null
   },
   {
-    "id": 919,
+    "id": 927,
     "name": "Gonzalez v. Texas Taxpayers and Research Association",
     "judge": "",
     "court": "U.S. District Court, Western District of Texas",
@@ -30633,7 +30888,7 @@
     "_rg_id": null
   },
   {
-    "id": 920,
+    "id": 928,
     "name": "Arajuo v. Wedelstadt",
     "judge": "Judge Griesbach",
     "court": "U.S. District Court, Eastern District of Wisconsin",
@@ -30663,7 +30918,7 @@
     "_rg_id": null
   },
   {
-    "id": 921,
+    "id": 929,
     "name": "Strike 3 Holdings, LLC v. Doe",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -30693,7 +30948,7 @@
     "_rg_id": null
   },
   {
-    "id": 922,
+    "id": 930,
     "name": "Kohls v. Ellison",
     "judge": "",
     "court": "U.S. District Court, District of Minnesota",
@@ -30722,7 +30977,7 @@
     "_rg_id": null
   },
   {
-    "id": 923,
+    "id": 931,
     "name": "Kasten Berry Inc. v. Stewart",
     "judge": "Judge Robinson",
     "court": "U.S. District Court, District of Kansas",
@@ -30754,7 +31009,7 @@
     "_rg_id": null
   },
   {
-    "id": 924,
+    "id": 932,
     "name": "Churchill Funding I LLC v. 732 Indiana, LLC",
     "judge": "Judge Mandel",
     "court": "Superior Court of California, County of Los Angeles, West District (Santa Monica)",
@@ -30784,7 +31039,7 @@
     "_rg_id": null
   },
   {
-    "id": 925,
+    "id": 933,
     "name": "Mortazavi v. Booz Allen Hamilton, Inc.",
     "judge": "",
     "court": "U.S. District Court, Central District of California",
@@ -30816,7 +31071,7 @@
     "_rg_id": null
   },
   {
-    "id": 926,
+    "id": 934,
     "name": "Thomas v. Commissioner of Internal Revenue",
     "judge": "Judge Buch",
     "court": "U.S. Tax Court",
@@ -30848,7 +31103,7 @@
     "_rg_id": null
   },
   {
-    "id": 927,
+    "id": 935,
     "name": "United States v. Michel",
     "judge": "Judge Kollar-Kotelly",
     "court": "U.S. District Court for the District of Columbia",
@@ -30877,7 +31132,7 @@
     "_rg_id": null
   },
   {
-    "id": 928,
+    "id": 936,
     "name": "Rasmussen v. Rasmussen",
     "judge": "",
     "court": "Superior Court of California, County of Sonoma",
@@ -30907,7 +31162,7 @@
     "_rg_id": null
   },
   {
-    "id": 929,
+    "id": 937,
     "name": "Iovino v. Michael Stapleton Associates, Ltd.",
     "judge": "",
     "court": "U.S. District Court for the Western District of Virginia, Harrisonburg Division",
@@ -30936,7 +31191,7 @@
     "_rg_id": null
   },
   {
-    "id": 930,
+    "id": 938,
     "name": "Morgan v. Community Against Violence",
     "judge": "Judge Johnson",
     "court": "U.S. District Court, District of New Mexico",
@@ -30966,7 +31221,7 @@
     "_rg_id": null
   },
   {
-    "id": 931,
+    "id": 939,
     "name": "Smith v. Farwell",
     "judge": "",
     "court": "Commonwealth of Massachusetts, Norfolk Superior Court",
@@ -30998,7 +31253,7 @@
     "_rg_id": null
   },
   {
-    "id": 932,
+    "id": 940,
     "name": "People v. Crabill",
     "judge": "",
     "court": "Colorado Office of the Presiding Disciplinary Judge",
@@ -31030,7 +31285,7 @@
     "_rg_id": null
   },
   {
-    "id": 933,
+    "id": 941,
     "name": "In re Celsius Network LLC",
     "judge": "Judge Glenn",
     "court": "United States Bankruptcy Court, Southern District of New York",
@@ -31059,7 +31314,7 @@
     "_rg_id": null
   },
   {
-    "id": 934,
+    "id": 942,
     "name": "Ex parte Lee",
     "judge": "",
     "court": "Court of Appeals of Texas, Tenth District (Waco)",
