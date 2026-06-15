@@ -121,6 +121,21 @@ def test_normalize_courts_leaves_state_and_bankruptcy_courts():
     assert [r['court'] for r in recs] == before
 
 
+def test_normalize_amount_awarded():
+    cases = {
+        '$1,000': '$1,000', '$8,044.25': '$8,044.25', '$55,597.00': '$55,597',
+        '$10000': '$10,000', '$500': '$500',
+        '$7,500 (two sanctions: $2,500 + $5,000)': '$7,500',
+        'None (warning only)': None, 'Dismissal with prejudice': None,
+        '1 year suspension': None, 'None': None, '': None, None: None,
+    }
+    for raw, want in cases.items():
+        rec = base()
+        rec['sanction_types'] = {'amount_awarded': raw, 'amount_sought': None, 'types': []}
+        normalize.normalize_record(rec)
+        assert rec['sanction_types']['amount_awarded'] == want, (raw, want)
+
+
 def test_normalize_courts_keeps_distinct_districts_separate():
     recs = [_court('N.D. Cal.', 'California'), _court('S.D. Cal.', 'California')]
     normalize.normalize_courts(recs)

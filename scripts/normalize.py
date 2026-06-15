@@ -26,6 +26,25 @@ def _empty_sanction_types():
     return {'amount_awarded': None, 'amount_sought': None, 'types': []}
 
 
+def _norm_amount(val):
+    """Standardize a sanction amount to '$X,XXX[.cc]', or None if non-monetary.
+
+    The field historically held prose ('None (warning only)', 'Dismissal with
+    prejudice', '1 year suspension'); those carry no dollar figure and become
+    None — the description lives in consequence / sanction_types.types / summary.
+    """
+    if not val:
+        return None
+    m = re.search(r'\$\s?([\d,]+(?:\.\d+)?)', str(val))
+    if not m:
+        return None
+    try:
+        f = float(m.group(1).replace(',', ''))
+    except ValueError:
+        return None
+    return '${:,}'.format(int(f)) if f == int(f) else '${:,.2f}'.format(f)
+
+
 def normalize_reqs(reqs):
     if not isinstance(reqs, dict):
         return {}
@@ -55,6 +74,8 @@ def normalize_record(rec):
         st.setdefault('amount_sought', None)
         if not isinstance(st.get('types'), list):
             st['types'] = []
+    st['amount_awarded'] = _norm_amount(st.get('amount_awarded'))
+    st['amount_sought'] = _norm_amount(st.get('amount_sought'))
     rec['sanction_types'] = st
 
     if not isinstance(rec.get('applicableTo'), list):
