@@ -29,7 +29,7 @@ CONSEQUENCES = {'warning', 'sanctions_attorney', 'sanctions_party'}
 # Every cleaned record carries exactly this key set.
 REQUIRED_KEYS = {
     'id', 'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type',
-    'source', 'jurisdiction', 'link', 'original_link', 'link_source',
+    'source', 'jurisdiction', 'link', 'original_link', 'link_source', 'pdf',
     'ai_type', 'applies_to', 'summary', 'reqs', 'consequence', 'applicableTo',
     'sanction_types', '_rg_id',
 }
@@ -37,6 +37,7 @@ REQUIRED_KEYS = {
 _STR_KEYS = {
     'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type', 'source',
     'jurisdiction', 'link', 'original_link', 'ai_type', 'applies_to', 'summary',
+    'pdf',
 }
 
 

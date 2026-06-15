@@ -18,6 +18,7 @@ def clean_record():
         'link': 'https://www.courtlistener.com/opinion/1/x/',
         'original_link': 'https://advance.lexis.com/permalink/abc/',
         'link_source': 'courtlistener',
+        'pdf': '',
         'ai_type': 'Gen AI',
         'applies_to': 'Attorneys',
         'summary': 'A summary.',

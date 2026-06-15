@@ -16,6 +16,7 @@ import schema
 _STR_DEFAULT = {
     'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type', 'source',
     'jurisdiction', 'link', 'original_link', 'ai_type', 'applies_to', 'summary',
+    'pdf',
 }
 
 
