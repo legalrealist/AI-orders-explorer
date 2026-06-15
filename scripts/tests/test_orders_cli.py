@@ -98,6 +98,40 @@ def test_get_missing_exits(monkeypatch):
     assert e.value.code == 3
 
 
+def test_court_match_alias_and_substring():
+    long = 'U.S. District Court, Southern District of New York'
+    assert oc.court_match(long, 'S.D.N.Y.')        # alias unifies the two spellings
+    assert oc.court_match('S.D.N.Y.', 'sdny')      # abbreviation alias
+    assert oc.court_match('Supreme Court of Montana', 'Montana')  # substring
+    assert not oc.court_match('N.D. Cal.', 'S.D.N.Y.')
+
+
+def test_filter_court_unifies_spellings():
+    recs = [
+        {'id': 1, 'court': 'S.D.N.Y.', 'name': 'A'},
+        {'id': 2, 'court': 'U.S. District Court, Southern District of New York', 'name': 'B'},
+        {'id': 3, 'court': 'N.D. Cal.', 'name': 'C'},
+    ]
+    got = {r['id'] for r in oc.apply_filters(recs, {'court': 'S.D.N.Y.'})}
+    assert got == {1, 2}   # both SDNY spellings, not the N.D. Cal. record
+
+
+def test_facet_excludes_placeholders_by_default():
+    recs = [{'judge': 'All Judges'}, {'judge': 'Judge X'}, {'judge': 'Judge X'}, {'judge': ''}]
+    default = {f['value']: f['count'] for f in oc.facet(recs, 'judge')}
+    assert default == {'Judge X': 2}                 # "All Judges" + empty dropped
+    allv = {f['value']: f['count'] for f in oc.facet(recs, 'judge', include_all=True)}
+    assert allv.get('All Judges') == 1
+
+
+def test_count_flag(monkeypatch, capsys):
+    import json as _json
+    monkeypatch.setattr(oc, 'load_orders', lambda: RECS)
+    oc.main(['search', '', '--state', 'California', '--count'])
+    out = _json.loads(capsys.readouterr().out)
+    assert out == {'count': 1}
+
+
 def test_bar_filter(monkeypatch):
     monkeypatch.setattr(oc, 'load_bar', lambda: {'items': [
         {'name': 'California', 'abbreviation': 'CA', 'status': 'formal'},

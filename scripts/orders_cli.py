@@ -21,6 +21,7 @@ Examples:
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.request
 
@@ -29,12 +30,71 @@ _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _LOCAL_DIR = os.path.join(os.path.dirname(_SCRIPT_DIR), 'data', 'processed')
 _UA = 'ai-court-orders-cli/1.0'
 
-# Filter flag -> record field (exact match, case-insensitive).
+# Filter flag -> record field (exact match, case-insensitive). `court` is handled
+# separately with alias + substring matching (court values aren't normalized).
 _EXACT = {
-    'judge': 'judge', 'court': 'court', 'state': 'state', 'type': 'type',
+    'judge': 'judge', 'state': 'state', 'type': 'type',
     'consequence': 'consequence', 'ai_type': 'ai_type', 'applies_to': 'applies_to',
     'source': 'source', 'jurisdiction': 'jurisdiction',
 }
+
+# Court aliases: the dataset stores the same court two ways (e.g. "S.D.N.Y." and
+# "U.S. District Court, Southern District of New York"), so an exact filter
+# under-reports. These map both an abbreviation and the long-form phrase to a
+# canonical label; _canon_court() unifies a record's court and the query.
+_COURT_ALIASES_RAW = {
+    'sdny': 'S.D.N.Y.', 'southern district of new york': 'S.D.N.Y.',
+    'edny': 'E.D.N.Y.', 'eastern district of new york': 'E.D.N.Y.',
+    'ndny': 'N.D.N.Y.', 'northern district of new york': 'N.D.N.Y.',
+    'wdny': 'W.D.N.Y.', 'western district of new york': 'W.D.N.Y.',
+    'cdcal': 'C.D. Cal.', 'central district of california': 'C.D. Cal.',
+    'ndcal': 'N.D. Cal.', 'northern district of california': 'N.D. Cal.',
+    'edcal': 'E.D. Cal.', 'eastern district of california': 'E.D. Cal.',
+    'sdcal': 'S.D. Cal.', 'southern district of california': 'S.D. Cal.',
+    'ndill': 'N.D. Ill.', 'northern district of illinois': 'N.D. Ill.',
+    'edtex': 'E.D. Tex.', 'eastern district of texas': 'E.D. Tex.',
+    'sdtex': 'S.D. Tex.', 'southern district of texas': 'S.D. Tex.',
+    'ndtex': 'N.D. Tex.', 'northern district of texas': 'N.D. Tex.',
+    'wdtex': 'W.D. Tex.', 'western district of texas': 'W.D. Tex.',
+    'edpa': 'E.D. Pa.', 'eastern district of pennsylvania': 'E.D. Pa.',
+    'sdfl': 'S.D. Fla.', 'southern district of florida': 'S.D. Fla.',
+    'mdfl': 'M.D. Fla.', 'middle district of florida': 'M.D. Fla.',
+    'edmi': 'E.D. Mich.', 'eastern district of michigan': 'E.D. Mich.',
+    'edva': 'E.D. Va.', 'eastern district of virginia': 'E.D. Va.',
+    'ddc': 'D.D.C.', 'district of columbia': 'District of Columbia',
+    'dnj': 'D.N.J.', 'district of new jersey': 'D.N.J.',
+    'dmass': 'D. Mass.', 'district of massachusetts': 'D. Mass.',
+    'dconn': 'D. Conn.', 'district of connecticut': 'D. Conn.',
+    'dcolo': 'D. Colo.', 'district of colorado': 'D. Colo.',
+    'dariz': 'D. Ariz.', 'district of arizona': 'D. Ariz.',
+}
+COURT_ALIASES = {re.sub(r'[^a-z0-9]+', '', k): v for k, v in _COURT_ALIASES_RAW.items()}
+
+# Generic facet values that aren't real entities (court-wide placeholders).
+_FACET_PLACEHOLDERS = {'all judges', 'district wide', 'unknown', 'court personnel'}
+
+
+def _ncourt(text):
+    return re.sub(r'[^a-z0-9]+', '', (text or '').lower())
+
+
+def _canon_court(text):
+    n = _ncourt(text)
+    if n in COURT_ALIASES:
+        return COURT_ALIASES[n]
+    for k, v in COURT_ALIASES.items():
+        if len(k) >= 12 and k in n:   # long-form phrase contained in the court text
+            return v
+    return n
+
+
+def court_match(court, query):
+    if not query:
+        return True
+    if _canon_court(court) == _canon_court(query):
+        return True
+    nq, nc = _ncourt(query), _ncourt(court)
+    return bool(nq) and nq in nc
 
 
 def _fetch_json(name):
@@ -92,6 +152,8 @@ def apply_filters(records, filters):
                 break
         if not ok:
             continue
+        if filters.get('court') and not court_match(r.get('court'), filters['court']):
+            continue
         df, dt = filters.get('date_from'), filters.get('date_to')
         d = r.get('date', '') or ''
         if df and d < df:
@@ -109,15 +171,15 @@ def apply_filters(records, filters):
     return out
 
 
-def facet(records, field, limit=None):
+def facet(records, field, limit=None, include_all=False):
     counts = {}
     for r in records:
         v = r.get(field)
-        if isinstance(v, list):
-            for x in v:
-                counts[x] = counts.get(x, 0) + 1
-        elif v:
-            counts[v] = counts.get(v, 0) + 1
+        vals = v if isinstance(v, list) else ([v] if v else [])
+        for x in vals:
+            if not include_all and isinstance(x, str) and x.strip().lower() in _FACET_PLACEHOLDERS:
+                continue  # drop court-wide placeholders like "All Judges"
+            counts[x] = counts.get(x, 0) + 1
     items = sorted(counts.items(), key=lambda kv: (-kv[1], str(kv[0])))
     if limit:
         items = items[:limit]
@@ -141,7 +203,7 @@ def stats(records):
 
 # --- output ---
 
-_LIST_FIELDS = ['id', 'date', 'state', 'type', 'judge', 'consequence', 'name', 'pdf', 'link']
+_LIST_FIELDS = ['id', 'date', 'state', 'type', 'court', 'judge', 'consequence', 'name', 'pdf', 'link']
 
 
 def _project(r):
@@ -197,10 +259,14 @@ def _add_filter_args(p):
     p.add_argument('--has-link', action='store_true', help='only records with a source link')
     p.add_argument('--limit', type=int, default=50)
     p.add_argument('--full', action='store_true', help='emit full records, not the summary projection')
+    p.add_argument('--count', action='store_true', help='print only the number of matches (respects filters)')
 
 
 def cmd_search(a):
     recs = apply_filters(search(load_orders(), a.query), _filters_from_args(a))
+    if a.count:
+        _emit({'count': len(recs)}, a.format)
+        return
     recs = recs[:a.limit]
     _emit(recs if a.full else [_project(r) for r in recs], a.format)
 
@@ -219,7 +285,7 @@ def cmd_get(a):
 
 
 def cmd_facets(a):
-    _emit(facet(load_orders(), a.field, a.limit), a.format)
+    _emit(facet(load_orders(), a.field, a.limit, include_all=a.all), a.format)
 
 
 def cmd_stats(a):
@@ -271,6 +337,8 @@ def build_parser():
                         help='distinct values + counts for a field')
     pf.add_argument('field', help='e.g. judge, court, state, type, consequence, ai_type')
     pf.add_argument('--limit', type=int, default=None)
+    pf.add_argument('--all', action='store_true',
+                    help='include court-wide placeholders (All Judges, District Wide, …)')
     pf.set_defaults(func=cmd_facets)
 
     pt = sub.add_parser('stats', parents=[common], help='dataset summary counts')

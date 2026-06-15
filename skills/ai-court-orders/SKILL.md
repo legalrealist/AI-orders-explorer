@@ -35,7 +35,11 @@ python3 scripts/orders_cli.py pdf <id>                        # self-hosted PDF 
 python3 scripts/orders_cli.py bar [<state>]                   # state bar AI opinions
 ```
 
-**Filters** (on `search` / `list`): `--judge`, `--court`, `--state`, `--type`, `--consequence`, `--ai-type`, `--applies-to`, `--source`, `--jurisdiction`, `--tag`, `--date-from YYYY-MM-DD`, `--date-to YYYY-MM-DD`, `--has-pdf`, `--has-link`.
+**Filters** (on `search` / `list`): `--judge`, `--court`, `--state`, `--type`, `--consequence`, `--ai-type`, `--applies-to`, `--source`, `--jurisdiction`, `--tag`, `--date-from YYYY-MM-DD`, `--date-to YYYY-MM-DD`, `--has-pdf`, `--has-link`, `--count` (print only the match count), `--limit N`, `--full`.
+
+- **`--court` is alias- and substring-aware** — court values aren't normalized in the data (`S.D.N.Y.` and `U.S. District Court, Southern District of New York` both occur). `--court "S.D.N.Y."`, `--court sdny`, and `--court "southern district of new york"` all match both spellings, so you won't under-report. The other filters are exact (case-insensitive).
+- **`--count`** answers "how many X" without counting the array yourself.
+- **`facets`** drops court-wide placeholders (`All Judges`, `District Wide`) and empty values by default, so `facets judge` ranks real jurists; pass `--all` to include placeholders.
 
 **Enums:**
 - `type`: `Judicial Opinion`, `Standing Order`, `Local Rules`, `Administrative Order`, `Practice Direction`
