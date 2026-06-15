@@ -37,6 +37,12 @@ CL_API_KEY = os.environ.get('CL_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 OPENROUTER_MODEL = os.environ.get('OPENROUTER_MODEL', 'deepseek/deepseek-v4-flash')
 
+# Local cleanup modules (schema contract, link recovery, normalization).
+sys.path.insert(0, SCRIPT_DIR)
+import linkrecover  # noqa: E402
+import normalize  # noqa: E402
+import schema  # noqa: E402
+
 EXPLORER_SCHEMA_PROMPT = """You convert raw court order data from Ropes & Gray into a structured JSON object.
 
 Output a single JSON object with these fields:
@@ -600,6 +606,7 @@ def main():
                 else:
                     entry = fallback_convert_entry(item, next_id)
                     print(f'  + [{i+1}/{len(new_rg)}] {entry.get("date","")}  {entry.get("name","")[:55]}')
+                entry['_rg_id'] = item.get('id')
                 new_entries.append(entry)
                 next_id += 1
                 if use_ai and i < len(new_rg) - 1:
@@ -608,6 +615,7 @@ def main():
                 print(f'  WARN: AI failed for {name_hint}: {e}')
                 try:
                     entry = fallback_convert_entry(item, next_id)
+                    entry['_rg_id'] = item.get('id')
                     new_entries.append(entry)
                     next_id += 1
                     print(f'    fallback OK: {entry.get("name","")[:55]}')
@@ -629,11 +637,23 @@ def main():
     # 6. Save (only if new entries were added)
     n_added = len(new_entries)
     if n_added:
-        with open(EXPLORER_PATH, 'w') as f:
-            json.dump(existing, f, indent=2)
-        with open(os.path.join(DATA_DIR, 'explorer_data.json')) as src:
-            with open(os.path.join(CHARTS_DATA_DIR, 'explorer_data.json'), 'w') as dst:
-                dst.write(src.read())
+        # Durability: recover original links, normalize to canonical schema,
+        # and validate before writing. Preserves original_link (never destroyed
+        # by CL replacement) and reclassifies link_source.
+        linkrecover.recover(existing, rg_entries)
+        normalize.normalize(existing)
+        problems = schema.validate_dataset(existing)
+        if problems:
+            print(f'  ERROR: {len(problems)} schema problems after normalize — not writing.')
+            for p in problems[:10]:
+                print('   ', p)
+            return
+
+        payload = json.dumps(existing, ensure_ascii=False, indent=2)
+        with open(EXPLORER_PATH, 'w', encoding='utf-8') as f:
+            f.write(payload)
+        with open(os.path.join(CHARTS_DATA_DIR, 'explorer_data.json'), 'w', encoding='utf-8') as f:
+            f.write(payload)
         print(f'Saved: {len(existing)} total entries (+{n_added} new)')
     else:
         print(f'No changes: {len(existing)} total entries')
