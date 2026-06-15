@@ -105,10 +105,12 @@ def test_date_mismatch_rejects_then_finds_right_ruling():
     assert url.endswith('recap/rightdate.pdf') and method == 'search'
 
 
-def test_ai_content_disambiguates_same_day_rulings():
-    # Same case, same date, two rulings; pick the one whose text is about AI.
+def test_summary_overlap_disambiguates_same_day_rulings():
+    # Same case, same date, two rulings; pick the one whose text matches the
+    # record's own description — not a generic "AI" keyword.
     rec = {'link': 'https://www.courtlistener.com/docket/1/x/',
-           'name': 'Smith v. Jones', 'summary': '', 'date': '2026-03-01'}
+           'name': 'Smith v. Jones', 'date': '2026-03-01',
+           'summary': 'The brief cited nonexistent cases produced by ChatGPT; sanctions imposed.'}
     fetch = make_fetch({
         '/dockets/1/': {'clusters': ['https://x/api/rest/v4/clusters/A/',
                                      'https://x/api/rest/v4/clusters/B/']},
@@ -118,17 +120,20 @@ def test_ai_content_disambiguates_same_day_rulings():
                           'plain_text': 'Order setting a status conference next month.'},
         '/clusters/B/': {'case_name': 'Smith v. Jones', 'date_filed': '2026-03-01',
                          'sub_opinions': ['https://x/opinions/11/']},
-        '/opinions/11/': {'local_path': 'recap/ai_sanctions.pdf',
-                          'plain_text': 'Counsel cited nonexistent cases produced by '
-                                        'ChatGPT, a generative artificial intelligence tool.'},
+        '/opinions/11/': {'local_path': 'recap/sanctions.pdf',
+                          'plain_text': 'Counsel cited nonexistent cases produced by ChatGPT; '
+                                        'the court imposed monetary sanctions.'},
     })
     url, method, cname = cl_resolve.resolve_pdf_url(rec, fetch)
-    assert url.endswith('recap/ai_sanctions.pdf') and method == 'docket'
+    assert url.endswith('recap/sanctions.pdf') and method == 'docket'
 
 
-def test_ai_score():
-    assert cl_resolve._ai_score('used ChatGPT and generative AI to hallucinate citations') >= 3
-    assert cl_resolve._ai_score('a routine scheduling order') == 0
+def test_doc_score():
+    rec = {'name': 'Smith v. Jones',
+           'summary': 'attorney used ChatGPT producing fabricated citations; sanctions imposed'}
+    assert cl_resolve._doc_score('counsel cited fabricated citations from ChatGPT', rec) >= 2
+    assert cl_resolve._doc_score('a routine scheduling conference order', rec) == 0
+    assert cl_resolve._doc_score('', rec) == 0  # no text -> 0, falls back to date+case
 
 
 def test_date_close():

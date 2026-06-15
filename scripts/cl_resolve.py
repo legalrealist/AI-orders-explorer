@@ -80,16 +80,29 @@ def _date_close(record_date, cl_date, days=31):
     return abs((a - b).days) <= days
 
 
-# AI relevance — every record here is an AI order, so the correct document
-# mentions AI. Used to disambiguate multiple same-day rulings in one case.
-_AI_RE = re.compile(
-    r'\b(a\.?i\.?|artificial intelligence|chat\s?gpt|gpt-?\d?|generative|'
-    r'hallucinat|fabricat|large language model|llm|gen\s?ai|co-?counsel|'
-    r'copilot|claude|gemini|bard|nonexistent (?:case|citation))\b', re.I)
+# Disambiguate multiple same-day rulings in one case by how well a document's
+# text matches THIS record's own description (parties, AI tool, sanction, fake-
+# case language) — document-specific, so it doesn't rely on the literal word "AI"
+# appearing (many real AI orders / image PDFs never spell it out).
+_DOC_STOP = lag_merge._NOT_SURNAME | {
+    'court', 'order', 'case', 'cases', 'plaintiff', 'defendant', 'defendants',
+    'plaintiffs', 'motion', 'filed', 'filing', 'judge', 'magistrate', 'states',
+    'united', 'rule', 'rules', 'dist', 'docket', 'opinion', 'civil', 'action',
+    'counsel', 'attorney', 'attorneys', 'this', 'that', 'with', 'from', 'will',
+    'shall', 'which', 'their', 'there', 'been', 'were', 'have', 'about',
+}
 
 
-def _ai_score(text):
-    return len(_AI_RE.findall(text or ''))
+def _doc_terms(record):
+    blob = (record.get('name', '') + ' ' + record.get('summary', '')).lower()
+    return {t for t in re.findall(r'[a-z]{4,}', blob)} - _DOC_STOP
+
+
+def _doc_score(text, record):
+    if not text:
+        return 0
+    tl = text.lower()
+    return sum(1 for t in _doc_terms(record) if t in tl)
 
 
 def _opinion(opinion_id, fetch):
@@ -101,8 +114,8 @@ def _cluster(cluster_url, fetch):
     return fetch(f'/api/rest/v4/clusters/{_id_from(cluster_url)}/')
 
 
-def _best_pdf_in_cluster(cluster_json, fetch):
-    """Pick the AI-most-relevant sub-opinion PDF (preference, not hard filter)."""
+def _best_pdf_in_cluster(cluster_json, fetch, record):
+    """Pick the sub-opinion PDF best matching the record (preference, not filter)."""
     best_url, best_score, fallback = '', -1, ''
     for sub in (cluster_json.get('sub_opinions') or [])[:2]:
         url, _, text = _opinion(_id_from(sub), fetch)
@@ -110,30 +123,30 @@ def _best_pdf_in_cluster(cluster_json, fetch):
             continue
         if not fallback:
             fallback = url
-        s = _ai_score(text)
+        s = _doc_score(text, record)
         if s > best_score:
             best_url, best_score = url, s
         if best_score > 0:
-            break  # confident AI hit — stop scanning siblings
+            break  # strong content match — stop scanning siblings
     if best_score > 0:
         return best_url, best_score
     return fallback, 0
 
 
 def _cluster_candidate(cluster_url, fetch, record):
-    """(url, case_name, ai_score) if the cluster matches the record's case+date, else None."""
+    """(url, case_name, doc_score) if the cluster matches the record's case+date, else None."""
     c = _cluster(cluster_url, fetch)
     cname = c.get('case_name', '')
     if not case_matches(record, cname):
         return None
     if not _date_close(record.get('date'), c.get('date_filed')):
         return None  # right case, wrong ruling
-    url, score = _best_pdf_in_cluster(c, fetch)
+    url, score = _best_pdf_in_cluster(c, fetch, record)
     return (url, cname, score) if url else None
 
 
 def _pick_best(cluster_urls, fetch, record):
-    """Among case+date-matching clusters, prefer the AI-relevant one."""
+    """Among case+date-matching clusters, prefer the one matching the record's text."""
     fallback = None
     for cu in cluster_urls[:4]:
         cand = _cluster_candidate(cu, fetch, record)
