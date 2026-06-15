@@ -2010,7 +2010,7 @@
     "sanction_types": {
       "types": [],
       "amount_sought": null,
-      "amount_awarded": "$7,500 (two sanctions: $2,500 in Feb 2025 and $5,000 in Apr 2026)"
+      "amount_awarded": "$7,500"
     },
     "_rg_id": "378de1fb-ea39-4fdb-9c46-6143b877114c",
     "link_source": "courtlistener",
@@ -2721,7 +2721,7 @@
         "bar_referral"
       ],
       "amount_sought": null,
-      "amount_awarded": "$55,597.00"
+      "amount_awarded": "$55,597"
     },
     "_rg_id": "387248b9-e8ae-444e-b073-42a0643dfda5",
     "link_source": "justia",
@@ -2829,7 +2829,7 @@
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/0d75bf64-663b-41ce-8a40-2f8111813ade/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (warning only; the Court declared a no-tolerance policy for AI-assisted briefing that hallucinates legal propositions or severely misstates the law, and stated such filings 'will often result in sanctions absent reasonable excuse')",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -3039,7 +3039,7 @@
         "monetary"
       ],
       "amount_sought": null,
-      "amount_awarded": "Defendants' attorneys' fees and costs incurred from the false citations (amount unquantified in order); case dismissed with prejudice"
+      "amount_awarded": null
     },
     "_rg_id": "ec3b074f-449e-4dc9-be62-cc77f4d6631c",
     "link_source": "justia",
@@ -3145,7 +3145,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "None (public admonishment, no monetary sanction)"
+      "amount_awarded": null
     },
     "_rg_id": "d8a6c5c2-4ab2-430d-a5c5-aa4abfa9325c",
     "link_source": "justia",
@@ -3606,7 +3606,7 @@
         "show_cause"
       ],
       "amount_sought": null,
-      "amount_awarded": "None monetary (warning + filing precondition: any future amended pleading or similar action in this Court must include PDF copies of each cited case with the supporting text highlighted; non-compliance is grounds for show-cause and sanctions)"
+      "amount_awarded": null
     },
     "_rg_id": "46a9fc8d-38b1-4947-9e49-1ff93ac316cf",
     "link_source": "justia",
@@ -5175,7 +5175,7 @@
     "link_source": "other",
     "original_link": "https://advance.lexis.com/api/permalink/c19a2da7-150c-41e6-90c9-4d6dcc70ef76/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -5312,7 +5312,7 @@
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/13bee12a-2902-41fa-9d3b-9eac44653af7/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (admonishment only; future violations may draw sanctions)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -5487,7 +5487,7 @@
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/e39c7132-7d8e-4d14-aba8-7ca7b73f73c3/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (warning only; the Court reserved monetary sanctions for any future repetition, stating 'If, in the future, Dixon repeats this behavior, monetary sanctions may be awarded')",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -6556,7 +6556,7 @@
     "link_source": "other",
     "original_link": "https://advance.lexis.com/api/permalink/7217a4a4-31c8-4fef-beb8-9958f66eae7f/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (warning only; the Court cautioned that further AI-citation failures may be sanctionable under Fed. R. Bankr. P. 9011)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -7637,7 +7637,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "$12,000 total across four attorneys ($5,000 + $3,000 + $3,000 + $1,000); fifth attorney released from monetary sanctions"
+      "amount_awarded": "$12,000"
     },
     "link_source": "justia",
     "original_link": "https://www.govinfo.gov/content/pkg/USCOURTS-ksd-2_22-cv-02324/pdf/USCOURTS-ksd-2_22-cv-02324-9.pdf",
@@ -7918,7 +7918,7 @@
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/3449b8be-c785-496b-aa28-f212d18b1916/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (warning only; the Court reserved Rule 11 sanctions for any future filing providing 'authority to the Court that does not actually exist')",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -8968,7 +8968,7 @@
     "link_source": "other",
     "original_link": "https://advance.lexis.com/api/permalink/7e60b880-91cd-49eb-9cda-6719aba4584f/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (Rule 11 caution in footnote 3 of dismissal order; complaint dismissed without prejudice under 28 U.S.C. § 1915(e)(2) on separate Rule 8 / failure-to-state-a-claim grounds with leave to amend)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -9815,7 +9815,7 @@
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/1800c2f9-3e7a-49c4-9ce3-be4a7bd82f67/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None (Rule 11 reminder in footnote 5 of summary-judgment opinion; sanctions reserved for any future failure to conduct 'reasonable inquiry')",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -9956,7 +9956,7 @@
         "monetary"
       ],
       "amount_sought": null,
-      "amount_awarded": "$1,000 (final amount; reduced from initial sanction figure following sealed in-camera hearing)"
+      "amount_awarded": "$1,000"
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/db9f3763-44dd-4431-b645-509a7e915fd0/?context=1519217",
@@ -10027,7 +10027,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "$7,360.96 in attorney's fees and costs ($7,346.56 fees + $14.40 costs) under Vermont's anti-SLAPP statute, plus a pre-filing injunction limiting plaintiff to attorney-represented filings or pre-clearance by the assigned superior court judge"
+      "amount_awarded": "$7,360.96"
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/83f8af7b-9be9-4851-85b3-f3107185e8be/?context=1000516",
@@ -10518,7 +10518,7 @@
         "striking"
       ],
       "amount_sought": null,
-      "amount_awarded": "Admonition + strike of Plaintiff's Response (ECF No. 30) and Sur-Reply (ECF No. 32) from the record without leave to amend; future sanctions (including dismissal of the case with prejudice) reserved for any further AI-generated hallucinations in any subsequent filing"
+      "amount_awarded": null
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/b0d3b2d1-8291-4d3a-b1fd-cd94e2b0c39d/?context=1000516",
@@ -10666,7 +10666,7 @@
         "monetary"
       ],
       "amount_sought": null,
-      "amount_awarded": "$8,640 (recommended; final amount to be set on supplemental affidavit)"
+      "amount_awarded": "$8,640"
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/576b2a2a-5213-45df-bdbe-08151b6bfd45/?context=1000516",
@@ -11066,7 +11066,7 @@
         "cle"
       ],
       "amount_sought": null,
-      "amount_awarded": "Defendants' reasonable attorneys' fees and costs for hearing attendance (amount to be determined)"
+      "amount_awarded": null
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/api/permalink/be777dad-873c-4fe0-b194-83fd491501da/?context=1000516",
@@ -12890,7 +12890,7 @@
     "link_source": "other",
     "original_link": "https://advance.lexis.com/api/permalink/bb7d5a59-c5cc-4fb9-bbd8-f8fc5866fc16/?context=1000516",
     "sanction_types": {
-      "amount_awarded": "None at this stage (Rule 11 motion for costs and fees denied without prejudice to renew once the merits of the case are resolved)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -15507,7 +15507,7 @@
         "dismissal"
       ],
       "amount_sought": null,
-      "amount_awarded": "Dismissal with prejudice"
+      "amount_awarded": null
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/document?crid=6a732923-2d2d-4bb9-bb82-5a9c3b19bf95&pddocfullpath=%2Fshared%2Fdocument%2Fcases%2Furn%3AcontentItem%3A6GPJ-TCY3-RS2X-W22N-00000-00&pdsourcegroupingtype=G&pdalertemail=True&pdcontentcomponentid=6420&pdalertresultid=8426653982&pdalertprofileid=f6266a5a-3878-4e38-830e-3777db463e4b&pdmfid=1000516&pdisurlapi=true",
@@ -16082,7 +16082,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "Non-monetary: 10 hours community service within 20 days of the order; prospective AI disclosure and certification requirement for all future filings in this matter; no monetary sanction"
+      "amount_awarded": null
     },
     "link_source": "other",
     "original_link": "https://www.courtlistener.com/docket/68447832/54/monster-energy-company-v-owoc/",
@@ -16712,7 +16712,7 @@
         "dismissal"
       ],
       "amount_sought": null,
-      "amount_awarded": "R&R recommends dismissal with prejudice as a sanction for submission of fake case law and continued Local Rules violations; recommendation pending adoption by District Judge Altman as of the verified record"
+      "amount_awarded": null
     },
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/860fa7f3-254d-42ec-b839-559fbd04fcca/?context=1000516",
@@ -17419,7 +17419,7 @@
     "link_source": "westlaw",
     "original_link": "https://1.next.westlaw.com/Document/I671abf00590511f086ade3c1d65bd673/View/FullText.html?originationContext=typeAhead&transitionType=Default&contextData=(sc.Default)",
     "sanction_types": {
-      "amount_awarded": "None (admonishment only)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -17945,7 +17945,7 @@
         "show_cause"
       ],
       "amount_sought": null,
-      "amount_awarded": "$1,485 to defense counsel"
+      "amount_awarded": "$1,485"
     },
     "link_source": "courtlistener",
     "original_link": "https://storage.courtlistener.com/recap/gov.uscourts.mied.370246/gov.uscourts.mied.370246.92.0.pdf",
@@ -18721,7 +18721,7 @@
         "striking"
       ],
       "amount_sought": null,
-      "amount_awarded": "None monetary (16 AI-signed submissions struck and denied without prejudice; AI agent representation denied; motion to integrate AI agent with PACER denied)"
+      "amount_awarded": null
     },
     "link_source": "justia",
     "original_link": "https://advance.lexis.com/f/courtlinkdocument/jobstatus/downloadfile/4bd31610-e48f-496a-a396-27be41755a62/6FSW-39S3-RS1M-91SJ-00000-00/132/0/d161346402e7948/0/blob/US_BAN_NJB_2_24bk22714_d161346402e7948_ORDER_RE_THE_DEBTORS_USE_OF_ARTIFICIAL_INTELLIGENC?aci=la&lnsi=b96c9569-f036-49ee-be2b-20d664ccf966",
@@ -19222,7 +19222,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "None (Rule 11 warning; sanctions reserved for any future failure to comply with Rule 11 obligations, with the Court noting Plaintiff 'may incur a substantial penalty' including attorney's-fees award, monetary penalty to the Court, or dismissal of the lawsuit)"
+      "amount_awarded": null
     },
     "link_source": "justia",
     "original_link": "https://www.courtlistener.com/docket/69860375/gordon-v-wells-fargo-banks-na-inc/",
@@ -22053,7 +22053,7 @@
         "admonishment"
       ],
       "amount_sought": null,
-      "amount_awarded": "None (case dismissed with prejudice as the sanction)"
+      "amount_awarded": null
     },
     "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/search/?pdmfid=1000516&crid=de74479d-a612-430d-8a93-fce2b622555f&pdsearchterms=2024+U.S.+Dist.+LEXIS+99970&pdtypeofsearch=searchboxclick&pdsearchtype=SearchBox&pdstartin=&pdpsf=&pdqttype=and&pdquerytemplateid=&ecomp=wx1vkkk&earg=pdsf&prid=a5d2e226-e72c-419e-9073-289c399894ec",
@@ -27815,7 +27815,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "Warning (no monetary sanction)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "monetary"
@@ -27877,7 +27877,7 @@
       "Generative AI Usage"
     ],
     "sanction_types": {
-      "amount_awarded": "None",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -28032,7 +28032,7 @@
       "Generative AI Usage"
     ],
     "sanction_types": {
-      "amount_awarded": "None",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -29096,7 +29096,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "$1,578,172 attorney fees + $93,388 costs",
+      "amount_awarded": "$1,578,172",
       "amount_sought": null,
       "types": [
         "monetary"
@@ -29566,7 +29566,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "$6,200 (approx.)",
+      "amount_awarded": "$6,200",
       "amount_sought": null,
       "types": [
         "monetary"
@@ -30187,7 +30187,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "Up to $2,500 (Notice of Intention; final sanctions pending response)",
+      "amount_awarded": "$2,500",
       "amount_sought": null,
       "types": [
         "monetary"
@@ -30475,7 +30475,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "None",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "monetary"
@@ -31489,7 +31489,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "Opposing counsel's fees (amount not yet quantified)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "monetary"
@@ -31522,7 +31522,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "Attorney fees + client fee refund + $1,000 to access-to-justice nonprofit",
+      "amount_awarded": "$1,000",
       "amount_sought": null,
       "types": [
         "monetary"
@@ -31931,7 +31931,7 @@
       "Court-Imposed Consequences - Parties"
     ],
     "sanction_types": {
-      "amount_awarded": "Counsel agreed to reimburse opposing party's fees; specific dollar amount not fixed in the November 14, 2024 order",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "monetary"
@@ -32028,7 +32028,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "None (symbolic sanction; Pretrial Memorandum deemed stricken)",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "monetary"
@@ -32060,7 +32060,7 @@
       "Generative AI Usage"
     ],
     "sanction_types": {
-      "amount_awarded": "None",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
@@ -32183,7 +32183,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "$2,000 payable to the Clerk of Court within 10 days",
+      "amount_awarded": "$2,000",
       "amount_sought": null,
       "types": [
         "monetary"
@@ -32216,7 +32216,7 @@
       "Court-Imposed Consequences - Attorneys/Law Firms"
     ],
     "sanction_types": {
-      "amount_awarded": "1 year + 1 day suspension; 90 days active",
+      "amount_awarded": null,
       "amount_sought": null,
       "types": [
         "bar_referral"
