@@ -5378,7 +5378,7 @@
     "date": "2026-03-06",
     "type": "Administrative Order",
     "source": "rg",
-    "link": "https://www.dccourts.gov/dc-courts/artificial-Intelligence",
+    "link": "https://www.dccourts.gov/sites/default/files/2026-03/Artificial-Intelligence-Task-Force-Administrative-Order-Revised-FINAL-03062026%20%281%29.pdf",
     "ai_type": "Any AI",
     "applies_to": "Court Staff,Judges",
     "summary": "In In re A.I. Task Force of the D.C. Courts, 2026 D.C. App. LEXIS 82 (Mar. 6, 2026), the District of Columbia Court of Appeals established a standing AI Task Force comprising 18 appointed members (including judges, court administrators, and IT staff) tasked with examining and developing best practices for “the use of AI in the courts,” expanding the courts’ use of AI, ensuring that AI “is used appropriately and the integrity of the court process is preserved and maintained,” and to “[d]evelop court rules with respect to disclosure, transparency, ethics, accuracy, authenticity[,] and certification of AI use in court pleadings and proceedings.”",
@@ -21038,7 +21038,7 @@
     "date": "2024-12",
     "type": "Standing Order",
     "source": "rails",
-    "link": "https://www.cacd.uscourts.gov/honorable-anne-hwang",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "In <em>Martinez v. Dollar Tree Stores, Inc.</em>, 2025 U.S. Dist. LEXIS 147616 (C.D. Cal. July 31, 2025), the <em>pro se </em>plaintiff included a hallucinated case in her motion for remand, and the court held that such conduct failed to comply with the court’s standing order that requires parties who use GenAI to disclose such use and certify that all cited authority is accurate. Although the court did not sanction the plaintiff for her GenAI misuse and her failure to comply with the standing order, Judge Hwang cautioned that future citations to hallucinated authority will result in a show cause order where the plaintiff would have to explain why she should not be sanctioned.",
@@ -21055,7 +21055,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -21064,7 +21064,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 585,
@@ -22551,7 +22551,7 @@
     "date": "2024-05",
     "type": "Standing Order",
     "source": "both",
-    "link": "https://www.cacd.uscourts.gov/honorable-rozella-oliver",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "Judge Oliver’s standing orders require parties using GenAI to “generate any portion of a brief, pleading, or other filing” to submit a separate declaration disclosing the use of GenAI and certifying the review and accuracy of any AI-generated content. This language appears to be specific to the use of GenAI in drafting court filings.",
@@ -22568,7 +22568,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -22577,7 +22577,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 630,
@@ -22902,7 +22902,7 @@
     "date": "2023-05-31",
     "type": "Standing Order",
     "source": "both",
-    "link": "https://www.ilnd.uscourts.gov/judge_display.php?LastName=Fuentes",
+    "link": "https://www.ilnd.uscourts.gov/_assets/_documents/_forms/_judges/Fuentes/Standing%20order%20for%20civil%20cases%20beofre%20Magistrate%20Judge%20Fuentes%20with%20appendix.pdf",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "This standing order primarily focuses on the use of any “generative AI tool\" in the preparation or drafting of documents for filing with the Court and requires disclosure of any filing in which generative AI was used to conduct legal research and/or to draft the document.  The order has been revised from its original form, and no longer requires disclosure of which generative AI tools were used or how they were used, while also emphasizing that the order is “not intended” to “discourage use of generative AI” or to “trigger greater judicial scrutiny” of briefs containing such disclosures.",
@@ -22927,7 +22927,7 @@
       "types": []
     },
     "_rg_id": "966abee6-ee14-4639-81bc-28b911160f86",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-966abee6ee14.pdf",
     "unverified": false
   },
   {
@@ -22939,7 +22939,7 @@
     "date": "2024-03-01",
     "type": "Standing Order",
     "source": "rails",
-    "link": "https://www.cacd.uscourts.gov/honorable-stanley-blumenfeld-jr",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "In <em>Anaya v. Target Corp.</em>, No. 2:25-cv-09135-SB-RAO (Nov. 26, 2025), the court sanctioned plaintiff's counsel in the amount of $1,250 for filing a brief “containing a case that did not stand for the cited proposition” in support of the plaintiff's motion to remand. Judge Blumenfeld noted that the court had previously cautioned the plaintiff about the importance of abiding by court rules, warning that further violations could result in sanctions. In response to the order to show cause, the attorney explained that his associate used “AI to refine a small portion of the Reply\" but he did not disclose the use because he did not realize the associate had used GenAI at the time. Judge Blumenfeld determined that this conduct violated Fed. R. Civ. P. 11. The court further “admonished” the firm's managing partner based on his “indirect responsibility” for “failing to take appropriate steps to ensure firmwide compliance with all applicable rules and orders.” Judge Blumenfeld determined that the despite his candor, the filing attorney’s “use of AI without proper disclosure and blatant misuse of case law in reliance on AI—coupled with his careless oversight of the case as lead counsel for Plaintiff—warrant appropriate sanctions.” The court ordered $1,250 in monetary sanctions and notification of the sanction to the State Bar of California. ",
@@ -22956,7 +22956,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -22965,7 +22965,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 641,
@@ -25906,7 +25906,7 @@
     "date": "",
     "type": "Standing Order",
     "source": "rails",
-    "link": "https://www.cacd.uscourts.gov/honorable-karen-e-scott",
+    "link": "",
     "ai_type": "Any AI",
     "applies_to": "Attorneys",
     "summary": "Standing order requiring practitioners to: warns about AI misuse consequences; references existing procedural rules. Applies to attorneys.",
@@ -25921,7 +25921,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -25930,7 +25930,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 733,
