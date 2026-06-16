@@ -61,7 +61,26 @@ Commands: `search`, `list`, `get`, `facets` (distinct values + counts), `stats`,
 curl -fsSL https://raw.githubusercontent.com/legalrealist/AI-orders-explorer/main/skills/ai-court-orders/install.sh | bash
 ```
 
-This drops the skill and its bundled CLI into `~/.claude/skills/ai-court-orders/` (override with `CLAUDE_SKILLS_DIR`). The CLI pulls live data from legalhack.io, so nothing else to clone — only `python3` is required. Restart Claude Code, then just ask a question or invoke `/ai-court-orders <question>`.
+This drops the skill and its bundled CLI into `~/.claude/skills/ai-court-orders/` (override with `CLAUDE_SKILLS_DIR`). The CLI pulls live data from legalhack.io, so nothing else to clone — only `python3` is required.
+
+**Use it.** Restart Claude Code (or reload skills) so the new skill is picked up. Then just ask in plain English — the skill auto-triggers on AI-court-order questions, no slash command needed:
+
+```
+which courts sanction attorneys most for AI misuse?
+does Judge Nina Wang have an AI standing order?
+what AI disclosure rules does the Northern District of Texas have?
+show me the sanctions cases over hallucinated citations in 2025
+what's California's state bar opinion on AI?
+pull the PDF for the Mata v. Avianca order
+```
+
+Claude picks the right query, parses the JSON, and answers with judge, court, outcome, source links, and a self-hosted PDF where one exists. You can also invoke it explicitly with `/ai-court-orders <question>` to force it.
+
+**Update or remove it.** Re-run the install one-liner to pull the latest skill + CLI. To uninstall, `rm -rf ~/.claude/skills/ai-court-orders`.
+
+**Manual install (no `curl | bash`):** copy `skills/ai-court-orders/SKILL.md` and `scripts/orders_cli.py` into a single directory at `~/.claude/skills/ai-court-orders/`, then reload Claude Code. (The CLI must sit next to `SKILL.md` — the skill calls it by that path.)
+
+Behind the scenes the skill is a thin wrapper over the [CLI above](#querying-from-the-command-line): every plain-English question maps to a `search` / `list` / `facets` / `get` / `pdf` / `bar` call, so anything the skill can answer, you can also run yourself from the shell.
 
 ## Data sources
 
