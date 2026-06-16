@@ -1817,7 +1817,7 @@
     "date": "2026-04-23",
     "type": "Standing Order",
     "source": "rg",
-    "link": "https://law.resource.org/pub/us/case/reporter/F3/397/397.F3d.964.04-3140.04-3139.04-3138.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In a concurring opinion in In re Miller, No. 01-26-00319-CV, 2026 Tex. App. LEXIS 3788 (Tex. App. Apr. 23, 2026), in which the court denied mandamus relief, Chief Justice Adams noted that the mandamus petition contained fictitious or misleading citations “which strongly appear[ed] to be AI-fabricated hallucinations.”&#160; Justice Adams warned that regardless of GenAI use, this conduct is a “serious breach of candor that this Court cannot tolerate” and that failure to verify caselaw submitted to the court will result in the court taking the “necessary corrective action,” including but not limited to striking the brief and “reporting counsel to the State Bar.”",
@@ -1833,7 +1833,7 @@
     "jurisdiction": "US",
     "state_abbr": "TX",
     "_rg_id": "1aaa3306-8b85-4401-a724-bc2e46b45bfa",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/06b40d9f-7d85-4316-b687-633c82fafab1/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -13420,7 +13420,7 @@
     "date": "2025-11-05",
     "type": "Administrative Order",
     "source": "rg",
-    "link": "https://law.justia.com/cases/pennsylvania/commonwealth-court/2022/660-c-d-2021.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Manivannan v. County of Centre, Pennsylvania, Case No. 4:21-cv-01359 (M.D. Penn. Nov. 5, 2025), Magistrate Judge Susan E. Schwab issued an order requiring counsel and pro se litigants to disclose and certify the use of GenAI “in the preparation of a document.” The certification and disclosure require the party to identify the specific GenAI tool used, the portions of the filing prepared by GenAI, and that a person has checked the accuracy of the portions of the filing prepared by the GenAI tool, including all citations and legal authority. The order also reminds parties of their ethical and professional obligations and cites the “Joint Formal Opinion of the Pennsylvania Bar Association and Philadelphia Bar Association regarding the use of Artificial Intelligence.” Lastly, the order states that failure to comply may result in sanctions. Although this order is case-specific, it may be indicative of future similar orders by Magistrate Judge Schwab.",
@@ -13440,7 +13440,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "PA",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/r/documentprovider/g2_bk/attachment/data?attachmentid=urn:contentItem:6H50-W9K3-RSFY-H1PD-00000-00&attachmenttype=PDF&attachmentname=Click%20to%20view%20PDF%20document&origination=BlobStore&sequencenumber=1&ishotdoc=false&docTitle=&pdmfid=1519217&",
     "sanction_types": {
       "amount_awarded": null,
@@ -20750,7 +20750,7 @@
     "date": "2025-01",
     "type": "Standing Order",
     "source": "both",
-    "link": "https://drive.google.com/file/d/18Ng--k7X5WwSjW9TnmG3EZIQMhdusydy/view?usp=sharing",
+    "link": "https://drive.google.com/uc?export=download&id=18Ng--k7X5WwSjW9TnmG3EZIQMhdusydy",
     "ai_type": "Gen AI, excluding standard research tools",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "Judge Payne issued a Scheduling Order in Kromrey, et al. v. Capital One, N.A., et al. that addresses the “Use of Artificial Intelligence.” It requires that “[a]ll attorneys and pro se filers must file a certification with any brief or memorandum” certifying that no AI was used in the “research for the preparation” of the filing, making exceptions for AI “embedded in the standard on-line research sources Westlaw, Lexis, FastCase, and Bloomberg.” Filers must also certify that all statements and citations were verified by an attorney and/or paralegal for accuracy. This order is unique due to its specification of “research for the preparation of [a filing],” potentially implying that certification may not be not required where AI is used for non-research purposes in association with a filing. However, parties should still exercise caution to ensure full compliance with the Court’s order.",
@@ -20772,7 +20772,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-213cb5a37852.pdf",
     "unverified": false
   },
   {
@@ -21690,7 +21690,7 @@
     "date": "2024-09-23",
     "type": "Standing Order",
     "source": "both",
-    "link": "https://www.cacd.uscourts.gov/sites/default/files/documents/SB/AD/1.%20Civil%20Standing%20Order%20%283.1.24%29%20%5BFinal%5D.pdf",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "Judge Slaughter’s standing order requires any filings containing content created by GenAI to include a separate declaration “disclosing the use of [generative] artificial intelligence and certifying that the filer has reviewed the source material and verified that the artificially generated content is accurate and complies with the filer’s Rule 11 obligations.”",
@@ -21707,7 +21707,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "https://www.cacd.uscourts.gov/sites/default/files/documents/FWS/AD/Civil%20Standing%20Order%20UPDATED%2009-23-2024.pdf",
     "sanction_types": {
       "amount_awarded": null,
@@ -21716,7 +21716,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 604,
@@ -22976,7 +22976,7 @@
     "date": "2024-03",
     "type": "Standing Order",
     "source": "rails",
-    "link": "https://cp.cuyahogacounty.us/court-resources/judges/judge-john-j-russo/",
+    "link": "https://cp.cuyahogacounty.gov/media/3728/jjr-certificate-re-generative-artificial-intelligence.pdf",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "The court's local rules require attorneys to file a certification attesting that either no portion of any filing will be drafted by generative artificial intelligence or that any language drafted by generative artificial intelligence will be checked for accuracy. The court supplies a template certificate for attorneys to use. ",
@@ -22998,8 +22998,8 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
-    "unverified": true
+    "pdf": "https://legalhack.io/orders/c-67e181d121b4.pdf",
+    "unverified": false
   },
   {
     "id": 642,
@@ -23691,7 +23691,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-dc65b17247d0.pdf",
     "unverified": false
   },
   {
@@ -23763,7 +23763,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-70c3ba9d87af.pdf",
     "unverified": false
   },
   {
@@ -24294,7 +24294,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-f8675684bc9c.pdf",
     "unverified": false
   },
   {
@@ -24659,7 +24659,7 @@
     "date": "2023-11-22",
     "type": "Standing Order",
     "source": "both",
-    "link": "https://www.cand.uscourts.gov/wp-content/uploads/2023/03/AMO-Civil-Standing-Order-11.22.2023-FINAL.pdf",
+    "link": "https://www.cand.uscourts.gov/sites/default/files/standing-orders/AMO-CivilStandingOrder-10-20-2025.pdf",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "This standing order requires lawyers to confirm the accuracy of content generated by “ChatGPT or other such tools,” and any submissions “containing AI-generated content” must include certification that \"lead trial counsel\" has \"personally verified the content’s accuracy.\" The order also holds counsel responsible for “maintaining records of all prompts or inquiries submitted to any generative AI tools” in the event that those records become relevant.",
@@ -24685,7 +24685,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-26df21fb13fb.pdf",
     "unverified": false
   },
   {
@@ -24697,7 +24697,7 @@
     "date": "2023-11-01",
     "type": "Standing Order",
     "source": "rails",
-    "link": "https://drive.google.com/file/d/1gSBa0oAMTqltlEXIxkiOHpiv4ZsPrfwv/view",
+    "link": "https://drive.google.com/uc?export=download&id=1gSBa0oAMTqltlEXIxkiOHpiv4ZsPrfwv",
     "ai_type": "Any AI",
     "applies_to": "Any Parties",
     "summary": "Judge Hudson has been issuing pretrial orders, such as the one found in <em>Kelly v. Altria Client Services, LLC</em>, Docket No. 3:23-cv-00725, which include a paragraph addressing the “Use of Artificial Intelligence.” The instruction states: “Should any party utilize artificial intelligence for the preparation of any filing, they must identify the use of the artificial intelligence in the filing and provide a certification that they have reviewed all citations for accuracy.” The use of the phrase “preparation” (as opposed to “drafting”) could indicate disclosure and verification are required when any AI tools are used in any part of the preparatory process, including research.",
@@ -24721,7 +24721,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-f35da19d8e04.pdf",
     "unverified": false
   },
   {
@@ -24936,7 +24936,7 @@
       "types": []
     },
     "_rg_id": "0e300e90-e6b2-4c09-9952-9ab935b87461",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-0e300e90e6b2.pdf",
     "unverified": false
   },
   {
@@ -25498,7 +25498,7 @@
       "types": []
     },
     "_rg_id": "f4b4b3fd-adbe-4d85-b9e9-8b321a90a0d3",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-f4b4b3fdadbe.pdf",
     "unverified": false
   },
   {
@@ -25568,7 +25568,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-75d6c9cf3b61.pdf",
     "unverified": false
   },
   {
@@ -25860,7 +25860,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-d4d16489fc72.pdf",
     "unverified": false
   },
   {
