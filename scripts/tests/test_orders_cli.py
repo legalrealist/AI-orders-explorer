@@ -161,6 +161,100 @@ def test_count_flag(monkeypatch, capsys):
     assert out == {'count': 1}
 
 
+REQ_RECS = [
+    {'id': 0, 'court': 'N.D. Cal.', 'type': 'Standing Order',
+     'reqs': {'disclose': True}, 'name': 'A'},
+    {'id': 1, 'court': 'N.D. Cal.', 'type': 'Standing Order',
+     'reqs': {'disclose': False}, 'name': 'B'},
+    {'id': 2, 'court': 'S.D.N.Y.', 'type': 'Judicial Opinion',
+     'reqs': {'rules': 'FRCP 11'}, 'name': 'C'},
+    {'id': 3, 'court': 'D. Mass.', 'type': 'Standing Order',
+     'reqs': {}, 'name': 'D'},
+    {'id': 4, 'court': 'D. Mass.', 'type': 'Standing Order', 'name': 'E'},  # no reqs key
+]
+
+
+def test_requires_truthy_only():
+    assert {r['id'] for r in oc.apply_filters(REQ_RECS, {'requires': 'disclose'})} == {0}
+
+
+def test_requires_string_value_is_truthy():
+    assert {r['id'] for r in oc.apply_filters(REQ_RECS, {'requires': 'rules'})} == {2}
+
+
+def test_requires_unknown_key_and_missing_reqs():
+    assert oc.apply_filters(REQ_RECS, {'requires': 'nonexistent'}) == []
+    # record 4 has no reqs key at all — must not raise
+    assert {r['id'] for r in oc.apply_filters(REQ_RECS, {'requires': 'disclose'})} == {0}
+
+
+def test_requires_composes_with_other_filters():
+    f = {'type': 'Standing Order', 'requires': 'disclose'}
+    assert {r['id'] for r in oc.apply_filters(REQ_RECS, f)} == {0}
+
+
+def test_facets_filter_aware_helper():
+    recs = oc.apply_filters(REQ_RECS, {'requires': 'disclose'})
+    counts = {x['value']: x['count'] for x in oc.facet(recs, 'court')}
+    assert counts == {'N.D. Cal.': 1}
+
+
+def test_facets_command_respects_filters(monkeypatch):
+    monkeypatch.setattr(oc, 'load_orders', lambda: RECS)
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc.main(['facets', 'court', '--consequence', 'sanctions_attorney'])
+    out = {x['value']: x['count'] for x in json.loads(buf.getvalue())}
+    assert out == {'D. Mass.': 1}
+
+
+def test_facets_command_unfiltered_regression(monkeypatch):
+    monkeypatch.setattr(oc, 'load_orders', lambda: RECS)
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc.main(['facets', 'type'])
+    out = {x['value']: x['count'] for x in json.loads(buf.getvalue())}
+    assert out == {'Judicial Opinion': 2, 'Standing Order': 1}
+
+
+def test_parser_builds_without_arg_collision():
+    # facets gains filter flags but keeps its own --limit/--all — must not raise
+    oc.build_parser()
+
+
+def test_summary_in_projection_and_table(monkeypatch):
+    assert 'summary' in oc._LIST_FIELDS
+    monkeypatch.setattr(oc, 'load_orders', lambda: RECS)
+    # JSON keeps full summary
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc.main(['search', 'chatgpt'])
+    assert json.loads(buf.getvalue())[0]['summary'].startswith('In Shore v. Dorel')
+    # table shows a truncated summary line
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc.main(['search', 'chatgpt', '--format', 'table'])
+    table = buf.getvalue()
+    assert 'In Shore v. Dorel' in table
+
+
+def test_table_no_summary_line_when_empty():
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc._print_table([{'id': 9, 'date': '2026-01-01', 'state': 'X', 'type': 'Standing Order',
+                          'consequence': None, 'name': 'No summary here', 'summary': ''}])
+    lines = [ln for ln in buf.getvalue().splitlines() if ln.strip()]
+    assert any('No summary here' in ln for ln in lines)
+    assert len(lines) == 2  # header line + name line, no summary line
+
+
+def test_facets_table_branch_unaffected():
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc._print_table([{'value': 'N.D. Cal.', 'count': 9}])
+    assert buf.getvalue().strip() == '9  N.D. Cal.'
+
+
 def test_bar_filter(monkeypatch):
     monkeypatch.setattr(oc, 'load_bar', lambda: {'items': [
         {'name': 'California', 'abbreviation': 'CA', 'status': 'formal'},

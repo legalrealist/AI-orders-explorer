@@ -197,6 +197,9 @@ def apply_filters(records, filters):
             continue
         if filters.get('applies_to') and not applies_match(r.get('applies_to'), filters['applies_to']):
             continue
+        req = filters.get('requires')
+        if req and not (r.get('reqs') or {}).get(req):
+            continue
         df, dt = filters.get('date_from'), filters.get('date_to')
         d = r.get('date', '') or ''
         if df and d < df:
@@ -246,7 +249,7 @@ def stats(records):
 
 # --- output ---
 
-_LIST_FIELDS = ['id', 'date', 'state', 'type', 'court', 'judge', 'consequence', 'name', 'pdf', 'link']
+_LIST_FIELDS = ['id', 'date', 'state', 'type', 'court', 'judge', 'consequence', 'name', 'summary', 'pdf', 'link']
 
 
 def _project(r):
@@ -282,6 +285,9 @@ def _print_table(data):
         print(f"[{r.get('id')}] {r.get('date','')}  {r.get('state','')}  "
               f"{(r.get('type') or '')[:18]:18}  {(r.get('consequence') or '-')}")
         print(f"      {(r.get('name') or '')[:90]}")
+        summ = r.get('summary')
+        if summ:
+            print(f"      {summ[:120]}")
 
 
 def _filters_from_args(a):
@@ -291,15 +297,24 @@ def _filters_from_args(a):
         'source': a.source, 'jurisdiction': a.jurisdiction,
         'date_from': a.date_from, 'date_to': a.date_to,
         'has_pdf': a.has_pdf, 'has_link': a.has_link, 'tag': a.tag,
+        'requires': a.requires,
     }
 
 
-def _add_filter_args(p):
+def _add_filter_flags(p):
+    """Query filters shared by search/list/facets (no result-shaping flags)."""
     for name in ('judge', 'court', 'state', 'type', 'consequence', 'ai-type',
                  'applies-to', 'source', 'jurisdiction', 'tag', 'date-from', 'date-to'):
         p.add_argument(f'--{name}')
+    p.add_argument('--requires', help='only records whose reqs[KEY] is set, e.g. '
+                   'disclose, certify_if_ai, certify_all, verify, prohibited, proprietary '
+                   '(any key accepted; unknown keys match nothing)')
     p.add_argument('--has-pdf', action='store_true', help='only records with a self-hosted PDF')
     p.add_argument('--has-link', action='store_true', help='only records with a source link')
+
+
+def _add_filter_args(p):
+    _add_filter_flags(p)
     p.add_argument('--limit', type=int, default=50)
     p.add_argument('--full', action='store_true', help='emit full records, not the summary projection')
     p.add_argument('--count', action='store_true', help='print only the number of matches (respects filters)')
@@ -328,7 +343,8 @@ def cmd_get(a):
 
 
 def cmd_facets(a):
-    _emit(facet(load_orders(), a.field, a.limit, include_all=a.all), a.format)
+    recs = apply_filters(load_orders(), _filters_from_args(a))
+    _emit(facet(recs, a.field, a.limit, include_all=a.all), a.format)
 
 
 def cmd_stats(a):
@@ -379,6 +395,7 @@ def build_parser():
     pf = sub.add_parser('facets', parents=[common],
                         help='distinct values + counts for a field')
     pf.add_argument('field', help='e.g. judge, court, state, type, consequence, ai_type')
+    _add_filter_flags(pf)
     pf.add_argument('--limit', type=int, default=None)
     pf.add_argument('--all', action='store_true',
                     help='include court-wide placeholders (All Judges, District Wide, …)')
