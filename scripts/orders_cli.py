@@ -22,6 +22,7 @@ import argparse
 import json
 import os
 import re
+import ssl
 import sys
 import urllib.request
 
@@ -140,12 +141,25 @@ class DataUnavailable(Exception):
     """Raised when the dataset can't be fetched remotely or read locally."""
 
 
+def _ssl_context():
+    """A verifying SSL context. Prefer certifi's CA bundle when present —
+    python.org Python on macOS ships without usable system certs, so a bare
+    default context fails with CERTIFICATE_VERIFY_FAILED. certifi rides along
+    with pip, so this needs no extra install in practice."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except Exception:
+        return ssl.create_default_context()
+
+
 def _fetch_json(name):
     """Load a dataset file: remote first, local fallback."""
     url = f'{DATA_BASE}/{name}'
     try:
         req = urllib.request.Request(url, headers={'User-Agent': _UA})
-        with urllib.request.urlopen(req, timeout=15) as r:
+        ctx = _ssl_context() if url.startswith('https') else None
+        with urllib.request.urlopen(req, timeout=15, context=ctx) as r:
             return json.loads(r.read().decode('utf-8'))
     except Exception as remote_err:
         path = os.path.join(_LOCAL_DIR, name)
