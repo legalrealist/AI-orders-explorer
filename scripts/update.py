@@ -37,6 +37,16 @@ CL_API_KEY = os.environ.get('CL_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 OPENROUTER_MODEL = os.environ.get('OPENROUTER_MODEL', 'deepseek/deepseek-v4-flash')
 
+# Local cleanup + ingestion modules.
+sys.path.insert(0, SCRIPT_DIR)
+import lag_cases  # noqa: E402
+import lag_convert  # noqa: E402
+import lag_merge  # noqa: E402
+import dedup  # noqa: E402
+import linkrecover  # noqa: E402
+import normalize  # noqa: E402
+import schema  # noqa: E402
+
 EXPLORER_SCHEMA_PROMPT = """You convert raw court order data from Ropes & Gray into a structured JSON object.
 
 Output a single JSON object with these fields:
@@ -600,6 +610,7 @@ def main():
                 else:
                     entry = fallback_convert_entry(item, next_id)
                     print(f'  + [{i+1}/{len(new_rg)}] {entry.get("date","")}  {entry.get("name","")[:55]}')
+                entry['_rg_id'] = item.get('id')
                 new_entries.append(entry)
                 next_id += 1
                 if use_ai and i < len(new_rg) - 1:
@@ -608,6 +619,7 @@ def main():
                 print(f'  WARN: AI failed for {name_hint}: {e}')
                 try:
                     entry = fallback_convert_entry(item, next_id)
+                    entry['_rg_id'] = item.get('id')
                     new_entries.append(entry)
                     next_id += 1
                     print(f'    fallback OK: {entry.get("name","")[:55]}')
@@ -626,15 +638,46 @@ def main():
             for i, e in enumerate(existing):
                 e['id'] = i
 
-    # 6. Save (only if new entries were added)
+    # 5b. Ingest LAG/RAILS court-order cases (fetch + convert + merge).
+    lag_ingested = False
+    try:
+        print('\nIngesting LAG/RAILS court-order cases...')
+        lag_env = lag_cases.fetch_cases()
+        lag_cases.save_cached(lag_env)
+        lag_recs = lag_convert.convert_all(lag_cases.items(lag_env))
+        existing, review, lag_stats = lag_merge.merge_lag(existing, lag_recs)
+        print(f'  LAG: {lag_stats}')
+        if review:
+            with open(os.path.join(DATA_DIR, 'review_needed.json'), 'w', encoding='utf-8') as f:
+                json.dump(review, f, indent=2)
+            print(f'  {len(review)} near-matches -> review_needed.json')
+        lag_ingested = True
+    except Exception as e:
+        print(f'  WARN: LAG ingestion failed: {e} — continuing with R&G only')
+
+    # 6. Save (when R&G entries were added or LAG ingestion ran).
     n_added = len(new_entries)
-    if n_added:
-        with open(EXPLORER_PATH, 'w') as f:
-            json.dump(existing, f, indent=2)
-        with open(os.path.join(DATA_DIR, 'explorer_data.json')) as src:
-            with open(os.path.join(CHARTS_DATA_DIR, 'explorer_data.json'), 'w') as dst:
-                dst.write(src.read())
-        print(f'Saved: {len(existing)} total entries (+{n_added} new)')
+    if n_added or lag_ingested:
+        # Durability: collapse same-order duplicates (R&G + LAG double-ingest),
+        # recover original links, normalize to canonical schema, flag records
+        # with no openly accessible primary source, and validate before writing.
+        existing, _dedup = dedup.merge_duplicates(existing)
+        linkrecover.recover(existing, rg_entries)
+        normalize.normalize(existing)
+        normalize.mark_unverified(existing)
+        problems = schema.validate_dataset(existing)
+        if problems:
+            print(f'  ERROR: {len(problems)} schema problems after normalize — not writing.')
+            for p in problems[:10]:
+                print('   ', p)
+            return
+
+        payload = json.dumps(existing, ensure_ascii=False, indent=2)
+        with open(EXPLORER_PATH, 'w', encoding='utf-8') as f:
+            f.write(payload)
+        with open(os.path.join(CHARTS_DATA_DIR, 'explorer_data.json'), 'w', encoding='utf-8') as f:
+            f.write(payload)
+        print(f'Saved: {len(existing)} total entries (+{n_added} new R&G, LAG merged={lag_ingested})')
     else:
         print(f'No changes: {len(existing)} total entries')
 

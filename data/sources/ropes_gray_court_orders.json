@@ -54,7 +54,7 @@
       {
         "text": "Florida",
         "value": "d9dba727-42dc-4dfc-8fc9-01aa7c42b715",
-        "count": 34
+        "count": 35
       },
       {
         "text": "Georgia",
@@ -114,12 +114,12 @@
       {
         "text": "Massachusetts",
         "value": "79b36201-2523-4d62-8ffc-2cdb48b19735",
-        "count": 4
+        "count": 5
       },
       {
         "text": "Michigan",
         "value": "cd8e165e-739e-423e-a1b0-99a99e5a65f1",
-        "count": 19
+        "count": 20
       },
       {
         "text": "Minnesota",
@@ -164,7 +164,7 @@
       {
         "text": "New York",
         "value": "e4d30ea8-3d59-4b7a-9238-fbc2e86ff40d",
-        "count": 73
+        "count": 75
       },
       {
         "text": "North Carolina",
@@ -184,12 +184,12 @@
       {
         "text": "Ohio",
         "value": "2faa0e93-8bb7-422d-8d92-addaa936c9bb",
-        "count": 19
+        "count": 20
       },
       {
         "text": "Oklahoma",
         "value": "1f1f99b0-32f6-4a39-be6f-e22026fb9ed0",
-        "count": 14
+        "count": 15
       },
       {
         "text": "Oregon",
@@ -244,7 +244,7 @@
       {
         "text": "Washington",
         "value": "628f19d6-7713-486a-b2ad-38101423f2b9",
-        "count": 16
+        "count": 17
       },
       {
         "text": "Washington D.C.",
@@ -366,12 +366,12 @@
       {
         "text": "6th Circuit - 6th Cir.",
         "value": "a1e30e22-e57b-42b3-9d8c-2fd63cfbac16",
-        "count": 1
+        "count": 2
       },
       {
         "text": "6th Circuit - Federal Court of Appeals",
         "value": "c41d9968-11be-463f-ba00-bc29a34678a9",
-        "count": 1
+        "count": 2
       },
       {
         "text": "7th Circuit - 7th Cir.",
@@ -764,6 +764,11 @@
         "count": 1
       },
       {
+        "text": "Federal Circuit",
+        "value": "9cf4f3db-3e39-445b-9efa-91328e46c508",
+        "count": 1
+      },
+      {
         "text": "Federal Claims - Fed. Cl.",
         "value": "2eaca824-451c-4902-97d6-e704db050ad9",
         "count": 2
@@ -866,7 +871,7 @@
       {
         "text": "Florida - State Intermediate Appeals Court",
         "value": "eb2022d0-8456-43c3-9370-220b036056fe",
-        "count": 4
+        "count": 5
       },
       {
         "text": "Florida - State Trial Court",
@@ -1326,7 +1331,7 @@
       {
         "text": "Massachusetts - D. Mass.",
         "value": "7de424f9-1556-46ea-b296-ca8fd3ecd6e5",
-        "count": 4
+        "count": 5
       },
       {
         "text": "Massachusetts - Federal Bankruptcy Court",
@@ -1341,7 +1346,7 @@
       {
         "text": "Michigan - E.D. Mich.",
         "value": "8e51d90d-8704-4db0-bc66-9372be4d5b5b",
-        "count": 19
+        "count": 20
       },
       {
         "text": "Michigan - Federal District Court",
@@ -1351,7 +1356,7 @@
       {
         "text": "Michigan - Federal District Court (Eastern District)",
         "value": "8f5e490b-e0e4-4f82-a33c-386ed2bea450",
-        "count": 18
+        "count": 19
       },
       {
         "text": "Minnesota - Minn. Dist. Ct., Cnty. of Hennepin, Fourth Jud. Dist.",
@@ -1676,7 +1681,7 @@
       {
         "text": "New York - State Trial Court",
         "value": "c2c4dcfd-6713-4c52-a7c4-a86767f4801a",
-        "count": 22
+        "count": 23
       },
       {
         "text": "New York - Suffolk County Supreme Court",
@@ -1856,7 +1861,7 @@
       {
         "text": "Ohio - S.D. Ohio",
         "value": "aa66da63-a82a-4b4b-bfdd-9562802b7566",
-        "count": 7
+        "count": 8
       },
       {
         "text": "Ohio - State Court of Common Pleas",
@@ -1921,7 +1926,7 @@
       {
         "text": "Oklahoma - W.D. Okla.",
         "value": "d6942ec4-562c-48c7-b08b-1d1581a09b1f",
-        "count": 9
+        "count": 10
       },
       {
         "text": "Oregon",
@@ -2381,7 +2386,7 @@
       {
         "text": "Washington - E.D. Wash.",
         "value": "b26d7b99-e849-4d32-b98a-38e8a7dc4a01",
-        "count": 1
+        "count": 2
       },
       {
         "text": "Washington - Federal District Court",
@@ -2391,7 +2396,7 @@
       {
         "text": "Washington - Federal District Court (Eastern District)",
         "value": "31c13fab-0a80-4d17-aaca-b9d4fab7a3e8",
-        "count": 1
+        "count": 2
       },
       {
         "text": "Washington - Federal District Court (Western District)",
@@ -4853,7 +4858,7 @@
       {
         "text": "Judge Stan Bastian",
         "value": "e941b151-df1e-4d8a-869b-9b47d09c46ff",
-        "count": 1
+        "count": 2
       },
       {
         "text": "Judge Stanley Blumenfeld",
@@ -5318,7 +5323,7 @@
       {
         "text": "Magistrate Judge Anthony P. Patti",
         "value": "ce0cfcba-4db5-4fe9-bf0c-558c0583b04e",
-        "count": 3
+        "count": 4
       },
       {
         "text": "Magistrate Judge Arlene R. Lindsay",
@@ -5891,7 +5896,7 @@
       {
         "text": "Applies to AI Used for Filings/Drafting",
         "value": "b2b20a2e-8f2d-4739-add6-1e1c5a0905ab",
-        "count": 657,
+        "count": 667,
         "colorHexCode": "#FAA2D4"
       },
       {
@@ -5903,7 +5908,7 @@
       {
         "text": "Court-Imposed Consequences - Attorneys/Law Firms",
         "value": "3756d65f-8eef-494c-9980-49a00d1e8023",
-        "count": 150,
+        "count": 154,
         "colorHexCode": "#4B90FF"
       },
       {
@@ -5915,7 +5920,7 @@
       {
         "text": "Generative AI Usage",
         "value": "2bd3fe1e-961c-4f1e-b081-efd693de2aeb",
-        "count": 630,
+        "count": 640,
         "colorHexCode": "#63EA5C"
       },
       {
@@ -5927,13 +5932,13 @@
       {
         "text": "Requires Disclosure and/or Verification",
         "value": "de9b7bb5-b781-4eb7-8b90-1b52722502a4",
-        "count": 144,
+        "count": 145,
         "colorHexCode": "#12E2CE"
       },
       {
         "text": "Suggests Cautious Use of AI",
         "value": "4e90810e-177a-4295-aff4-bb84ab08bead",
-        "count": 343,
+        "count": 348,
         "colorHexCode": "#EE9F1E"
       }
     ],
@@ -5961,7 +5966,7 @@
       {
         "text": "6th Circuit",
         "value": "6",
-        "count": 1
+        "count": 2
       },
       {
         "text": "7th Circuit",
@@ -5972,13 +5977,172 @@
         "text": "10th Circuit",
         "value": "10",
         "count": 6
+      },
+      {
+        "text": "11th Circuit",
+        "value": "11",
+        "count": 1
       }
     ]
   },
-  "totalFound": 681,
+  "totalFound": 691,
   "page": 0,
   "pageSize": 16,
   "results": [
+    {
+      "id": "e0493ba2-988c-45dd-a386-db1d4112e843",
+      "state": "Ohio",
+      "court": [
+        "Ohio - S.D. Ohio"
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "Federal District Court (Southern District)|Ohio - S.D. Ohio \u2013 (Judge) Douglas (R.) Cole",
+        "url": "https://advance.lexis.com/api/permalink/f1377a5d-8134-4f5b-8d03-9781d4377394/?context=1000516"
+      },
+      "effectiveDate": "2026-05-15T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Suggests Cautious Use of AI",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In <em>Brock v. Hamilton County JFS</em>, 2026 U.S. Dist. LEXIS 108000 (S.D. Ohio May 15, 2026), the<em> pro se </em>plaintiff filed objections to a magistrate judge\u2019s supplemental report and recommendation that relied on what the court said \u201cappears\u201d to be hallucinated case law. The court was left with \u201cthe distinct impression that [plaintiff] is using artificial intelligence tools to craft her objections and is not checking the resulting citations with care,\u201d as the plaintiff cited a case for a proposition it did not support. The court warned the plaintiff that \u201cif future filings contain misstatements about the contents of precedent, the Court will not hesitate to sanction her.\u201d The court dismissed the case without prejudice on unrelated grounds."
+    },
+    {
+      "id": "e3680cee-b1d6-4ced-ac62-df175d117dbb",
+      "state": "New York",
+      "court": [],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "New York - State Intermediate Appeals Court|New York - Supreme Court of New York, Appeals Division, First Department \u2013 (Justice) Saliann () Scarpulla|(Justice) Martin () Shulman|Justice) Julio () Rodriguez III|(Justice) Marsha (D.) Michael|(Justice) Margaret (A.) Chan (May 14, 2026)",
+        "url": "https://advance.lexis.com/api/permalink/9b13ef05-026b-4b3e-a80f-b15e04c07c0a/?context=1000516"
+      },
+      "effectiveDate": "2026-05-14T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Applies to AI Used for Filings/Drafting",
+        "Court-Imposed Consequences - Attorneys/Law Firms"
+      ],
+      "summary": "In <em>Matter of Lewis</em>, 2026 N.Y. App. Div. LEXIS 3256 (N.Y. App. Div. May 14, 2026), the Attorney Grievance Committee for the First Judicial Department of New York sought the immediate suspension of respondent, an attorney whose draft for a client (another attorney who had hired respondent to assist with research and drafting) was \u201creplete with citations to non-existent cases,\u201d which a federal court attributed to GenAI hallucinations. The draft resulted in a $1,500 fine against the client attorney (who had submitted the respondent\u2019s work product without checking the citations or substance) and an order to report the drafting attorney to disciplinary authorities. When the Committee opened an investigation, the respondent refused to appear for a scheduled examination under oath, characterized the investigation as \u201ca racist attack and a form of racial and gender harassment,\u201d demanded the Committee \u201ccease and desist\u201d from further communications, and claimed to have \u201cresigned\u201d from the bar without submitting the required application. The court found that the attorney\u2019s \u201cfailure to appear for an [examination under oath] as directed by a judicial subpoena\u201d and her \u201cfail[ure] to respond to the [Committee\u2019s] lawful demands for documents and information\u201d constituted \u201cconduct immediately threatening the public interest.\u201d The court granted the motion for immediate suspension, effective immediately and \u201cuntil further order\u201d of the court."
+    },
+    {
+      "id": "9eebf005-53a4-452f-b0ee-f2dd9b4111b7",
+      "court": [
+        "Federal Circuit"
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "Federal Circuit - Federal Court of Appeals|Federal Circuit - Fed. Cir. \u2013 (Judge) Timothy (Belcher) Dyk|(Judge) Kara (Farnandez) Stoll|(Judge) Leonard (Philip) Stark",
+        "url": "https://advance.lexis.com/api/permalink/743a39ad-4730-4932-9971-30b62ab84a11/?context=1000516"
+      },
+      "effectiveDate": "2026-05-13T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Suggests Cautious Use of AI",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In <em>Jones v. Dep\u2019t of the Army</em>, 2026 U.S. App. LEXIS 13687 (Fed. Cir. May 13, 2026), the <em>pro se</em> petitioner included citations in his brief and a prior motion for sanctions that \u201cappear to reference cases that do not exist, or at the least contain significant errors, apparently resulting from the use of artificial intelligence.\u201d  The respondent also identified additional \u201capparently fraudulent citations\u201d in the petitioner\u2019s brief, and the petitioner \u201cd[id] not attempt to explain or justify the inclusion of these citations\u201d in his reply.   The court warned that \u201c[t]he use of these false citations is sanctionable\u201d and that \u201crepetition of this conduct can result in serious consequences, potentially including dismissal of his petition for review.\u201d The court determined the appeal on unrelated grounds."
+    },
+    {
+      "id": "7dd4ec6b-c33c-4306-aeac-9a51c3ac2dd7",
+      "state": "Oklahoma",
+      "court": [
+        "Oklahoma - W.D. Okla."
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "Federal District Court (Western District)|Oklahoma - W.D. Okla. \u2013 (Judge) David (L.) Russell",
+        "url": "https://advance.lexis.com/api/permalink/cd2f3fdd-09f1-4b48-ad0b-2c5a219676c4/?context=1000516"
+      },
+      "effectiveDate": "2026-05-13T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Applies to AI Used for Filings/Drafting",
+        "Court-Imposed Consequences - Attorneys/Law Firms"
+      ],
+      "summary": "In <em>Doe v. Mount St. Mary High Sch. Corp. of Okla.</em>, 2026 U.S. Dist. LEXIS 106280 (W.D. Okla. May 13, 2026), the attorney for plaintiffs filed a response brief containing \u201ccase citations to nonexistent authority, inaccurate quotations, and case citations that do not stand for the proposition indicated.\u201d When the errors were identified, counsel filed a motion that \u201cdeflected responsibility,\u201d \u201coffered an absurd explanation for the inclusion of fake cases,\u201d and included statements that \u201cproved to be false.\u201d The court further noted that this was \u201cnot an isolated occurrence,\u201d as the same attorney had submitted a brief with similar errors in another action pending before the same judge.  At the show cause hearing, counsel \u201cacknowledged that she used AI tools without performing the essential step of personally reviewing the cited authority\u201d and apologized.  Finding violations of Fed. R. Civ. P. 11(b)(2) and (b)(3), the court issued a public reprimand, ordered counsel to notify her clients, and ordered her to self-report the incident to the state bar disciplinary authority. In determining not to issue monetary sanctions, the court noted that the misconduct \u201coccurred in conjunction with a discovery motion\u201d for which \u201cattorneys\u2019 fees will be awarded,\u201d that a monetary sanction had already been assessed against counsel in the related action, and that the non-monetary consequences imposed were \u201cthe least severe sanction adequate to deter and punish\u201d the conduct, consonant with the purpose of Rule 11."
+    },
+    {
+      "id": "856dbc73-efc5-49c0-9655-bb1ee6cf4a82",
+      "state": "Florida",
+      "court": [
+        "Florida - State Intermediate Appeals Court"
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "Florida - State Intermediate Appeals Court|Florida - Court of Appeal of Florida\u2013 (Judge) Patricia () Kelly|(Judge) Susan (H.) Rothstein-Youakim|(Judge) Suzanne (Youmans) Labrit",
+        "url": "https://advance.lexis.com/api/permalink/d06bbc2c-1628-4295-a937-8d00acd0cd8c/?context=1000516"
+      },
+      "effectiveDate": "2026-05-13T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Suggests Cautious Use of AI",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In<em> Gleason v. Marcus,</em> 2026 Fla. App. LEXIS 3648 (Fla. 2d DCA May 13, 2026), the <em>pro se</em> plaintiff filed appellate briefs that \u201ccite[d] numerous cases that do not exist\u201d and \u201cfrequently quote[d] case law for propositions that appear nowhere in the cases cited.\u201d  Citing its own recent precedent cautioning against the use of GenAI, the court warned that \u201c[t]his technology is very good at sounding right, but less adept at being right\u201d and that \u201cblind reliance\u201d on it is \u201cunwise, unacceptable, and sanctionable.\u201d The court warned the plaintiff that future GenAI misuse \u201cwill not receive favorable treatment\u201d and reminded \u201call litigants\u2014both pro se and represented\u2014that they must ensure the accuracy of their filings or risk the consequences.\u201d The court affirmed the dismissal of the complaint on other grounds. "
+    },
+    {
+      "id": "ca793892-88ad-4b96-a234-efbbf9d21e44",
+      "state": "Michigan",
+      "court": [
+        "Michigan - Federal District Court (Eastern District)",
+        "Michigan - E.D. Mich."
+      ],
+      "judge": [
+        "Magistrate Judge Anthony P. Patti"
+      ],
+      "linkToCourtOrder": {
+        "text": "Michigan - Federal District Court (Eastern District)|Michigan - E.D. Mich. \u2013 (Magistrate Judge) Anthony (P.) Patti",
+        "url": "https://advance.lexis.com/api/permalink/920f7a82-180a-426b-82c2-479a00f7dfc8/?context=1000516"
+      },
+      "effectiveDate": "2026-05-13T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In <em>Johnson v. Experian Info. Sols.</em>, 2026 U.S. Dist. LEXIS 107105 (E.D. Mich. May 13, 2026), the pro se plaintiff filed several motions that \u201cappear[ed] to be based on advice Plaintiff [received] from use of [GenAI].\u201d The court noted that the plaintiff had several other pending motions which could potentially violate the Court\u2019s local rules due to \u201cinaccurate reliance on AI\u201d and cautioned the plaintiff to \u201ccarefully consider the pending motions\u201d and whether it would be \u201cprudent to withdraw any motions to avoid any possible imposition of sanctions.\u201d The court warned that \u201cAI cannot give legal advice\u201d and that \u201cin many cases, its use in legal research has led to glaring misstatements of law and related sanctions,\u201d citing prior authority from the same district.  The court denied the plaintiff\u2019s evidentiary motions on unrelated grounds.  "
+    },
+    {
+      "id": "57112ba1-b914-44ca-a6e4-147863b5b0a0",
+      "state": "Washington",
+      "court": [
+        "Washington - Federal District Court (Eastern District)",
+        "Washington - E.D. Wash."
+      ],
+      "judge": [
+        "Judge Stan Bastian"
+      ],
+      "linkToCourtOrder": {
+        "text": "Washington - Federal District Court (Eastern District)|Washington - E.D. Wash. \u2013 (Judge) Stan () Bastian",
+        "url": "https://advance.lexis.com/api/permalink/43d5ff9c-13dd-4c64-ab78-1f7ac7eeb269/?context=1000516"
+      },
+      "effectiveDate": "2026-05-13T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Suggests Cautious Use of AI",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In <em>Walden v. White Star Invs. LLC</em>, No. 1:24-cv-03172-SAB, 2026 U.S. Dist. LEXIS 106178 (E.D. Wash. May 13, 2026), the pro se plaintiffs cited a case to support a proposition the case had \u201cnothing to do with\u201d in their motion to disqualify the defendant\u2019s counsel.  The court warned the plaintiffs \u201cnot to overly rely on the use of [GenAI] such as ChatGPT, as the use of AI-generated citations that lack merit may result in sanctions.\u201d  Judge Bastian denied the plaintiffs\u2019 motion to disqualify counsel and granted the defendant\u2019s motion to dismiss on other grounds.   "
+    },
+    {
+      "id": "27cb2ca5-e806-4a8f-9491-176c6e50b891",
+      "state": "Massachusetts",
+      "court": [
+        "Massachusetts - D. Mass."
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "Federal District Court|Massachusetts - D. Mass. \u2013 (Judge) Leo (T.) Sorokin",
+        "url": "https://advance.lexis.com/api/permalink/69077069-702f-4c52-960d-e3e78c456de4/?context=1519217"
+      },
+      "effectiveDate": "2026-05-12T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Applies to AI Used for Filings/Drafting",
+        "Court-Imposed Consequences - Attorneys/Law Firms"
+      ],
+      "summary": "In<em> Shore v. Dorel Juvenile Grp., Inc.</em>, No. 25-11232-LTS (D. Mass. May 12, 2026), the attorney for plaintiffs used ChatGPT and Claude to finalize a jointly drafted opposition brief \u201cwith the intent to improve the brief\u2019s writing style and coherence,\u201d but failed to verify the substantive accuracy of the revisions, disclose the GenAI use to co-counsel, or provide a redline of his changes to co-counsel. The GenAI tools purportedly \u201cre-wrote some of the quotations,\u201d introducing fabricated quotations attributed to real cases, and the brief ultimately contained \u201cnearly two dozen fabricated quotations, misquotations, or incorrect legal citations.\u201d When defense counsel pointed out the fabrications in their reply brief, none of the attorneys sought to correct their submission prior to the court\u2019s order to show cause. However, noting the \u201cseriousness with which the lawyers responded to the show-cause order,\u201d including attending CLE classes, offering to paying defense counsel\u2019s fees for their reply without direction from the court, and adopting a new GenAI policy, the court ultimately struck the opposition brief and permitted plaintiffs to file a revised opposition. The court also ordered the primarily responsible attorney to pay $2,500 to the defendant and to file a status report on remedial measures, but declined to impose further sanctions on the two co-counsel firms in light of their \u201cquite appropriate[]\u201d respective roles and responses. In particular, the co-counsel firms had pre-existing policies prohibiting GenAI use for drafting and requiring active tracking of GenAI misuse cases, and counsel proactively disclosed eight additional fabricated quotations beyond the two the court had identified \u2014 demonstrating the candor and swift accountability the court credited."
+    },
     {
       "id": "28cff554-a777-446f-abf0-db2db85f1127",
       "state": "Montana",
@@ -6341,6 +6505,25 @@
         "Applies to AI Used for Filings/Drafting"
       ],
       "summary": "In <em>Nevels v. TransUnion, LLC</em>, No. 25-CV-3446(GRB)(SIL), 2026 U.S. Dist. LEXIS 99537 (E.D.N.Y. May 5, 2026), the <em>pro se</em> plaintiff relied on nonexistent authority in her opposition to the defendant\u2019s motion to dismiss.  Though the court suspected GenAI misuse, it declined to sanction the plaintiff because the citations \u201cd[id] not impact the Court\u2019s analysis.\u201d  However, the court warned that future fabricated citations will result in sanctions.  Magistrate Judge Locke recommended that the defendant\u2019s motion to dismiss be granted in part and denied in part on other grounds."
+    },
+    {
+      "id": "ff946db8-f496-4523-8012-b244b386a23f",
+      "state": "New York",
+      "court": [
+        "New York - State Trial Court"
+      ],
+      "judge": [],
+      "linkToCourtOrder": {
+        "text": "New York - State Trial Court|New York - Supreme Court of New York, New York County \u2013 (Justice) Lyle (E.) Frank",
+        "url": "https://advance.lexis.com/api/permalink/b610d5a9-3a83-4233-a8db-3d773d4dad24/?context=1000516"
+      },
+      "effectiveDate": "2026-05-05T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Suggests Cautious Use of AI",
+        "Applies to AI Used for Filings/Drafting"
+      ],
+      "summary": "In <em>Doe v. Trs. of Columbia Univ. in the City of N.Y.</em>, 2026 N.Y. Misc. LEXIS 5112 (N.Y. Sup. Ct. May 5, 2026), the attorney for petitioners filed motions that contained GenAI-generated hallucinated citations. After the false citations were \u201cpointed out in the reply papers,\u201d petitioners\u2019 counsel notified the court of the errors, withdrew the filings, and apologized. At oral argument, counsel \u201creiterated the apology, acknowledged that the use of AI without proper checking was wrong, and identified the specific ways that steps were being taken by him and his firm to prevent future problems.\u201d The court declined to impose sanctions but issued a warning, noting that \u201cit is incumbent on every party communicating with a court, but especially incumbent on attorneys, to ensure that any output generated by AI is verified and accurate\u201d and that \u201c[t]he submission of hallucinated or misstated material to courts is an ethical violation.\u201d On unrelated grounds, the court dismissed the petition."
     },
     {
       "id": "fba452bf-4f35-4267-a63e-665a647bc59d",
@@ -7713,6 +7896,22 @@
         "Applies to AI Used for Filings/Drafting"
       ],
       "summary": "In <em>Wolkenstein v. Heinrich</em>, No. 2:25-cv-01138-APG-NJK, 2026 U.S. Dist. LEXIS 76690 (D. Nev. Apr. 6, 2026), the <em>pro se</em> plaintiffs filed a motion for entry of default judgment that was&#160;\u201creplete with false citations to cases.\u201d The court warned the plaintiffs that GenAI \u201coften invents fake cases and legal precedent,\u201d and that citing nonexistent cases may violate Fed. R. Civ. P. 11. Nevertheless, the court granted the plaintiffs\u2019 motion for default judgment on other grounds."
+    },
+    {
+      "id": "fe370ecb-3bda-4656-b608-3ba4df709c23",
+      "court": [
+        "6th Circuit - Federal Court of Appeals",
+        "6th Circuit - 6th Cir."
+      ],
+      "judge": [],
+      "effectiveDate": "2026-04-03T00:00:00Z",
+      "applicableTo": [
+        "Generative AI Usage",
+        "Requires Disclosure and/or Verification",
+        "Applies to AI Used for Filings/Drafting",
+        "Court-Imposed Consequences - Attorneys/Law Firms"
+      ],
+      "summary": "In <em>United States v. Farris</em>, 171 F.4th 920 (6th Cir. Apr. 3, 2026), the defendant\u2019s court-appointed attorney filed two briefs containing indicia of GenAI use.  The principal brief\u2019s file name referenced \u201cCoCounsel,\u201d which is a Westlaw AI platform.  Both briefs contained quotations that \u201cdo not appear in their cited sources\u201d or in \u201cany relevant legal authority\u201d and misrepresented holdings of two cases.  In response to the court\u2019s order to show cause, the attorney admitted to using Westlaw\u2019s CoCounsel program to create first drafts of both briefs from court documents a team member uploaded to the program.  He then \u201csupplement[ed] the draft produced by [GenAI].\u201d  The attorney also explained that this was his first time using CoCounsel \u201cin this way for a Court of Appeals brief.\u201d  In \u201creiterat[ing] attorneys&#39; baseline ethical obligations as they relate to the use of artificial intelligence,\u201d the court expressed that lack of familiarity with a program is no excuse and that \u201c[a]ttorneys have an ethical obligation to verify citations and propositions they submit to courts.\u201d  Although the court noted the attorney\u2019s \u201ctimely response\u201d and \u201ccandor\u201d in responding to the show-cause order, and that the attorney had no previous ethical violations, it characterized his error as \u201cinexcusable transgressions\u201d which inflicted \u201charm to our system of justice.\u201d  As sanction, the court ordered (1) that the attorney \u201cshall not be compensated under the Criminal Justice Act for his time spent on this appeal\u201d; (2) the opinion forwarded to the Chief Judge to consider further disciplinary proceedings; (3) the opinion served on the District Court for the Eastern District of Kentucky and the Kentucky Bar Association; and (4) removal of the attorney and appointment of replacement counsel; \u201clocking\u201d of the attorney\u2019s briefs, which the court will not rely on moving forward, but will preserve for the record; and a reset of the briefing schedule upon appointment of new counsel. "
     },
     {
       "id": "aa38d21b-647a-4709-b563-56ab3ea8e06a",
