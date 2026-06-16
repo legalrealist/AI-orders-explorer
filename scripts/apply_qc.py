@@ -33,15 +33,16 @@ ORDERS = '/Users/hao/legalhack/public_html/orders'
 _STOP = {'inc', 'llc', 'corp', 'company', 'services', 'the', 'case', 'court',
          'order', 'united', 'states', 'district', 'county', 'board', 'llp',
          'national', 'association', 'commission', 'et', 'al', 'pc', 'in', 're'}
-# Hosts whose links the original AI pipeline fabricated. Only these are safe to
-# clear when we can't verify — a real court/.gov/govinfo link is left intact.
-_SUSPECT = ('justia', 'findlaw', 'leagle', 'bloomberglaw', 'casetext',
-            'pacermonitor', 'metnews', 'midpage', 'bostonglobe', 'lawnext',
-            'law360', 'law.resource.org')
+# Only these are *provably* fabricated: dockets.justia.com / docs.justia.com
+# links carry an internal numeric id that the AI pipeline guessed, so they
+# resolve to the wrong case (confirmed on records 287, 121, 248). Real opinion
+# pages (law.justia.com/cases/..., FindLaw, Leagle) are NOT cleared — they are
+# kept and flagged `unverified` instead, since we can't fetch them to confirm.
+_CLEARABLE = ('dockets.justia.com', 'docs.justia.com')
 
 
 def _is_suspect(url):
-    return any(s in (url or '').lower() for s in _SUSPECT)
+    return any(s in (url or '').lower() for s in _CLEARABLE)
 
 
 def _toks(s):

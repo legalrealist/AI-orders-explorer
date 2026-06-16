@@ -19,14 +19,24 @@ def test_tracker_page_is_unverified():
     assert recs[0]['unverified'] is True
 
 
-def test_court_gov_and_permalink_are_verified():
+def test_confirmed_sources_are_not_flagged():
     for link in ['https://www.cand.uscourts.gov/judges/foo/',
-                 'https://advance.lexis.com/api/permalink/abc/',
                  'https://www.courtlistener.com/docket/123/x/',
+                 'https://www.govinfo.gov/content/x.pdf',
                  'https://example.com/order.pdf']:
         recs = [_rec(link=link)]
         normalize.mark_unverified(recs)
         assert recs[0]['unverified'] is False, link
+
+
+def test_unfetchable_external_sources_are_flagged():
+    # real-looking but unconfirmable / paywalled -> kept, but flagged
+    for link in ['https://law.justia.com/cases/kansas/court-of-appeals/2026/1.html',
+                 'https://advance.lexis.com/api/permalink/abc/',
+                 'https://caselaw.findlaw.com/x.html']:
+        recs = [_rec(link=link)]
+        normalize.mark_unverified(recs)
+        assert recs[0]['unverified'] is True, link
 
 
 def test_confirmed_mismatch_flagged_despite_court_link():

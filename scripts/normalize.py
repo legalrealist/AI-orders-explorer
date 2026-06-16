@@ -243,8 +243,10 @@ def normalize(records):
 # accessible primary source: it has no self-hosted PDF and its link is not a
 # real document pointer (a tracker/aggregator/news page, or empty). Official
 # court/.gov pages and specific legal-research permalinks count as pointers.
-_PRIMARY_HOSTS = ('courtlistener', 'justia', 'recap', 'govinfo', 'lexis.com',
-                  'westlaw.com', 'google.com', 'dropbox')
+# Hosts we treat as independently confirmed. Justia/Lexis/Westlaw/news are NOT
+# here: their links are real-looking but unfetchable (or paywalled), so we keep
+# the link but flag the record `unverified` rather than vouch for it.
+_PRIMARY_HOSTS = ('courtlistener', 'recap', 'govinfo', 'google.com', 'dropbox')
 # Records whose publicly reachable document was checked and did NOT support the
 # summary — keyed on stable content, not id. (Both confirmed by fetching.)
 _CONFIRMED_UNVERIFIED = (
