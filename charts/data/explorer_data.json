@@ -6299,7 +6299,7 @@
     "date": "2026-02-19",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.westlaw.com/Document/I63b8fbb00e8611f1b2dac9cbea775483/View/FullText.html?transitionType=Default&contextData=(sc.Default)&VR=3.0&RS=cblt1.0",
+    "link": "https://www.courtlistener.com/docket/73388546/marrett-v-aroostook-county-federal-savings-loan/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In in re: Marrett v. Aroostook Cnty. Fed. Sav. & Loan (Bankr. D. Mass. Feb. 19, 2026), the pro se debtors cited a nonexistent case in their complaint as the only authority supporting one of their causes of action. The court therefore concluded that “the Debtors have not provided . . . any authority to support a cause of action.” The court granted the defendant’s motion to dismiss for failure to state a claim.",
@@ -6314,7 +6314,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "MA",
-    "link_source": "westlaw",
+    "link_source": "courtlistener",
     "original_link": "https://www.westlaw.com/Document/I63b8fbb00e8611f1b2dac9cbea775483/View/FullText.html?transitionType=Default&contextData=(sc.Default)&VR=3.0&RS=cblt1.0",
     "sanction_types": {
       "amount_awarded": null,
@@ -6323,7 +6323,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": true
+    "unverified": false
   },
   {
     "id": 179,
@@ -6334,7 +6334,7 @@
     "date": "2026-02-19",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.courtlistener.com/docket/64885682/juan-david-veramancini-v-county-of-orange/",
+    "link": "https://www.courtlistener.com/docket/64890768/veramancini-v-county-of-orange/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Veramancini v. Cnty. of Orange, 2026 U.S. Dist. LEXIS 35478 (C.D. Cal. Feb. 19, 2026), the court sanctioned plaintiffs' counsel for submitting briefing containing inaccurate case quotations and characterizations indicative of GenAI use. The court first noted potential GenAI misuse in response to inaccuracies in counsel's motion to dismiss briefing stage, after which counsel submitted a declaration acknowledging the errors and pledging corrective measures. However, in a subsequent briefing, opposing counsel informed the court that plaintiff’s counsel had misrepresented the holding of a state supreme court case, and the court again raised the issue at a hearing. Despite these warnings, counsel's summary judgment briefing repeated the same types of errors, attributing quotes to cases that did not contain those quotes and misrepresenting the holding of an appellate case. Throughout the proceedings, counsel repeatedly told the court that he did not use GenAI to draft his briefs, but ultimately acknowledged using Google Gemini for “grammar, spelling, and conciseness.” The court found that sanctions were appropriate under Federal Rule of Civil Procedure 11, emphasizing that “citing nonexistent case law or misrepresenting the holdings of a case is making a false statement to a court, regardless of whether [GenAI] suggested the content.” While counsel represented that his errors were “unintentional,” the court noted that it had already allowed him “substantial latitude” by not issuing sanctions in response to the first or second round of misrepresentations. The court sanctioned counsel by ordering him to (1) pay $2,000 personally to the Clerk of the Court and (2) serve a copy of the order on the State Bar of California.",
@@ -6906,7 +6906,7 @@
     "date": "2026-02-13",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.courtlistener.com/docket/64352627/mahwikizi-v-uber-technologies-inc/",
+    "link": "https://www.courtlistener.com/docket/70278616/justin-mahwikizi-v-uber-technologies-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Mahwikizi v. Uber Techs., Inc. & Rasier, LLC, 2026 U.S. App. LEXIS 4411 (7th Cir. Feb. 13, 2026), the court noted that it could not find two of the cases the pro se plaintiff cited in his reply brief. The court did not impose sanctions but reminded litigants that whether or not the errors were the result of GenAI use, they must “carefully review their submissions before filing in this court.” The court affirmed the district court’s dismissal for failure to prosecute on other grounds.",
@@ -7442,7 +7442,7 @@
     "date": "2026-02-24",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.govinfo.gov/app/details/USCOURTS-txed-6_25-cv-00402/context",
+    "link": "https://www.courtlistener.com/docket/71677902/tatum-v-american-amicable-life-insurance-company-of-texas/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Tatum v. Am. Amicable Life Ins. Co. of Tex., 2026 U.S. Dist. LEXIS 22283 (E.D. Tex. Jan. 9, 2026), a pro se plaintiff was accused of citing at least six nonexistent cases that appeared to be the product of GenAI. The court confirmed that it could not locate any of the cited cases, observing that the citations “make it impossible for these cases to exist because they would overlap with other existing cases.” The court emphasized that under Local Rule CV-11(g), litigants who use GenAI “remain[] responsible for the accuracy and quality of legal documents” and must verify all content for compliance with Fed. R. Civ. P. 11. The court further found that the plaintiff violated the court's standing order requiring certification of GenAI use. The court noted the harms of GenAI misuse, including wasted time and resources for opposing counsel and the court, potential reputational harm to judges and parties, and promotion of “cynicism about the legal profession and the American judicial system.” The court declined to consider the plaintiff's legal arguments supported by the fabricated citations and warned that any further GenAI misuse may result in sanctions under Rule 11.",
@@ -7458,7 +7458,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "TX",
-    "link_source": "govinfo",
+    "link_source": "courtlistener",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -7478,7 +7478,7 @@
     "date": "2026-02-09",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.ropesgray.com/en/sites/artificial-intelligence-court-order-tracker/states/illinois",
+    "link": "https://www.courtlistener.com/docket/69581774/bettis-v-sabrina-gaston/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Bettis v. Gaston, 2026 U.S. Dist. LEXIS 26147 (N.D. Ill. Feb. 9, 2026), the pro se plaintiff’s response brief contained citations that the court identified as “hallmarks of [GenAI].” The court noted that the plaintiff cited a nonexistent case, a real case that did not support the asserted proposition, and a nonexistent quotation attributed to another real case. Citing recent Seventh Circuit authority, the court reminded the plaintiff that “all litigants—represented and unrepresented—must read their filings and take reasonable care to avoid misrepresentations, factual and legal.” The court warned the plaintiff that future filings submitted without exercising reasonable care to check their accuracy may result in sanctions, finding that \"[b]ased on the current available technology, relying on computer-generated language without verification is not reasonable care.\" The court granted the defendants' motion to dismiss with prejudice on other grounds, finding the plaintiff's constitutional claims time-barred and his state law claim barred for lack of a private cause of action.",
@@ -7493,7 +7493,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "IL",
-    "link_source": "ropesgray",
+    "link_source": "courtlistener",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -7502,7 +7502,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": true
+    "unverified": false
   },
   {
     "id": 212,
@@ -7549,7 +7549,7 @@
     "date": "2026-02-06",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://ecf.cacd.uscourts.gov/doc1/031146964671",
+    "link": "https://www.courtlistener.com/docket/72073035/shaheryar-khan-v-nso/",
     "ai_type": "Any AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Khan v. NSO et al., No. 2:25-cv-11961 (C.D. Cal. Feb. 6, 2026), Judge Frimpong issued a resources document for the pro se plaintiff. The document notes that while the court does not restrict any party's use of AI, parties are reminded that AI “may output information that is false, inaccurate, or biased” and that it is the parties’ responsibility to “personally ensure the accuracy of any statements and representations made in the course of the litigation even if it has been generated by AI.” The court’s resources guide also directs the parties to the California State Bar's Practical Guidance on the use of AI.",
@@ -7563,7 +7563,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "CA",
-    "link_source": "other",
+    "link_source": "courtlistener",
     "original_link": "https://ecf.cacd.uscourts.gov/doc1/031146964671",
     "sanction_types": {
       "amount_awarded": null,
@@ -8441,7 +8441,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-fcad8ba54b45.pdf",
     "unverified": false
   },
   {
@@ -8564,7 +8564,7 @@
     "date": "2026-01-21",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://www.courtlistener.com/docket/72081031/parties/hc-xiong-v-becerra/",
+    "link": "https://www.courtlistener.com/docket/72081031/hc-xiong-v-wofford/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In That Xiong v. Wofford, 2026 U.S. Dist. LEXIS 12054 (E.D. Cal. Jan. 21, 2026), the court flagged two citations in a briefing filed by petitioner’s counsel (which included a certified law student and a supervising attorney) that “appeared to be [GenAI] hallucinations” and directed counsel—via a minute order—to be prepared to address them at a hearing. Petitioner’s counsel promptly filed a notice admitting error, apologizing, and supplying citations to actual, relevant cases in place of the hallucinated authorities. At the hearing, the court addressed the hallucinated citations and imposed corrective measures, including ordering counsel to obtain the transcript, provide it to the law student and any staff who assisted with the filings, require them to read it, and file written confirmation. On unrelated grounds, the court denied the motion.",
@@ -8599,7 +8599,7 @@
     "date": "2026-01-21",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://legalaigovernance.com/tracker/cases/parker-v-labat/",
+    "link": "https://www.courtlistener.com/docket/70749609/parker-v-labat/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Parker v. Labat, 2026 U.S. Dist. LEXIS 11877 (N.D. Ga. Jan. 21, 2026), the court issued a show‑cause order after the plaintiff’s brief contained “misstatements of law, non‑existent quotations, and non-existent case citations”—conduct the court emphasized is sanctionable whether stemming from GenAI or “old‑fashioned” attorney error, because citations submitted to the court must be warranted by existing law. The order required a sworn explanation and a statement disclosing whether counsel used GenAI, yet counsel failed to respond in any way. Concluding that the submission of fabricated or misrepresented authorities and the assertion of frivolous claims violated Rule 11(b), the court recommended sanctions, including a monetary fine of $1,500, mandatory CLE, and a sworn verification in future filings attesting that all citations and quotations were personally checked for accuracy. On unrelated grounds, the court recommended dismissing the plaintiff’s complaint.",
@@ -8622,11 +8622,11 @@
       "amount_sought": null,
       "amount_awarded": "$1,500"
     },
-    "link_source": "other",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/9c4294fb-3927-4417-9860-e13afe113f61/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": true
+    "unverified": false
   },
   {
     "id": 243,
@@ -14259,7 +14259,7 @@
     "date": "2025-10-22",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.courtlistener.com/docket/71724667/pete-v-facebook-data-breach/",
+    "link": "https://www.courtlistener.com/docket/70387255/pete-v-facebook-data-breach-transferred-to-ndca/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Pete v. Facebook Data Breach, 2025 U.S. Dist. LEXIS 207658 (E.D. Tex. Oct. 22, 2025), the pro se plaintiff included an erroneous citation (which the court stated it “does not know from where Plaintiff got his quoted language”) in his opposition to the defendant’s motion to dismiss, or, in the alternative, motion to transfer. Though the court ultimately granted the motion to transfer, Judge Crone reminded the plaintiff that, “as he should know by now,” he could face sanctions under Local Rule CV-11(g) for including erroneous citations generated by AI.",
@@ -14282,7 +14282,7 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-99ce8922b449.pdf",
     "unverified": false
   },
   {
@@ -14543,7 +14543,7 @@
     "date": "2025-10-15",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.westlaw.com/Document/I67ba94e0aabc11f0a8ecb6652357332f/View/FullText.html?transitionType=Default&contextData=(sc.Default)&VR=3.0&RS=cblt1.0",
+    "link": "https://www.courtlistener.com/docket/70189736/polinski-v-united-states/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Polinski v. United States, 2025 WL 2935059 (Fed. Cl. Oct. 15, 2025), the pro se plaintiff included hallucinated citations (“cases that do not exist”) in his emergency motion for declaratory judgment and emergency motion to recognize and enforce express trust. The court reminded the plaintiff that Federal Rule of Civil Procedure 11(b) applies to attorneys and non-attorneys and “obligates any party appearing before this Court—including pro se litigants—t o, at a minimum, ‘confirm the existence and validity of[] the legal authorities on which they rely.” Judge Roumel noted that other courts have imposed sanctions for similar conduct but declined to do so here, as the plaintiff’s claims failed for lack of jurisdiction, and the defendant did not seek sanctions. However, the plaintiff was warned that sanctions could be imposed in the future for any future filings with “fictional, AI-generated legal authority.”",
@@ -14558,7 +14558,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "DC",
-    "link_source": "westlaw",
+    "link_source": "courtlistener",
     "original_link": "https://www.westlaw.com/Document/I67ba94e0aabc11f0a8ecb6652357332f/View/FullText.html?transitionType=Default&contextData=(sc.Default)&VR=3.0&RS=cblt1.0",
     "sanction_types": {
       "amount_awarded": null,
@@ -14567,7 +14567,7 @@
     },
     "_rg_id": "270c5207-affe-4670-9932-82792a17f77c",
     "pdf": "",
-    "unverified": true
+    "unverified": false
   },
   {
     "id": 406,
