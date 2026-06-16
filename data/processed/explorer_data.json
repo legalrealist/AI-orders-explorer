@@ -4274,7 +4274,7 @@
     "date": "2026-03-18",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/south-carolina/scdce/7:2024cv06192/296694",
+    "link": "https://www.courtlistener.com/docket/70884683/brooks-v-amazon-data-services-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Brooks v. Amazon Data Servs., Inc., No. 2:25-cv-01294-HL (D. Or. Mar. 18, 2026), the pro se plaintiff filed a response to the defendant’s motion for summary judgment that contained citations and authorities that “appear to be inaccurate or non-existent.” The court stated that it had “reason to believe” the plaintiff used a GenAI tool in the preparation of the brief and that the tool “hallucinated” certain legal authorities. Although the court recognized that pro se litigants “may seek technological assistance when preparing filings,” it emphasized that it is the litigant’s responsibility to ensure that all filings “are accurate, truthful, and grounded in existing law and authority” under Fed. R. Civ. P. 11(b). The court prohibited the plaintiff from using any GenAI tool to draft or assist in drafting any future filings in the case and ordered that all future briefs or motions include a certification under penalty of perjury that the filing “was prepared solely by [the plaintiff] and was not drafted or assisted by any [GenAI] tool.” The court warned that failure to comply may result in sanctions, including dismissal of claims or striking of filings.",
@@ -4294,14 +4294,14 @@
     "jurisdiction": "US",
     "state_abbr": "OR",
     "_rg_id": "acb8ba86-1107-4b9b-97f5-1cc1b7cb7d89",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/90e52d6c-8b86-4bbb-9ddb-1c0fcd79b281/?context=1519217",
     "sanction_types": {
       "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-acb8ba861107.pdf",
     "unverified": false
   },
   {
@@ -8815,7 +8815,7 @@
     "date": "2026-01-16",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://dockets.justia.com/docket/new-york/nyndce/5:2024cv01206/145250",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Tiffany K. v. Comm'r of Soc. Sec., 2026 U.S. Dist. LEXIS 9392 (E.D. Mich. Jan. 16, 2026), the plaintiff’s counsel cited to a nonexistent case in her briefing “likely caused by use of [GenAI].” Judge Patti warned counsel and her law firm that “citations of this sort and unconfirmed use of AI have led to sanctions” and that “future instances of this will not be tolerated.” Judge Patti granted the plaintiff’s motion for summary judgment and remanded the case to the Commissioner of Social Security on other grounds.",
@@ -8830,7 +8830,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "MI",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/fca3cc3d-7ff0-4462-a3b6-87b1bae25b25/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -8839,7 +8839,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 249,
