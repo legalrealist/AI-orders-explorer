@@ -8,7 +8,7 @@
     "date": "2026-05-08",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/nevada/supreme-court/1994/24302-1.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In State v. Stroup, 2026 Mont. LEXIS 650 (Mont. May 8, 2026), the defendant’s attorney filed a motion to dismiss that the defendant claimed mistakenly contained “appended research and work-product materials,” which the court determined were “implie[dly] . . . prepared with the use of [GenAI].” The filing lacked the necessary GenAI disclosure required by Local Rule 3(g). After counsel filed a corrected motion with a proper certification, the trial court vacated the defendant’s trial date sua sponte, rejected all defense filings, and characterized the conduct as reflecting not only the “inept use of GenAI but also an unacceptable level of practice before this [c]ourt.” The trial court also “took judicial notice that [defense] counsel had allegedly filed documents in two other cases before him that similarly failed to properly disclose her use of GenAI in their preparation.” The defendant then petitioned the Montana Supreme Court to disqualify the trial judge, arguing that the judge’s response to the GenAI disclosure violation evinced personal bias. The Supreme Court denied the petition, holding that the trial court’s decision to “impose sanctions of a kind permitted under Local Rule 3(g), when counsel admittedly violated Rule 3(g) on numerous occasions involving at least three separate cases,” did not demonstrate personal bias or prejudice sufficient to warrant disqualification.",
@@ -30,10 +30,10 @@
       "amount_awarded": null
     },
     "_rg_id": "28cff554-a777-446f-abf0-db2db85f1127",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/96b46a7e-3e7f-4f45-b4ab-b025caa29ead/?context=1000516",
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 1,
@@ -152,7 +152,7 @@
     "date": "2026-05-07",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/new-mexico/nmdce/1:2019cv00008/409821/80/",
+    "link": "https://www.courtlistener.com/docket/8483367/neri-v-albuquerque-public-schools/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Neri v. Bd. of Educ. for Albuquerque Pub. Sch., No. 1:19-cv-00008-JCH-SCY, 2026 U.S. Dist. LEXIS 101246 (D.N.M. May 7, 2026), the pro se plaintiff cited a nonexistent case.  The court reminded the plaintiff that to the extent that the citation was the result of GenAI misuse, courts “courts ordinarily do not coddle a plaintiff who cites to fake, nonexistent, or misleading authorities,” cautioned her against using GenAI to draft her pleadings, and warned it may impose sanctions for future misconduct.  The court denied the plaintiff’s motion for reconsideration on other grounds.",
@@ -168,7 +168,7 @@
     "jurisdiction": "US",
     "state_abbr": "NM",
     "_rg_id": "d03f1139-d86c-4722-986f-9ef9429fdcc7",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/1a5312a8-fda7-4dcb-972b-0e102c1a0662/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -391,7 +391,7 @@
     "date": "2026-05-05",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://caselaw.findlaw.com/court/in-supreme-court/1259463.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Payne v. State, No. S26A0459, 2026 Ga. LEXIS 136 (May 5, 2026), the assistant district attorney included nine citations that do not exist or “do not stand for the proposition asserted” in her response to the defendant’s motion for a new trial.  The order denying the defendant’s motion (which was “largely prepared by [the ADA]”) and the ADA’s response to the defendant’s appeal also included citation errors.  The ADA admitted to using GenAI in her briefs and proposed order without verification.  She also “withdrew reliance” on nine citations in her appellate brief.  The court relied on its inherent authority and Georgia Supreme Court Rule 7 to issue sanctions. The court admonished the ADA and the DA’s Office, suspended the ADA from practice in the Supreme Court of Georgia for six months, and required that the ADA complete 12 additional hours of CLE on GenAI in order to be reinstated.  The court vacated the trial court’s order and remanded the case to the trial court for a new order that “shall not contain any fictitious or misattributed case citations” and “shall not be prepared by counsel for either party.”  The court also clarified its prior order and required counsel for the State to produce “all communications it had with the trial court concerning the proposed order denying [the defendant’s] motion for a new trial.”",
@@ -410,7 +410,7 @@
       "amount_awarded": null
     },
     "_rg_id": "47e8d810-25b3-4af8-b07e-b7c6c0035ffd",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/dd216ab3-eb70-45c7-a639-119d4d8290de/?context=1000516",
     "pdf": "",
     "unverified": true
@@ -424,7 +424,7 @@
     "date": "2026-05-05",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/hawaii/hidce/1:2024cv00367/170992/36/",
+    "link": "https://www.courtlistener.com/docket/69090351/moore-v-mc-architects-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Moore v. MC Architects Inc., No. 24-00367 JMS-KJM, 2026 U.S. Dist. LEXIS 98836 (D. Haw. May 5, 2026) the court observed that plaintiff’s opposition filings contained “a number of record-and case-citation issues.”  During the show cause hearing, counsel admitted that his client “had taken a lead role in preparing the oppositions and had used AI tools in the process of doing so,” And accepted “full responsibility” for the errors.  The court therefore imposed $1,000 in sanctions.",
@@ -446,9 +446,9 @@
       "amount_awarded": null
     },
     "_rg_id": "f70158c3-30ae-4cb2-a238-a4a9c6ba96cb",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/e7cfeaff-8fb5-423e-a808-046a083b53f9/?context=1000516",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-f70158c330ae.pdf",
     "unverified": false
   },
   {
@@ -768,7 +768,7 @@
     "date": "2026-05-01",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/new-mexico/nmdce/1:2023cv01013/494954/43/",
+    "link": "https://www.courtlistener.com/docket/68067473/carter-v-uzglobal-llc/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Carter v. Uzglobal LLC, 2026 U.S. Dist. LEXIS 96883 (D.N.M. May 1, 2026), the attorney for the plaintiffs filed a response brief and two motions to compel that collectively contained sixteen hallucinated cases. The court found that an associate attorney at counsel’s firm had drafted the filings using GenAI, and that the signing attorney “reviewed” the briefs for “writing style, argument, etc.” but “did not verify the cases cited.” The court noted that opposing counsel had notified plaintiffs that they had cited an “unlocatable case” in April 2025, yet the signing attorney “proceeded to file the two compromised motions to compel in June” without reviewing her briefs until “alerted a second time by another attorney.” The court found that the signing attorney violated Rule 11, holding that “submitting documents with AI-hallucinated cases is objectively unreasonable” and that an attorney “cannot delegate her obligations under Rule 11.” The court imposed sanctions, but noted that the attorney “did not attempt to avoid responsibility,” “self-reported to the New Mexico state bar,” took a CLE course, and “offered to pay reasonable attorney fees.” As sanctions, the court ordered the attorney to self-report to the Texas state bar and disciplinary boards, to update her New Mexico state bar reporting with a copy of this order, and pay a $1,000 fine to the Clerk of Court, submit proof of attendance at an AI-focused CLE course. The court also permitted the defendants to move for an award of attorney fees and costs.",
@@ -787,9 +787,9 @@
       "amount_awarded": null
     },
     "_rg_id": "8ead6386-a0e0-4bb1-b0a1-a3a41eb3cf62",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/1e736d9a-8f18-43c5-b51d-8ce298aabe45/?context=1000516",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-8ead6386a0e0.pdf",
     "unverified": false
   },
   {
@@ -941,7 +941,7 @@
     "date": "2026-04-29",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/kansas/ksdce/2:2025cv02126/156929/26/",
+    "link": "https://www.courtlistener.com/docket/69745211/redmond-v-dairy-farmer-of-america/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Redmond v. Dairy Farmers of Am., 2026 U.S. Dist. LEXIS 82609 (D. Kan. Apr. 14, 2026), the attorney for the plaintiff cited a case that neither the defendant nor the court could locate, among other instances of quoting or citing cases that “do not contain such quotes or propositions.” The court “strongly suspect[ed] that these errors are attributable to the careless use of [GenAI]” and warned counsel that “further errors like these will lead to sanctions” under Fed. R. Civ. P. 11 and the court’s recent standing order on the use of GenAI. The court granted the defendant’s motion on other grounds.",
@@ -958,14 +958,14 @@
     "jurisdiction": "US",
     "state_abbr": "KS",
     "_rg_id": "e9d631be-666d-42c9-a1bd-7c8e5e51dd51",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/24a90400-807d-4b02-81e9-3df0a898b396/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-e9d631be666d.pdf",
     "unverified": false
   },
   {
@@ -1050,7 +1050,7 @@
     "date": "2026-04-09",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/illinois/ilndce/1:2023cv13985/445832/221/",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Diallo v. 50 E. Chestnut Condo. Ass’n, No. 23-cv-13985, 2026 U.S. Dist. LEXIS 77536 (N.D. Ill. Apr. 9, 2026), the pro se plaintiff cited a case in his response brief with an incorrect reporter citation that, upon investigation, did not support his asserted proposition. The court found that the citation “may have been fabricated, perhaps with the use of [GenAI] applications.” The court reminded all parties that Fed. R. Civ. P. 11 requires a reasonable inquiry into the accuracy of filings and that failure to review filings for accuracy may result in sanctions. The court granted in part and denied in part the defendants’ motions to dismiss on other grounds.",
@@ -1067,7 +1067,7 @@
     "jurisdiction": "US",
     "state_abbr": "IL",
     "_rg_id": "fb8e2239-c55e-441c-b227-9d7c8afbc411",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/4ff89aa4-badf-425c-8ded-c47e80ee1454/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -1075,7 +1075,7 @@
       "types": []
     },
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 31,
@@ -1086,7 +1086,7 @@
     "date": "2026-04-03",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/new-york/other-courts/2026/2026-ny-slip-op-26048.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Michaelis v. Wilmington Sav. Fund Soc'y, 2026 N.Y. Misc. LEXIS 2581 (N.Y. Sup. Ct. Apr. 3, 2026), the pro se plaintiff filed several repetitive motions in which “virtually every legal citation” was “‘hallucinated’ through the use of [GenAI].” The court opined that its rules require all litigants, including self-represented parties, to submit a certification confirming either that no GenAI was used in drafting, or that all GenAI-generated text, including citations, quotations, and legal analysis, was reviewed for accuracy. The court noted that, “[i]n the normal course,” the motion would have been denied without prejudice for lack of this certification and for clear evidence of unreviewed GenAI use but proceeded to address the merits due to “newly discovered” evidence. In doing so, the court denied the motions on other grounds.",
@@ -1101,7 +1101,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "NY",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/13b96af5-a03f-450f-b339-372197639e3a/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -1110,7 +1110,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 32,
@@ -1121,7 +1121,7 @@
     "date": "2026-04-03",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2:2025cv01671/352116/28/",
+    "link": "https://www.courtlistener.com/docket/71254340/ward-v-amazoncom-services-llc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Ward v. Amazon.com Servs. LLC, 2026 U.S. Dist. LEXIS 73820 (W.D. Wash. Apr. 3, 2026), the pro se plaintiff’s opposition to the defendant’s motion for arbitration contained incorrect citations to case law that was ultimately inapplicable to the facts at hand. The court informed the plaintiff that making misrepresentations of legal authority constitutes “making a false statement to a court” and could result in sanctions. While no sanctions were imposed, Judge Evanson warned the plaintiff that “any further fictitious legal authority” included in a future filing could result in an order to show cause.",
@@ -1137,7 +1137,7 @@
     "jurisdiction": "US",
     "state_abbr": "WA",
     "_rg_id": "3ed4802b-1bc2-4d33-abc9-de66c7da2b91",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/92719041-dc3b-4cb6-b4d4-1789b8157a33/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -1191,7 +1191,7 @@
     "date": "2026-04-01",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/arkansas/court-of-appeals/2026/cv-25-106.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Hrdlichka v. Bengston, 2026 Ark. App. 205 (Ark. Ct. App. Apr. 1, 2026), the pro se appellant filed an appellate brief that contained multiple fictitious case citations not found in “any recognized legal database.” The court found that these fictitious citations, combined with pervasive failures and other procedural violations, constituted “fatal briefing deficiencies” that prevented meaningful appellate review, and dismissed the appeal. Noting that this was the court’s “first opportunity to consider the impact of fictitious cases being submitted to this court,” the court addressed at length the “growing and troubling practice” of submitting appellate briefs “generated in whole or in part through artificial-intelligence tools that contain fabricated, inaccurate, or nonexistent legal citations.” The court emphasized that the use of GenAI “does not relieve a litigant of the duty to verify the accuracy of citations,” that “technology, including [GenAI], is not a substitute for legal judgment, verification, and professional diligence,” and warned that filings containing fabricated citations “may be struck, and appropriate sanctions, such as dismissal, may be imposed where warranted.” The court concluded by urging litigants to be cognizant of the court’s awareness of issues related to pervasive GenAI use and their zero-tolerance policy for “fraud…in violation of [the court’s] rules.”",
@@ -1213,11 +1213,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/9ed79999-6a8a-4d7e-b8d2-c4cda603ac10/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 35,
@@ -1401,7 +1401,7 @@
     "date": "2026-04-29",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.pacermonitor.com/public/case/58267483/Adams_v_Kiewit_Infrastructure_West_Company_et_al",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Any Parties",
     "summary": "In Adams v. Kiewit Infrastructure W. Co., 2026 U.S. Dist. LEXIS 93911 (D. Ariz. Apr. 29, 2026), the pro se plaintiff    filed a motion which contained multiple procedural deficiencies, including failure to comply with local rules and failure to meet and confer with the defendants. The filing also contained hallucinated case citations, which “allow[ed] the Court to infer that Plaintiff prepared her filing with the use of [GenAI].” The court noted that while GenAI use “is not necessarily problematic, the failure to confirm the accuracy of the filing is,” and that Rule 11 requires parties to verify accuracy regardless of pro se status. The court warned that the plaintiff is “now on notice that the use of hallucinated cases or the filing of documents with related inaccuracies will result in sanctions.” The court struck the motion in part because of the GenAI hallucinations.",
@@ -1423,7 +1423,7 @@
       "amount_awarded": null
     },
     "_rg_id": "351d8eaf-977a-442b-9dc9-8db096918103",
-    "link_source": "other",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/9dca2f66-752a-46b3-9995-16115b53ec27/?context=1000516",
     "pdf": "",
     "unverified": true
@@ -1640,7 +1640,7 @@
     "date": "2026-04-24",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/alabama/supreme-court/2026/sc-2025-0600.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Ibach v. Stewart, No. SC-2025-0106, 2026 Ala. LEXIS 45 (Apr. 24, 2026), the attorney for the appellant filed briefs that “contain[ed] an astounding number of invalid, inaccurate, and irrelevant citations to legal authorities.”&#160; In response to the order to show cause, the attorney moved to withdraw from the case.&#160; He admitted to GenAI use, apologized, accepted responsibility, and “conceded that sanctions were appropriate.”&#160; He also self-reported to the Alabama State Bar and reimbursed the appellee’s counsel for “the fees and costs incurred in responding to the fabricated legal authorities.”&#160; In deciding whether to impose sanctions, the court noted that the attorney “appears . . . remorseful,” but ultimately reasoned that “regardless of whether&#160;[the attorney]&#160;included the AI hallucinations intentionally, recklessly, or negligently, the result is the same -- the wasteful expenditure of precious resources by both the opposing party and the courts.”&#160; The court concluded that the briefs were “wholly inadequate under&#160;Rule 28, Ala. R. App. P” because they failed to support their legal arguments.&#160; The court dismissed the appeal and denied the motion to file supplemental briefs, as “the Alabama Rules of Appellate Procedure do not contemplate allowing a party whose attorney has filed a poor brief to simply file a new brief . . . after the briefing period has closed.”&#160; The court additionally concluded that the appeal was frivolous and thus subject to sanctions under Rule 38, Ala. R. App. P.&#160; The court ordered the attorney to pay $17,200 in attorney fees and costs to the appellee’s attorney (including any amount that has already been paid) and double costs to the court.&#160; The court also prohibited the attorney from filing any other documents in the court unless another attorney in good standing signs the filing and referred him to the Alabama State Bar.&#160; The court also granted the attorney’s motion to withdraw.",
@@ -1659,10 +1659,10 @@
       "amount_awarded": null
     },
     "_rg_id": "737b595f-de00-40c1-8b42-ab2167800bd2",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/86c1f685-bf0e-4261-af2f-d5c5e718ec3c/?context=1000516",
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 48,
@@ -2430,7 +2430,7 @@
     "date": "2026-04-07",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://docs.justia.com/cases/federal/district-courts/california/candce/5:2024cv06798/437227/75",
+    "link": "https://www.courtlistener.com/docket/69204298/nguy-v-jabil-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Than Nguy v. Jabil Inc., No. 24-cv-06798-EKL (VKD), 2026 U.S. Dist. LEXIS 75791 (N.D. Cal. Apr. 7, 2026), the defendant asked the court to sanction plaintiff’s counsel for including an allegedly fabricated case citation in the plaintiff’s opposition to a motion for sanctions.&#160; Magistrate Judge DeMarchi also expressed “concern[] that [the plaintiff’s] counsel may have relied on [GenAI] to identify legal authorities.” The court, however, declined to impose sanctions for the fictitious citation because the plaintiff’s counsel corrected the filing the next day and took steps to ensure a similar mistake would not happen in the future. The court reminded all parties that failure to verify citations or assertions is grounds for potential sanctions under Fed. R. Civ. P. 11.",
@@ -2446,7 +2446,7 @@
     "jurisdiction": "US",
     "state_abbr": "CA",
     "_rg_id": "2c6e622a-dd3a-4759-aab4-6939f92923ab",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/bfe06d99-3825-4619-8415-a31dbfac0320/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -2964,7 +2964,7 @@
     "date": "2026-03-31",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/district-courts/illinois/ilcdce/3:2025cv03002/94965/36/",
+    "link": "https://www.courtlistener.com/docket/69513425/feldman-v-district-6-board-of-education/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Feldman v. Dist. 6 Bd. of Educ., 2026 U.S. Dist. LEXIS 69063 (C.D. Ill. Mar. 31, 2026), the attorney for plaintiffs filed a response to the defendants’ motion to dismiss in a student disability and harassment case that cited nonexistent cases and attributed unsupported legal propositions to real cases on multiple occasions. The court observed in a footnote that certain cited cases “d[id] not appear to exist, along with many others,” and that other citations, “[a]lthough the case exists, the quote does not, and the proposition the case is cited for was not a point of discussion.” The court warned that “any future citation to nonexistent cases, cases for legal propositions not discussed or supported, or other false representations to the Court will result in a show cause hearing and consideration of sanctions.” The court granted in part and denied in part the defendants’ motion to dismiss on other grounds.",
@@ -2981,14 +2981,14 @@
     "jurisdiction": "US",
     "state_abbr": "IL",
     "_rg_id": "a9df5928-9d15-4f8f-ab80-2da09e9043e7",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/ce84a294-b19e-49ce-bce8-27a50609006c/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-a9df59289d15.pdf",
     "unverified": false
   },
   {
@@ -3000,7 +3000,7 @@
     "date": "2026-03-31",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://docs.justia.com/cases/federal/district-courts/illinois/ilndce/1:2024cv07870/463710/54",
+    "link": "https://www.courtlistener.com/docket/69130780/ella-and-ramin-llc-v-travelers-insurance-company/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Ella & Ramin LLC v. Travelers Ins. Co., 2026 U.S. Dist. LEXIS 69445 (N.D. Ill. Mar. 31, 2026), the pro se plaintiff repeatedly misrepresented citations and caselaw in his briefs but openly admitted to using GenAI to prepare his filings. He also asserted that he took care to avoid legal misrepresentations. The court noted that “[f]ew of the cases [the plaintiff] cited support the proposition for which he cite[d] them,” that some were completely unrelated to the asserted propositions, and that one case could not be identified in any legal database despite the parallel citations provided. The plaintiff moved for Rule 11 sanctions against the defendants’ counsel for raising the possibility of GenAI-related errors in their reply brief, but the court denied the motion as frivolous, holding that the defendants’ counsel “plainly had a good-faith basis to call the Court’s attention to potential mistakes or misrepresentations of the law” and that attorneys are “in fact obligated to raise such mistakes when necessary.”  Citing recent Seventh Circuit authority, the court noted that “all litigants—represented and unrepresented—must read their filings and take reasonable care to avoid misrepresentations, factual and legal.” The court granted the defendants’ partial motion to dismiss in part and denied it in part on other grounds.",
@@ -3017,7 +3017,7 @@
     "jurisdiction": "US",
     "state_abbr": "IL",
     "_rg_id": "65a4939d-042c-45d9-97f1-0fd7af8669bf",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/175f661e-7114-4838-9acb-cef526cd97e0/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -3219,7 +3219,7 @@
     "date": "2026-03-30",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/appellate-courts/ca7/25-2417/25-2417-2026-03-30.html",
+    "link": "https://www.courtlistener.com/docket/71136441/danuta-dec-v-markwayne-mullin/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Dec v. Mullin, 2026 U.S. App. LEXIS 9085 (7th Cir. Mar. 30, 2026), the attorney for the plaintiff-appellant included two nonexistent case citations and a false quotation in her opening brief on appeal, which the court found had “tell-tale signs of [GenAI] hallucinations.” When questioned at oral argument, counsel could not explain the citations, denied using AI, and stated she “presumably copied and pasted that portion from another brief” but could not locate the source. In a post-argument letter, counsel reiterated that she did not use AI, took responsibility, and apologized.  Acknowledging the “promise and pitfalls” of AI in litigation, but expressing belief in the attorney’s “representation that she did not use AI,” the court reminded counsel that lawyers must not “knowingly misrepresent, mischaracterize, misquote, or miscite facts or authorities” and that violations “result in confusion and time wasted,” generating “unnecessary work on a case within a case.” The court publicly admonished counsel but declined to issue a show cause order for further sanctions, finding her acceptance of responsibility and apology persuasive and noting that the errors were few and “mainly supported the undisputed standard of review.” The court affirmed the dismissal on other grounds.",
@@ -3240,7 +3240,7 @@
       "amount_awarded": null
     },
     "_rg_id": "d8a6c5c2-4ab2-430d-a5c5-aa4abfa9325c",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/3cad332e-5b47-4e69-b933-28649a94f051/?context=1000516",
     "pdf": "",
     "unverified": false
@@ -3441,7 +3441,7 @@
     "date": "2026-03-27",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/appellate-courts/ca3/24-2704/24-2704-2026-03-27.html",
+    "link": "https://www.courtlistener.com/docket/70677302/stephen-mccarthy-v-dea/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In McCarthy, P.A. v. United States DEA, No. 24-2704, 2026 U.S. App. LEXIS 9000 (3d Cir. Mar. 27, 2026), the appellant’s counsel “relied on case overviews generated by AI and provided to him by a non-attorney . . . without verifying the existence or accuracy of the citations” for his opening brief. The Government noted the “factual and legal inaccuracies” in its response brief. The appellant’s counsel then failed to check the citations in his Reply Brief, characterizing erroneous citations as “a good faith effort to chronicle Agency disparities, [and that there were] some immaterial misstatements about the cited cases' tangential details.” In response to the court’s order to provide copies of the cases, the appellant’s counsel “disclosed, for the first time, that the seven summaries were inaccurate and that one authority was hallucinated by AI,” and admitted that he first suspected GenAI use months earlier. The court ordered counsel to show cause. After a hearing, the court found that the attorney violated his duty to provide competent representation to a client under Pa. R.P.C. 1.1. In considering sanctions, the court found that the attorney’s apologies and corrective measures were mitigating factors, along with the fact that the court had “not yet addressed the failure of attorneys to use AI with appropriate guardrails” and that it did not specifically ask the attorney to address the rule. The court imposed a sanction of reprimand, involving notifying “‘all other courts before whom [Attorney] is admitted to practice and the National Disciplinary Data Bank of this discipline’ and provide them with a copy of the opinion imposing this discipline.” The court noted that it would have imposed monetary sanctions had this not been the first opportunity to address GenAI use. In a dissenting opinion, Judge Roth wrote that this case called for more severe sanctions because of the multiple instances of sanctionable conduct, the fact that the attorney received early notice of his mistakes, and that the court should not have to “explicitly forewarn against improper AI use” when it falls within existing legal rules.",
@@ -3462,7 +3462,7 @@
       "amount_awarded": null
     },
     "_rg_id": "7a66f4c3-bc74-41a0-a2aa-30720f0922e4",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/35d8972d-896b-43de-b153-1e08be15c942/?context=1000516",
     "pdf": "",
     "unverified": false
@@ -3476,7 +3476,7 @@
     "date": "2026-03-27",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/michigan/miedce/1:2025cv13704/390504/43/",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Shaltry v. Benzing, 2026 U.S. Dist. LEXIS 66498 (E.D. Mich. Mar. 27, 2026), the pro se plaintiff filed multiple motions which contained false quotations and citations that the court identified as apparent GenAI hallucinations. On multiple occasions, the plaintiff attributed quotations to real cases that appeared nowhere in those opinions and cited at least one case the court was unable to find at all. The court noted that the closest a cited case came to supporting the plaintiff’s proposition “actually cuts the other way.” Citing recent Sixth Circuit authority that states, “‘no brief, pleading, motion, or any other paper filed in any court should contain any citations—whether provided by [GenAI] or any other source—that a lawyer has not personally read and verified,’” the court emphasized that the plaintiff’s pro se status does not alleviate him of his duties under Rule 11. The court cautioned the plaintiff that “further misrepresentations of fact or law will result in a recommendation for sanctions,” and denied struck the plaintiff’s motions on other grounds.",
@@ -3493,7 +3493,7 @@
     "jurisdiction": "US",
     "state_abbr": "MI",
     "_rg_id": "86e695cb-5aa0-4c91-9aa9-995f7e8d1c04",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/d66d75a3-fd19-4af2-94f5-986a86430f08/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -3501,7 +3501,7 @@
       "types": []
     },
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 100,
@@ -3512,7 +3512,7 @@
     "date": "2026-03-27",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/district-courts/delaware/dedce/1:2021cv00374/74926/200/",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Amtrust N. Am. v. Liberty Mut. Ins. Co., No. A-2587-24, 2026 N.J. Super. Unpub. LEXIS 633 (Super. Ct. App. Div. Mar. 27, 2026), the plaintiff’s counsel “cite[d] to four cases in his merits brief that do not exist,” whch the court suspected was the result of GenAI misuse. When the defendants pointed out in their opposition brief that they could not find one of the cases, the plaintiff’s counsel merely responded by pointing to “the existence of a case . . . with a similar citation,” but otherwise defending its position. The court was “stunned by the carelessness and dismissiveness of this statement,” noting that citing hallucinated cases, as the plaintiff’s authorities seemed to be, violates both state rules of professional conduct and court rules. The court found that this conduct warranted a “rare” sanction in part because the plaintiff’s counsel “flippantly disregarded the error and failed to make the appropriate retraction” and “glibly ignored the issue in his reply brief, in contravention of his duty of candor to the tribunal.” The court imposed a $1,000 sanction on the plaintiff’s counsel and dismissed the complaint without prejudice.",
@@ -3534,11 +3534,11 @@
       "amount_sought": null,
       "amount_awarded": "$1,000"
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/e465f542-3668-4eb0-94be-3cbc997fe254/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 101,
@@ -3585,7 +3585,7 @@
     "date": "2026-03-27",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/new-york/other-courts/2025/2025-ny-slip-op-34208-u.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Vichie v. Wheat, 2026 N.Y. Misc. LEXIS 2006 (N.Y. Sup. Ct. Mar. 27, 2026), the plaintiffs filed a cross motion for sanctions following one of the defendant’s “inadvertent” citations to an incorrect case and a hallucinated case in his motion for sanctions against the plaintiffs. The court determined that the defendant’s conduct was not “frivolous” under 22 NYCRR § 130-1.1 and denied the plaintiffs’ cross-motion for sanctions, but reminded the defendant of his duty to verify all legal and factual citations in future filings.",
@@ -3601,7 +3601,7 @@
     "jurisdiction": "US",
     "state_abbr": "NY",
     "_rg_id": "d6688e93-eabe-4456-acd5-7778d455f85f",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/ea34bfa0-42ed-42e9-aee8-02323086fbe0/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -3609,7 +3609,7 @@
       "types": []
     },
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 103,
@@ -3620,7 +3620,7 @@
     "date": "2026-03-26",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/district-courts/alabama/alndce/2:2024cv01424/191755/59/",
+    "link": "https://www.courtlistener.com/docket/72078143/state-national-insurance-company-inc-v-treadwell/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In State Nat'l Ins. Co. v. Treadwell, 2026 U.S. Dist. LEXIS 72098 (N.D. Ala. Mar. 26, 2026), the attorney for defendants filed a response to a motion filed by plaintiff that contained two fabricated quotations attributed to two different cases, neither of which existed in the cited authorities or anywhere else. The court issued an order to show cause, and counsel admitted to using ChatGPT and OpenCase to draft the filing, confirming that the quotations were hallucinations of one or both GenAI tools and that he did not thoroughly verify the citations before filing. The court found counsel’s conduct “akin to contempt” under Rule 11, noting his “cavalier approach to these proceedings,” which included a late-filed and unedited response to the show cause order and tardiness to the show cause hearing. Citing its own prior decision emphasizing that citations to fake legal authority “pose a serious threat to the fair administration of justice,” the court imposed a public reprimand, ordering counsel to provide a copy of the order to opposing counsel and the presiding judge in every pending case in which he is counsel of record and directing the Clerk to submit the order for publication in the Federal Supplement. The court declined to refer the matter to the state bar, impose monetary sanctions, or suspend counsel, but warned that each of these options “is on the table” for any future infraction.",
@@ -3643,9 +3643,9 @@
       "amount_awarded": null
     },
     "_rg_id": "27ad861f-febd-40de-96cb-b582f714ea7c",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/47e4be0f-b232-4fa7-a2c2-bb4d516243e0/?context=1000516",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-27ad861ffebd.pdf",
     "unverified": false
   },
   {
@@ -3831,7 +3831,7 @@
     "date": "2026-03-24",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/district-courts/utah/utdce/4:2025cv00018/154440/136/",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Harris v. Wash. Cty., No. 4:25-cv-00018-AMA-PK, 2026 U.S. Dist. LEXIS 63209 (D. Utah Mar. 24, 2026), the defendants asked the court to sanction the plaintiff based on the court’s prior “admonish[ment] . . .  against using fake AI citations.” However, the court noted that it had simply warned the plaintiff to be careful if using GenAI, and the plaintiff had proposed safeguards that the court found to be adequate. The court noted that it would “address any future misuse of AI should it occur.” Judge Kohler therefore denied the defendants’ motion for sanctions.",
@@ -3847,7 +3847,7 @@
     "jurisdiction": "US",
     "state_abbr": "UT",
     "_rg_id": "0ca56db0-c769-42b3-9cd5-aebc66d3a11c",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/01086eac-de05-43e3-8820-e3af7af874a3/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -3855,7 +3855,7 @@
       "types": []
     },
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 110,
@@ -4051,7 +4051,7 @@
     "date": "2026-03-20",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/nebraska/supreme-court/2026/s-25-295.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Prososki v. Regan, 2026 Neb. LEXIS 38, 321 Neb. 38 (Neb. Mar. 20, 2026), counsel for the appellant in a dissolution of marriage appeal filed a brief containing numerous fictitious case citations, real cases with fabricated quotations and mischaracterized holdings, and fictitious quotations. The appellee moved to strike the brief and dismiss the appeal, asserting that the errors were the product of GenAI. Counsel denied using GenAI, attributing the errors to “sloppy” copying and pasting from Westlaw and having filed the wrong draft due to “a screen crack on his laptop,” but the court found this explanation “lack[ed] credibility” given the volume of fictitious quotations that could not be located anywhere in Nebraska jurisprudence. Noting that this presented a novel issue for Nebraska courts, the court held that the submission of fictitious authority, whether through GenAI or not, “can be resolved by application of [Nebraska’s] existing rules of professional conduct and court rules,” including the duties of candor toward the tribunal, competence, diligence, and good faith argumentation. The court struck the appellant's brief, dismissed his appeal, and referred his counsel to the Counsel for Discipline of the Nebraska Supreme Court.",
@@ -4076,11 +4076,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/5016b497-4301-446a-a291-8d08655faeca/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 116,
@@ -4237,7 +4237,7 @@
     "date": "2026-03-19",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/washington/court-of-appeals-division-iii/2026/40344-1.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In In re Est. of Carey v. Whitman, 2026 Wash. App. LEXIS 562 (Wash. Ct. App. Mar. 19, 2026), the pro se appellant’s briefs contained citations to “incorrect, chimerical, or inapplicable case law” throughout, including citations to cases that did not exist and misquotations or misrepresentations of the holdings of cases that did exist. The court declined to review arguments premised on fictitious authority, holding that citations to fictitious legal authority “equates to a lack of legal authority” under Rule of Appellate Procedure 10.3(a)(6), which requires parties to provide citations to relevant legal authority in support of their arguments. The court also found the appeal “so devoid of merit that there was no possibility for reversal,” thus rendering it frivolous. While the court declined to impose independent sanctions for the appellant's use of fictitious case law and failure to comply with the Rules of Appellate Procedure, it did impose sanctions for the appellant’s frivolous appeal and granted attorneys fees to appellees",
@@ -4259,11 +4259,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/2c798fdc-321c-43cf-8787-0b674a431baa/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 121,
@@ -4274,7 +4274,7 @@
     "date": "2026-03-18",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/south-carolina/scdce/7:2024cv06192/296694",
+    "link": "https://www.courtlistener.com/docket/70884683/brooks-v-amazon-data-services-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Brooks v. Amazon Data Servs., Inc., No. 2:25-cv-01294-HL (D. Or. Mar. 18, 2026), the pro se plaintiff filed a response to the defendant’s motion for summary judgment that contained citations and authorities that “appear to be inaccurate or non-existent.” The court stated that it had “reason to believe” the plaintiff used a GenAI tool in the preparation of the brief and that the tool “hallucinated” certain legal authorities. Although the court recognized that pro se litigants “may seek technological assistance when preparing filings,” it emphasized that it is the litigant’s responsibility to ensure that all filings “are accurate, truthful, and grounded in existing law and authority” under Fed. R. Civ. P. 11(b). The court prohibited the plaintiff from using any GenAI tool to draft or assist in drafting any future filings in the case and ordered that all future briefs or motions include a certification under penalty of perjury that the filing “was prepared solely by [the plaintiff] and was not drafted or assisted by any [GenAI] tool.” The court warned that failure to comply may result in sanctions, including dismissal of claims or striking of filings.",
@@ -4294,14 +4294,14 @@
     "jurisdiction": "US",
     "state_abbr": "OR",
     "_rg_id": "acb8ba86-1107-4b9b-97f5-1cc1b7cb7d89",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/90e52d6c-8b86-4bbb-9ddb-1c0fcd79b281/?context=1519217",
     "sanction_types": {
       "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-acb8ba861107.pdf",
     "unverified": false
   },
   {
@@ -4454,7 +4454,7 @@
     "date": "2026-03-18",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/oregon/court-of-appeals/2026/a181982.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Doiban v. Or. Liquor & Cannabis Comm'n, 347 Or. Ct. App. 742 (Mar. 18, 2026), the petitioner’s counsel included in the opening brief “case citations to nonexistent cases and quotations that did not exist anywhere in Oregon case law.” In response to the order to show cause, the petitioner’s counsel apologized and explained that he failed to verify the citations and quotations from legal research delegated to his staff. He further explained that his office does not permit GenAI use for drafting legal documents or conducting legal research and that they did not use GenAI for actual drafting, although they did use it for administrative tasks. Counsel explained that he believes the errors were from what they thought were legitimate sources found through internet searches . Counsel and the law firm took steps to remedy the errors, including reviewing all citations in all court filings, restriction of citation to only Westlaw and Lexis databases or “other published and verified legal precedent,” and implementation of a “system of increased review” to permit additional time for verification and accuracy. Despite these proposed corrective actions, the court found that a $10,000 sanction on the petitioner’s counsel was warranted, particularly because the respondent’s counsel pointed out the errors, but the petitioner’s counsel did not acknowledge or address them until the court acted, thereby “minimiz[ing] the gravity of the situation.” The court allowed the petitioner to file a replacement brief, limited to the same arguments, relying only on the nonfabricated authorities.",
@@ -4474,11 +4474,11 @@
       "amount_sought": null,
       "amount_awarded": "$10,000"
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/27594df5-bfee-4c17-be48-8c3920c8846e/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 127,
@@ -4489,7 +4489,7 @@
     "date": "2026-03-18",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/oregon/court-of-appeals/2026/a181982.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Doiban v. Or. Liquor & Cannabis Comm’n, 2026 Ore. App. LEXIS 361 (Or. Ct. App. Mar. 18, 2026), petitioner’s counsel filed an opening brief in an administrative appeal that contained at least fifteen fabricated case citations and at least nine nonexistent quotations. Counsel explained that law firm staff used an “unverified search engine” for legal research after finding limited results on traditional platforms, but admitted that the resulting citations were not verified in Westlaw or Lexis before filing. Although counsel maintained that his office policy prohibits the use of GenAI for drafting or legal research, the court was skeptical that a “bad search engine” alone could account for the errors. Notably, opposing counsel flagged the fabricated citations months before oral argument, but petitioner's counsel did not respond or seek to correct them for seven months, acknowledging the errors only when questioned by the court at oral argument. The court found that sanctions were warranted under ORCP 17 C(3), which provides that an attorney who signs a brief certifies that its legal positions are warranted by existing law. The court imposed a $10,000 monetary sanction on counsel, permitted the filing of a replacement brief which cites only to the “five remaining [non-hallucinated] cases listed in the table of authorities” (provided that those cases are accurately described), and required counsel to certify that GenAI was not used to produce the redacted brief and that all citations had been personally verified.",
@@ -4512,11 +4512,11 @@
       "amount_sought": null,
       "amount_awarded": "$10,000"
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/1f29fb30-b73b-44c2-bb17-4bcd9f7c6921/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 128,
@@ -4669,7 +4669,7 @@
     "date": "2026-03-16",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/federal/district-courts/new-jersey/njdce/2:2025cv07589/572827/48/",
+    "link": "https://www.courtlistener.com/docket/70472901/pridgen-v-amazoncom-services-llc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Pridgen v. Amazon.com Servs. LLC, 2026 U.S. Dist. LEXIS 54341 (D.N.J. Mar. 16, 2026), the pro se plaintiff filed an opposition to the defendant's motion to dismiss; that opposition cited a nonexistent case to support the proposition that courts “routinely permit pro se plaintiffs to plead class claims.” Judge Padin stated that the court “does not tolerate hallucinated citations” and that “[l]itigants who use [GenAI] must disclose such use to this Court and litigants must review the filings for accuracy,” citing her Judicial Preferences standing order. The court further noted that the plaintiff’s citation to nonexistent authority “bolsters the Court’s conclusion” that the plaintiff could not adequately represent the interests of other litigants in the putative class action. The court warned that future filings containing hallucinated citations will be stricken and that the plaintiff may be subject to additional sanctions. The court granted the defendant's motion to dismiss on other grounds.",
@@ -4685,7 +4685,7 @@
     "jurisdiction": "US",
     "state_abbr": "NJ",
     "_rg_id": "aaac8911-e8ac-4515-b5e2-feabb36ecbf0",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/2aad5645-0482-4f70-90ca-532b50a33995/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -4704,7 +4704,7 @@
     "date": "2026-03-16",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/washington/court-of-appeals-division-i/2026/87320-2.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Esterra Commons Venture, LLC v. Norton, 2026 Wash. App. LEXIS 543 (Wash. Ct. App. Mar. 16, 2026), the pro se appellant “quot[ed] fictitious statutory language, cite[d] inapplicable statutes, and relie[d] on cases that do not exist” throughout his appellate briefing. The court acknowledged the possibility that “such fake and non-existent legal authority was generated by [GenAI]” and warned that all litigants, including pro se parties, “are responsible to confirm their pleadings, motions, briefs, and other filings are accurate and do not contain any citations that are invented or hallucinated by [GenAI] or any other source.” The court did not impose sanctions and affirmed the trial court’s ruling on other grounds.",
@@ -4719,7 +4719,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "WA",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/9bb6153f-b866-4547-bae9-3ca045289e1d/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -4728,7 +4728,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 134,
@@ -5059,7 +5059,7 @@
     "date": "2026-03-11",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.leagle.com/decision/infdco20260402d41",
+    "link": "https://www.courtlistener.com/docket/69755747/hawkins-v-desoto-independent-school-district/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Hawkins v. DeSoto Indep. Sch. Dist., 2026 U.S. Dist. LEXIS 70417 (N.D. Tex. Mar. 11, 2026), the pro se plaintiff filed a response to the defendants’ motions to dismiss in an employment discrimination and retaliation action that contained improperly cited cases, at least two of which did not exist. The court observed that these errors “are typical of unverified, AI-generated filings, which have become an increasing concern for courts in recent years.”  Magistrate Judge Rutherford reminded the plaintiff that while no federal or local rule explicitly prohibits the use of GenAI in litigation, all parties, including those proceeding pro se, “must fulfill their obligations under Federal Rule of Civil Procedure 11(b),” which “necessitates a careful review of AI-generated statements and citations to ensure accuracy.” The court further noted that Local Rule 7.2(f), adopted after the relevant pleadings were filed, requires parties to disclose the use of GenAI. The court recommended granting the defendants’ motions to dismiss on other grounds.",
@@ -5075,15 +5075,15 @@
     "jurisdiction": "US",
     "state_abbr": "TX",
     "_rg_id": "69f5df4a-8573-48e0-9808-23b5c444d82e",
-    "link_source": "other",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/a8dc0a94-13c6-4532-a91d-3b86cf1de8e1/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
       "amount_sought": null,
       "types": []
     },
-    "pdf": "",
-    "unverified": true
+    "pdf": "https://legalhack.io/orders/rg-69f5df4a8573.pdf",
+    "unverified": false
   },
   {
     "id": 144,
@@ -5164,7 +5164,7 @@
     "date": "2026-03-10",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/indiana/court-of-appeals/2026/25a-po-02249.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In A.K. v. M.R., No. 25A-PO-2249, 2026 Ind. App. Unpub. LEXIS 360 (Ind. Ct. App. Mar. 10, 2026), the court suspected that the pro se appellant used GenAI to conduct research for his brief because the citations to statutes and case law included therein “[did] not support the propositions that [appellant] claims they do” and “[did] not correspond to the case names stated in the brief.” Judge Bailey declined to impose sanctions as the appellee did not request any, but cautioned against relying on GenAI tools without independent verification. The trial court’s decision was affirmed on other grounds.",
@@ -5179,7 +5179,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "IN",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/e36e25dc-5d3f-4d91-af93-18ecca35d75c/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -5188,7 +5188,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 147,
@@ -6044,7 +6044,7 @@
     "date": "2026-02-25",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/district-courts/ohio/ohsdce/3:2025cv00273/304951/113/",
+    "link": "https://www.courtlistener.com/docket/71099112/kettering-adventist-healthcare-v-collier/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Kettering Adventist Healthcare v. Collier, 2026 U.S. Dist. LEXIS 38680 (S.D. Ohio Feb. 25, 2026), the defendants cited “at least twelve cases that either do not exist or do not remotely stand for the purported propositions of law.” See also Kettering Adventist Healthcare v. Collier, 2026 U.S. Dist. LEXIS 124 (S.D. Ohio Jan. 2, 2026) (detailing violations). The attorneys continued citing fabricated citations even after opposing counsel brought the nonexistent cases to their attention. In response to the order to show cause, the attorneys made “timely and contrite filings to the Court, including intended affirmative steps to prevent future errors.” But despite these promises, the attorneys proceeded to submit “patent misstatements and mischaracterizations of the law” to Magistrate Judge Silvain in their mediation statements in the underlying case, “[t]he breadth and depth of [the attorneys’] continued malfeasance leav[ing] [the Court] almost at a loss for words.” Judge Rice concluded that the attorney’s actions “constitute the most egregious, inexplicable, and repeated violations of Rule 11(b) by any attorneys that have ever appeared before the undersigned,” and that the attorneys also violated Ohio R. Prof’l Conduct 3.3(a)(1). The court imposed sanctions against the attorneys and found them in contempt of court for their misrepresentations to Magistrate Judge Silvain. As sanction, the court ordered the defendant’s motion to dismiss stricken without prejudice, and imposed a monetary sanction of $5,000 against one attorney and $2,500 against the other (who appeared later in the case). Judge Rice also referred the attorneys’ conduct to the Supreme Court of Ohio’s Office of Disciplinary Counsel and requested that the Chief Judge determine whether additional sanction is necessary for the contempt of court.",
@@ -6070,9 +6070,9 @@
       "amount_awarded": "$7,500"
     },
     "_rg_id": "e99c19a1-847c-47b8-86f7-a1829fbeaecf",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/1115fb2c-92e0-4f67-b0bc-034ab8b679b3/?context=1000516",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-e99c19a1847c.pdf",
     "unverified": false
   },
   {
@@ -6692,7 +6692,7 @@
     "date": "2026-02-23",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.bloomberglaw.com/product/blaw/document/XJNAH5KM3P8VQAI6IGBKKL2LVS/download",
+    "link": "https://www.courtlistener.com/docket/70564911/robertson-v-trueaccord-corp/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Robertson v. TrueAccord Corp., No. 4:25-CV-2816 (S.D. Tex. Feb. 18, 2026), the pro se plaintiff's response to the defendant's motion to dismiss contained several inaccurate or false case citations. The court noted that the citations “mush together case names, action numbers, and database identifiers from real decisions,” raising the concern that the plaintiff was using GenAI to draft her filings. While recognizing that the plaintiff may not be aware of the risks that GenAI tools pose, and acknowledging the difficulty pro se litigants may face without access to legal databases to verify such citations, the court emphasized that pro se status “does not exempt a party from compliance with relevant rules of procedural and substantive law.” The court reminded the plaintiff that filings containing false citations or quotations violate Fed. R. Civ. P. 11 regardless of whether they are GenAI-generated, and that she must also comply with the court's General Order 2025-04 regarding the use of GenAI in court filings. The court warned that failure to comply may result in sanctions, including monetary sanctions and dismissal of the plaintiff's claims with prejudice.",
@@ -6708,7 +6708,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "TX",
-    "link_source": "other",
+    "link_source": "courtlistener",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -6716,8 +6716,8 @@
       "types": []
     },
     "_rg_id": null,
-    "pdf": "",
-    "unverified": true
+    "pdf": "https://legalhack.io/orders/c-7f7b06964d61.pdf",
+    "unverified": false
   },
   {
     "id": 190,
@@ -7118,7 +7118,7 @@
     "date": "2026-02-11",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/oregon/court-of-appeals/2026/a185894.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Powell v. Emp. Dep't, 2026 Ore. App. LEXIS 171 (Ore. App. Feb. 11, 2026), the pro se claimant’s brief contained nonexistent legal citations, quotations that the court could not find “anywhere in Oregon case law,” and cases cited for propositions they did not support. In response to the court’s order to show cause, the claimant admitted that the errors were inadvertent and the result of GenAI. The claimant was previously admonished by a different court for inaccurate citations and had acknowledged that the tools he used led to incorrect citations. The court noted that even though the claimant was on notice that his drafting process could result in fabricated authority, he failed to alert this court about the potential issue or amend his briefs. Judge Joyce concluded that the claimant’s actions prejudiced the other side and wasted the court’s resources, imposing a $500 monetary sanction as a penalty. The court affirmed the Employment Appeals Board’s decision on unrelated grounds.",
@@ -7138,11 +7138,11 @@
       "amount_sought": null,
       "amount_awarded": "$500"
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/a8a7a994-f445-44aa-969e-a094722b28d5/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 202,
@@ -7153,7 +7153,7 @@
     "date": "2026-02-10",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/federal/appellate-courts/ca7/25-1441/25-1441-2025-12-05.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Browne v. Ciobanu, 2026 U.S. App. LEXIS 4128 (7th Cir. Feb. 10, 2026), in considering a motion for costs and fees, the court noted that the pro se plaintiff-appellant included nonexistent citations in her opposition brief. The panel reminded the plaintiff-appellant that pro se litigants who use GenAI to assist with court filings must make sure that their filings do not include misrepresentations of fact or law, and that further misrepresentations may result in sanctions.",
@@ -7168,7 +7168,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "FED",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/5522c8db-892a-4398-aa41-95ab8c37afc9/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -7177,7 +7177,7 @@
     },
     "_rg_id": "ba67be9f-42dd-48db-be4d-822984387245",
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 203,
@@ -7653,7 +7653,7 @@
     "date": "2026-02-06",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/indiana/court-of-appeals/2026/25a-dc-01780.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Mutugu v. Kiaraho, 2026 Ind. App. Unpub. LEXIS 203 (Ind. Ct. App. Feb. 6, 2026), the court dismissed the pro se appellant's appeal due to his “significant noncompliance with Indiana Appellate Rule 46,” which requires appellate briefs to be both accurate and follow certain filing guidelines, and awarded the appellee attorneys' fees. The appellant's brief was “deficient and violate[d] Appellate Rule 46(A) in almost every possible way,” including hallucinated and inaccurate citations. Of the 21 legal authorities cited in the appellant's argument, 5 cases did not exist, and 11 of the remaining authorities were “incorrectly cited or described.” Judge Felix observed that given the appellant's “citations to ‘nonexistent legal authorities and to real legal authorities that have nothing to do with the propositions they purport to support,’” it was likely that the appellant used GenAI to draft his brief. The court noted that “[c]itations to fictitious, AI-generated authority is a growing problem nationwide” and that “[c]ourts have sanctioned both attorneys and pro se litigants for including them in briefs.” Because the appellant's noncompliance substantially impeded appellate review and his appeal was “permeated with meritlessness,” the court granted the appellee's motion to dismiss, denied the appellant's motion to amend his brief, and remanded for a determination of reasonable appellate attorneys' fees.",
@@ -7674,11 +7674,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/7b29f8b3-6e8d-4ca2-9a1a-bd395a8479f4/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 217,
@@ -8093,7 +8093,7 @@
     "date": "2026-01-30",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/indiana/court-of-appeals/2026/25a-pl-01157.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Wilcox v. Gingrinch, 2026 Ind. App. LEXIS 29 (Ind. Ct. App. Jan. 30, 2026), the pro se appellants cited a “substantial number” of cases that “either do not exist or have nothing to do with the propositions they purport to support.” The court observed that the “pattern and nature of the citation errors in the [] brief strongly suggest the use of [GenAI] without adequate verification.” Furthermore, Judge May could not evaluate the merits of the appellants’ primary legal argument because it was based on fabricated authorities. The court therefore considered those issues waived, noting that “[h]ad the [plaintiffs] performed basic verification, the waiver we find today could have been avoided.” Because this was the appellants’ first infraction, Judge May did not impose sanctions, but cautioned that “the submission of briefs citing nonexistent authorities in future proceedings may result in sanctions.”",
@@ -8108,7 +8108,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "IN",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/1bfb45b1-93e4-4187-8c6d-eae22a019708/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -8117,7 +8117,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 229,
@@ -8453,7 +8453,7 @@
     "date": "2026-01-23",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://www.leagle.com/decision/infdco20260226c07",
+    "link": "https://www.courtlistener.com/docket/70615530/olali-v-ampex-brands-limited-liability-corporation/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Olali v. Ampex Brands, LLC, No. 3:25-CV-1602-K-BK, 2026 U.S. Dist. LEXIS 37552 (N.D. Tex. Jan. 23, 2026), the court suspected that the pro se plaintiff prepared his filings using GenAI because he cited to nonexistent cases, but failed to disclose that GenAI use, in violation of local rules. The court noted that this conduct also violated Fed. R. Civ. P. 11. The court found that the plaintiff’s “filings—built on AI-generated cases that stand for legal propositions in direct contravention of actual case law—are ‘the epitome of baseless.’” Magistrate Judge Toliver recommended granting the defendant’s motion to dismiss with prejudice, in part based on the GenAI misuse, and warned that further violations may result in sanctions.",
@@ -8475,11 +8475,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "other",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/59dfe6c8-450f-41d8-9640-5bb5c39a0722/?context=1000516",
     "_rg_id": null,
-    "pdf": "",
-    "unverified": true
+    "pdf": "https://legalhack.io/orders/c-29d0978f4308.pdf",
+    "unverified": false
   },
   {
     "id": 239,
@@ -8490,7 +8490,7 @@
     "date": "2026-01-22",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://law.justia.com/cases/georgia/court-of-appeals/2026/a25a1439.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys",
     "summary": "In Tolbert v. State, 2026 Ga. App. LEXIS 21 (Ga. Ct. App. Jan. 22, 2026), the court found the appellant’s brief rife with briefing defects, including reliance on irrelevant or overruled authority, quotations that do not appear in the cited cases, and material misrepresentations of the record. Although the court declined to make “factual findings here as to how or why [plaintiff] provided inappropriate authority to this Court,” notably not accusing him of misusing GenAI, the court concluded that “such misrepresentations exist and this appeal is frivolous as a result.” The court then ordered the appellant’s counsel to serve the opinion on his client and the State Bar of Georgia, file a certificate of compliance within ten days, and complete three hours of CLE on brief writing before filing any further briefs, warning that future violations may trigger contempt and jeopardize his authority to practice, and noting that monetary sanctions are not authorized in criminal cases. The court affirmed the judgment, in part because of the brief’s deficiencies.",
@@ -8514,11 +8514,11 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "https://advance.lexis.com/api/permalink/41b5f6d1-4769-4f86-858e-76f5656027e1/?context=1000516",
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 240,
@@ -8529,7 +8529,7 @@
     "date": "2026-01-22",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://law.justia.com/cases/texas/third-court-of-appeals/2026/03-25-00388-cv.html",
+    "link": "",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Campbell v. Campbell, 2026 Tex. App. LEXIS 475 (Tex. App. Jan. 22, 2026), the pro se appellant filed motions that cited authorities that do not exist and purported quotations that do not appear in the referenced opinions—conduct the court observed suggests use of GenAI. The court cautioned that pro se and represented litigants are held to the same rules and that use of hallucinated citations can lead to serious consequences, citing decisions that have imposed significant sanctions for such misuse. The court dismissed the appeal on other grounds.",
@@ -8544,7 +8544,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "TX",
-    "link_source": "justia",
+    "link_source": "none",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
@@ -8553,7 +8553,7 @@
     },
     "_rg_id": null,
     "pdf": "",
-    "unverified": false
+    "unverified": true
   },
   {
     "id": 241,
@@ -17715,7 +17715,7 @@
     "date": "2025-07-11",
     "type": "Judicial Opinion",
     "source": "both",
-    "link": "https://dockets.justia.com/docket/florida/flsdce/9:2025cv80128/682828",
+    "link": "https://www.courtlistener.com/docket/69588223/crespo-v-tesla-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Crespo v. Tesla, Inc. et al., 2025 WL 1799411 (S.D. Fla. June 30, 2025), the defendant moved to strike the pro se plaintiff’s reply briefs in support of his various motions to compel because the plaintiff included citations to nonexistent authority. The plaintiff’s sole reason for the hallucinated citations was a “flawed workflow process,” though he accepted responsibility for the erroneous submissions. The court ultimately required the plaintiff to submit a written apology to the defendant’s counsel for the frustrations and wasted time associated with reviewing the cited authorities and pay the defendant’s attorneys’ fees associated with this review. Magistrate Judge Matthewman warned that the sanctions being considered “would be much more serious” had the plaintiff not been honest about his use of AI. Later in Crespo v. Tesla, Inc., 2025 U.S. Dist. LEXIS 134498 (S.D. Fla. July 11, 2025), the court found it appropriate for the pro se plaintiff to pay $921.00 out of the requested $1,096.00 in defendant’s attorney fees associated with the review of the hallucinated citations and briefings. Judge Matthewman declined to award the full requested amount after finding that some tasks amongst the attorneys were duplicative of each other.",
@@ -17735,7 +17735,7 @@
       "amount_sought": "$1,096",
       "amount_awarded": "$921"
     },
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/0bbbb2c7-6128-48e7-837c-8e98a386c03b/?context=1000516",
     "_rg_id": null,
     "pdf": "",
@@ -18115,7 +18115,7 @@
     "date": "2025-06-20",
     "type": "Administrative Order",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/virginia/vaedce/1:2025cv00112/567238",
+    "link": "https://www.courtlistener.com/docket/71003537/mwakalindile-v-truist-bank-corporation/",
     "ai_type": "Any AI",
     "applies_to": "Any Parties",
     "summary": "In Mwakalindile v. Truist Bank Corporation, Case No. 1:25-cv-00112, Dkt. No. 55 (E.D. Va. June 20, 2025), after both plaintiff and defendant filed briefs in which they mentioned “the potential use of artificial intelligence platforms and services,” Magistrate Judge Vaala ordered that any utilization of AI “for the preparation of any filing” requires the party using AI to both identify such use and provide certification “affirming that the party has reviewed all citations for accuracy.”",
@@ -18131,7 +18131,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "VA",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/document?crid=1088bcc7-7386-42cc-a26a-d408171a10c2&pddocfullpath=%2Fshared%2Fdocument%2Fbriefs-pleadings-motions%2Furn%3AcontentItem%3A6G3C-GVR3-S407-D0NT-00000-00&pdsourcegroupingtype=G&pdalertemail=True&pdcontentcomponentid=109120&pdalertresultid=8227670478&pdalertprofileid=a32e4a78-be49-42ba-84f8-cee6a20b796b&pdmfid=1000516&pdisurlapi=true",
     "sanction_types": {
       "amount_awarded": null,
@@ -18187,7 +18187,7 @@
     "date": "2025-06-13",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/florida/flmdce/8:2024cv02671/444233",
+    "link": "https://www.courtlistener.com/docket/69462770/yao-v-university-of-south-florida-board-of-trustees/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Hsien Chueh Yao v. Univ. of S. Fla. Bd. of Trs., 2025 U.S. Dist. LEXIS 113006 (M.D. Fla. June 13, 2025), the court struck a pro se plaintiff’s briefs after the defendant alleged that the plaintiff used artificial intelligence to draft both the original and corrected opposition briefs because of numerous instances of citations by the plaintiff to nonexistent or inapplicable caselaw. Plaintiff was notified of the nonexistent citations in the original opposition, but did not properly amend the citations to caselaw that supported his legal claims. As a result, the court struck both oppositions, but allowed the plaintiff fourteen days to file a renewed opposition, cautioning that failure to cite “real cases that support the propositions for which they are cited will result in the imposition of sanctions.”",
@@ -18207,7 +18207,7 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/5038d149-d8e8-4250-9d12-d9769cea7018/?context=1000516",
     "_rg_id": null,
     "pdf": "",
@@ -19345,7 +19345,7 @@
     "date": "2025-05",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/texas/txedce/6:2024cv00213/230748",
+    "link": "https://www.courtlistener.com/docket/68846369/wilt-v-navy/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Wilt v. Dep’t of the Navy, 2025 U.S. Dist. LEXIS 83773, the pro se plaintiff cited two cases in her opposition briefing which “appear to have been created by” GenAI because “[n]either of these cases exist.” . Judge Kernodle refrained from imposing sanctions but reminded the plaintiff that “fabricated citations will not be tolerated,” and that pro se parties are “bound by the Court’s rules and the standards articulated under [Local] Rule 11.”",
@@ -19361,7 +19361,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "TX",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/b34c232e-5423-4875-966d-ad6d659b4306/?context=1000516",
     "sanction_types": {
       "amount_awarded": null,
@@ -19369,7 +19369,7 @@
       "types": []
     },
     "_rg_id": "11760c62-c22d-4b48-b331-83f28003f67d",
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/rg-11760c62c22d.pdf",
     "unverified": false
   },
   {
@@ -19526,7 +19526,7 @@
     "date": "2025-04-23",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/georgia/gasdce/1:2024cv00236/106188",
+    "link": "https://www.courtlistener.com/docket/69568833/nichols-v-walmart-inc/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "In Nichols v. Walmart, Inc., 2025 WL 1178592 (S.D. Ga. Apr. 23, 2025), the court sanctioned the pro se plaintiff for her use of fabricated legal citations in a motion to disqualify opposing counsel. The court found that the plaintiff cited “nonexistent legal authority” and failed to provide “any meaningful explanation” for such citations, despite being given an opportunity to respond to a show-cause order regarding potential Rule 11 sanctions. Citing the need to deter similar conduct, the court determined that dismissal of the case was an appropriate nonmonetary sanction, particularly considering the plaintiff’s indigency.",
@@ -19549,10 +19549,10 @@
       "amount_sought": null,
       "amount_awarded": null
     },
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/api/permalink/1acbe5d6-cf71-49d9-af1e-ff39f48283c7/?context=1000516",
     "_rg_id": null,
-    "pdf": "",
+    "pdf": "https://legalhack.io/orders/c-03f9860355a3.pdf",
     "unverified": false
   },
   {
@@ -19869,7 +19869,7 @@
     "date": "2025-04-02",
     "type": "Judicial Opinion",
     "source": "rg",
-    "link": "https://dockets.justia.com/docket/missouri/mowdce/4:2025cv00105/181850",
+    "link": "https://www.courtlistener.com/docket/69643591/quraishi-v-creative-planning-llc/",
     "ai_type": "Gen AI",
     "applies_to": "Pro Se Litigants",
     "summary": "In Quraishi v. Creative Planning LLC, No. 4:25-CV-00105, the court found that the plaintiff likely used “an artificial intelligence tool” to cite case law in support of her service deadline argument because she included “cites to two cases that do not exist” or that refer to “completely different [and unrelated] cases.” Although no sanctions were imposed, Judge Bough warned against any further inclusion of false citations.",
@@ -19884,7 +19884,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "MO",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "https://advance.lexis.com/r/documentprovider/g2_bk/attachment/data?attachmentid=urn:contentItem:6FN1-D1N3-SBMD-6533-00000-00&attachmenttype=PDF&attachmentname=Click%20to%20view%20PDF%20document&origination=BlobStore&sequencenumber=1&ishotdoc=false&docTitle=&pdmfid=1519217&",
     "sanction_types": {
       "amount_awarded": null,
@@ -25021,7 +25021,7 @@
     "date": "2023-09-01",
     "type": "Administrative Order",
     "source": "rails",
-    "link": "https://dockets.justia.com/docket/arizona/azdce/4:2023cv00327/1341070",
+    "link": "https://www.courtlistener.com/docket/67624517/cowan-v-board-of-immigration-appeals/",
     "ai_type": "Gen AI",
     "applies_to": "Attorneys,Pro Se Litigants",
     "summary": "This is an exemplar of a case-specific order in the same format as orders issued by Judge Soto in other cases. <em>See, e.g.</em>, <em>Cowan v. Board of Immigration Appeals, et al.</em>, Case No. 4:23-cv-00327-JAS, Dkt. No. 15. Although the order abbreviates “generative AI” as “AI,” the order is clear that it specifically governs filings drafted using GenAI. It requires parties to identify both the tool used and which portion(s) of the filings were drafted using GenAI, and to submit a certification that the work product was verified as accurate.",
@@ -25040,7 +25040,7 @@
     ],
     "jurisdiction": "US",
     "state_abbr": "AZ",
-    "link_source": "justia",
+    "link_source": "courtlistener",
     "original_link": "",
     "sanction_types": {
       "amount_awarded": null,
