@@ -53,9 +53,15 @@ Commands: `search`, `list`, `get`, `facets` (distinct values + counts), `stats`,
 
 ## Claude skill
 
-`skills/ai-court-orders/SKILL.md` is a [Claude Code](https://claude.com/claude-code) skill that wraps the CLI above, so you can ask questions in plain English instead of remembering flags — *"what AI rules does the D.D.C. have?"*, *"which courts sanction attorneys most for AI misuse?"*, *"does Judge Wang have an AI standing order?"*. Claude translates the request into the right `orders_cli.py` query, parses the JSON, and answers with source links and PDFs.
+[`ai-court-orders`](skills/ai-court-orders/SKILL.md) is a [Claude Code](https://claude.com/claude-code) skill that wraps the CLI above, so you can ask questions in plain English instead of remembering flags — *"what AI rules does the D.D.C. have?"*, *"which courts sanction attorneys most for AI misuse?"*, *"does Judge Wang have an AI standing order?"*. Claude translates the request into the right query, parses the JSON, and answers with source links and PDFs.
 
-Install it by copying the skill directory into your Claude Code skills path (e.g. `~/.claude/skills/ai-court-orders/`), then invoke it with `/ai-court-orders <question>`.
+**Install (one line):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/legalrealist/AI-orders-explorer/main/skills/ai-court-orders/install.sh | bash
+```
+
+This drops the skill and its bundled CLI into `~/.claude/skills/ai-court-orders/` (override with `CLAUDE_SKILLS_DIR`). The CLI pulls live data from legalhack.io, so nothing else to clone — only `python3` is required. Restart Claude Code, then just ask a question or invoke `/ai-court-orders <question>`.
 
 ## Data sources
 

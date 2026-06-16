@@ -98,6 +98,31 @@ def test_get_missing_exits(monkeypatch):
     assert e.value.code == 3
 
 
+def test_data_unavailable_exits_cleanly(monkeypatch, capsys):
+    import pytest
+
+    def boom(name):
+        raise oc.DataUnavailable(f"no data for {name}")
+
+    monkeypatch.setattr(oc, '_fetch_json', boom)
+    with pytest.raises(SystemExit) as e:
+        oc.main(['stats'])
+    assert e.value.code == 4
+    assert 'error:' in capsys.readouterr().err
+
+
+def test_fetch_json_raises_dataunavailable_when_offline(monkeypatch, tmp_path):
+    import pytest
+
+    def fail_open(*a, **k):
+        raise OSError('offline')
+
+    monkeypatch.setattr(oc.urllib.request, 'urlopen', fail_open)
+    monkeypatch.setattr(oc, '_LOCAL_DIR', str(tmp_path))
+    with pytest.raises(oc.DataUnavailable):
+        oc._fetch_json('explorer_data.json')
+
+
 def test_court_match_alias_and_substring():
     long = 'U.S. District Court, Southern District of New York'
     assert oc.court_match(long, 'S.D.N.Y.')        # alias unifies the two spellings

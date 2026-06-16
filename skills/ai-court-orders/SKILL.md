@@ -7,7 +7,7 @@ description: Query the AI Court Orders dataset — 900+ U.S. court standing orde
 
 A curated, regularly-refreshed dataset of **900+ U.S. court orders and opinions on AI use in legal proceedings** (May 2023–present), plus state-bar AI ethics opinions. Each record carries the judge, court, state, date, order type, AI type, who it applies to, a plain-English summary, the consequence/outcome, a source link, and — where archived — a self-hosted PDF of the primary document.
 
-Query it with the `orders` CLI: `python3 scripts/orders_cli.py <command>`. Output is **JSON by default** (parse it directly); add `--format table` for human reading.
+Query it with the bundled `orders_cli.py`: `python3 orders_cli.py <command>`. The CLI ships alongside this skill (and lives at `scripts/orders_cli.py` inside the AI-orders-explorer repo) — run whichever path exists. It fetches data from legalhack.io with a local fallback, so no other files are required. Output is **JSON by default** (parse it directly); add `--format table` for human reading.
 
 ## When to use
 
@@ -26,13 +26,13 @@ Query it with the `orders` CLI: `python3 scripts/orders_cli.py <command>`. Outpu
 ## Commands
 
 ```bash
-python3 scripts/orders_cli.py search "<query>" [filters] [--limit N] [--full]
-python3 scripts/orders_cli.py list [filters] [--limit N]
-python3 scripts/orders_cli.py get <id>
-python3 scripts/orders_cli.py facets <field> [--limit N]     # distinct values + counts
-python3 scripts/orders_cli.py stats
-python3 scripts/orders_cli.py pdf <id>                        # self-hosted PDF + source links
-python3 scripts/orders_cli.py bar [<state>]                   # state bar AI opinions
+python3 orders_cli.py search "<query>" [filters] [--limit N] [--full]
+python3 orders_cli.py list [filters] [--limit N]
+python3 orders_cli.py get <id>
+python3 orders_cli.py facets <field> [--limit N]     # distinct values + counts
+python3 orders_cli.py stats
+python3 orders_cli.py pdf <id>                        # self-hosted PDF + source links
+python3 orders_cli.py bar [<state>]                   # state bar AI opinions
 ```
 
 **Filters** (on `search` / `list` / `facets`): `--judge`, `--court`, `--state`, `--type`, `--consequence`, `--ai-type`, `--applies-to`, `--source`, `--jurisdiction`, `--tag`, `--requires`, `--date-from YYYY-MM-DD`, `--date-to YYYY-MM-DD`, `--has-pdf`, `--has-link`, `--count` (print only the match count), `--limit N`, `--full`. (`--count`/`--limit`/`--full` are `search`/`list` only.)
@@ -90,5 +90,5 @@ orders_cli.py bar California
 - **Parse JSON**, don't scrape table output. Default output is JSON.
 - `id` is **not stable** across data refreshes (the dataset re-indexes on each merge). For a durable handle to a document, use the `pdf` URL or `link`.
 - `pdf` is populated only for records whose primary document was archived (~a third and growing); when empty, use `link`/`original_link`.
-- The CLI fetches from `legalhack.io` and falls back to the repo's local `data/processed/*.json` when offline (override the host with `ORDERS_DATA_BASE`).
-- Exit code `3` means "no record with that id".
+- The CLI fetches from `legalhack.io` (override the host with `ORDERS_DATA_BASE`), falling back to the repo's local `data/processed/*.json` when run inside the AI-orders-explorer checkout. A standalone skill install has no local copy, so it needs network access.
+- Exit code `3` means "no record with that id"; exit code `4` means the dataset couldn't be reached (network down and no local copy).

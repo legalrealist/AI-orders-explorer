@@ -136,6 +136,10 @@ def court_match(court, query):
     return nq in nc
 
 
+class DataUnavailable(Exception):
+    """Raised when the dataset can't be fetched remotely or read locally."""
+
+
 def _fetch_json(name):
     """Load a dataset file: remote first, local fallback."""
     url = f'{DATA_BASE}/{name}'
@@ -143,10 +147,17 @@ def _fetch_json(name):
         req = urllib.request.Request(url, headers={'User-Agent': _UA})
         with urllib.request.urlopen(req, timeout=15) as r:
             return json.loads(r.read().decode('utf-8'))
-    except Exception:
+    except Exception as remote_err:
         path = os.path.join(_LOCAL_DIR, name)
-        with open(path, encoding='utf-8') as f:
-            return json.load(f)
+        try:
+            with open(path, encoding='utf-8') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            raise DataUnavailable(
+                f"could not fetch {name} from {DATA_BASE} ({remote_err}) "
+                f"and no local copy at {path}. Check your network connection "
+                f"or set ORDERS_DATA_BASE to a reachable host."
+            )
 
 
 def load_orders():
@@ -417,7 +428,11 @@ def build_parser():
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
-    args.func(args)
+    try:
+        args.func(args)
+    except DataUnavailable as e:
+        print(f"error: {e}", file=sys.stderr)
+        sys.exit(4)
 
 
 if __name__ == '__main__':
