@@ -28,11 +28,40 @@ def clean_record():
         'sanction_types': {'amount_awarded': None, 'amount_sought': None, 'types': []},
         '_rg_id': 'abc-123',
         'unverified': False,
+        'pending': False,
+        'slug': 'doe-v-roe',
+        'ai_tool': 'ChatGPT',
+        'last_verified': '2026-05-14',
     }
 
 
 def test_clean_record_has_no_problems():
     assert schema.validate_record(clean_record()) == []
+
+
+def test_missing_pending_reported():
+    rec = clean_record()
+    del rec['pending']
+    assert any('pending' in p for p in schema.validate_record(rec))
+
+
+def test_pending_must_be_bool():
+    rec = clean_record()
+    rec['pending'] = 'yes'
+    assert any('pending must be bool' in p for p in schema.validate_record(rec))
+
+
+def test_missing_slug_reported():
+    rec = clean_record()
+    del rec['slug']
+    assert any('slug' in p for p in schema.validate_record(rec))
+
+
+def test_new_string_fields_must_be_str():
+    for k in ('slug', 'ai_tool', 'last_verified'):
+        rec = clean_record()
+        rec[k] = 123
+        assert any(f'{k} must be str' in p for p in schema.validate_record(rec))
 
 
 def test_missing_original_link_reported():

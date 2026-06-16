@@ -49,7 +49,7 @@ python3 scripts/orders_cli.py pdf 42
 python3 scripts/orders_cli.py bar California
 ```
 
-Commands: `search`, `list`, `get`, `facets` (distinct values + counts), `stats`, `pdf`, `bar`. Filters (`--judge`, `--court`, `--state`, `--type`, `--consequence`, `--requires`, date range, `--has-pdf`, …) apply to `search`, `list`, and `facets` — so `facets` produces filtered cross-tabs like sanctions-by-court. `--requires <key>` queries the per-record requirements (`disclose`, `certify_if_ai`, `verify`, `prohibited`, …).
+Commands: `search`, `list`, `get`, `facets` (distinct values + counts), `stats`, `pdf`, `bar`. Filters (`--judge`, `--court`, `--state`, `--type`, `--consequence`, `--requires`, date range, `--has-pdf`, `--pending`/`--final`, `--ai-tool`, …) apply to `search`, `list`, and `facets` — so `facets` produces filtered cross-tabs like sanctions-by-court. `--requires <key>` queries the per-record requirements (`disclose`, `certify_if_ai`, `verify`, `prohibited`, …). `--pending`/`--final` separate proposed sanctions (show-cause orders, R&Rs, deferred rulings) from imposed ones. `--ai-tool` filters by the specific AI product named in the order (ChatGPT, Claude, Gemini, Copilot, …). Litigation records carry a stable `slug` — `get <slug>` resolves it.
 
 ## Claude skill
 

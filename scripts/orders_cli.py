@@ -37,6 +37,7 @@ _UA = 'ai-court-orders-cli/1.0'
 _EXACT = {
     'state': 'state', 'type': 'type', 'consequence': 'consequence',
     'ai_type': 'ai_type', 'source': 'source', 'jurisdiction': 'jurisdiction',
+    'ai_tool': 'ai_tool',
 }
 
 
@@ -235,6 +236,10 @@ def apply_filters(records, filters):
             continue
         if filters.get('has_link') and not r.get('link'):
             continue
+        if filters.get('pending') and not r.get('pending'):
+            continue
+        if filters.get('final') and r.get('pending'):
+            continue
         tag = filters.get('tag')
         if tag and not any(_norm(tag) in _norm(t) for t in (r.get('applicableTo') or [])):
             continue
@@ -265,6 +270,7 @@ def stats(records):
         'by_source': {f['value']: f['count'] for f in facet(records, 'source')},
         'with_pdf': sum(1 for r in records if r.get('pdf')),
         'with_link': sum(1 for r in records if r.get('link')),
+        'pending_sanctions': sum(1 for r in records if r.get('pending')),
         'date_range': [
             min((r['date'] for r in records if r.get('date')), default=''),
             max((r['date'] for r in records if r.get('date')), default=''),
@@ -274,7 +280,7 @@ def stats(records):
 
 # --- output ---
 
-_LIST_FIELDS = ['id', 'date', 'state', 'type', 'court', 'judge', 'consequence', 'name', 'summary', 'pdf', 'link']
+_LIST_FIELDS = ['id', 'slug', 'date', 'state', 'type', 'court', 'judge', 'consequence', 'pending', 'ai_tool', 'name', 'summary', 'pdf', 'link']
 
 
 def _project(r):
@@ -318,24 +324,28 @@ def _print_table(data):
 def _filters_from_args(a):
     return {
         'judge': a.judge, 'court': a.court, 'state': a.state, 'type': a.type,
-        'consequence': a.consequence, 'ai_type': a.ai_type, 'applies_to': a.applies_to,
+        'consequence': a.consequence, 'ai_type': a.ai_type, 'ai_tool': a.ai_tool,
+        'applies_to': a.applies_to,
         'source': a.source, 'jurisdiction': a.jurisdiction,
         'date_from': a.date_from, 'date_to': a.date_to,
         'has_pdf': a.has_pdf, 'has_link': a.has_link, 'tag': a.tag,
-        'requires': a.requires,
+        'requires': a.requires, 'pending': a.pending, 'final': a.final,
     }
 
 
 def _add_filter_flags(p):
     """Query filters shared by search/list/facets (no result-shaping flags)."""
     for name in ('judge', 'court', 'state', 'type', 'consequence', 'ai-type',
-                 'applies-to', 'source', 'jurisdiction', 'tag', 'date-from', 'date-to'):
+                 'ai-tool', 'applies-to', 'source', 'jurisdiction', 'tag',
+                 'date-from', 'date-to'):
         p.add_argument(f'--{name}')
     p.add_argument('--requires', help='only records whose reqs[KEY] is set, e.g. '
                    'disclose, certify_if_ai, certify_all, verify, prohibited, proprietary '
                    '(any key accepted; unknown keys match nothing)')
     p.add_argument('--has-pdf', action='store_true', help='only records with a self-hosted PDF')
     p.add_argument('--has-link', action='store_true', help='only records with a source link')
+    p.add_argument('--pending', action='store_true', help='only proposed/not-yet-final sanctions (show-cause, R&R, deferred)')
+    p.add_argument('--final', action='store_true', help='only final/imposed orders (exclude proposed sanctions)')
 
 
 def _add_filter_args(p):
@@ -360,7 +370,10 @@ def cmd_list(a):
 
 
 def cmd_get(a):
-    rec = next((r for r in load_orders() if str(r.get('id')) == str(a.id)), None)
+    recs = load_orders()
+    rec = next((r for r in recs if str(r.get('id')) == str(a.id)), None)
+    if rec is None:  # fall back to the stable slug handle
+        rec = next((r for r in recs if r.get('slug') and r['slug'] == a.id), None)
     if rec is None:
         print(f'No record with id {a.id}', file=sys.stderr)
         sys.exit(3)

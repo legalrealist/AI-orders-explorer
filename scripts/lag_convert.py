@@ -47,9 +47,11 @@ _JUDGE_RE = re.compile(r'\(([A-Z][A-Za-z.\'-]+(?:\s+[A-Z][A-Za-z.\'-]+)?),\s*'
 # Fallback: a judge named in prose ("...Judge Timothy L. Brooks issued..."),
 # used when the structured citation carries no judge. Anchors on the word
 # Judge/Justice and captures the following name — first/last words, middle
-# initials, accented letters, apostrophe surnames ("d'Auguste"), and lowercase
-# nobiliary particles ("van Keulen") — stopping at the first ordinary word.
-_NAME_WORD = r"(?:[a-z]['’])?[A-ZÀ-Þ][a-zß-ÿ]+(?:['’\-][A-Za-zÀ-ÿ]+)*"
+# initials, accented letters, apostrophe surnames ("d'Auguste", "O'Hearn"),
+# internal-capital surnames ("McConnell", "MacDonald"), and mid-name lowercase
+# nobiliary particles ("Susan van Keulen") — stopping at the first ordinary word.
+_NAME_WORD = (r"(?:[A-Za-z]['’])?[A-ZÀ-Þ][a-zß-ÿ]+(?:[A-ZÀ-Þ][a-zß-ÿ]+)*"
+              r"(?:['’\-][A-Za-zÀ-ÿ]+)*")
 _INITIAL = r"[A-Z]\."
 _PARTICLE = r"(?:van|von|de|del|della|di|da|du|le|la|der|den|ten|ter)"
 _PROSE_JUDGE_RE = re.compile(
@@ -84,8 +86,10 @@ def extract_judge_prose(text):
     """Recover 'Judge <name>' from narrative prose when no citation judge."""
     for m in _PROSE_JUDGE_RE.finditer(text or ''):
         toks = m.group(1).split()
-        while len(toks) > 1 and re.fullmatch(r"[A-Z]\.?", toks[-1]):
-            toks.pop()  # never end a name on a dangling initial
+        # never end a name on a dangling initial or a glued-on non-name word
+        while len(toks) > 1 and (re.fullmatch(r"[A-Z]\.?", toks[-1])
+                                 or toks[-1] in _NOT_JUDGE_NAME):
+            toks.pop()
         if toks[0] in _NOT_JUDGE_NAME:
             continue
         return 'Judge ' + ' '.join(toks)
@@ -108,6 +112,32 @@ def _ai_type(ai_tool):
     if low.startswith('any ai') or 'any ai' in low:
         return 'Any AI'
     return 'Gen AI'
+
+
+# Freeform source `ai_tool` strings -> canonical product name. Order matters
+# (first hit wins). Anything not naming a specific product -> '' (unspecified).
+_TOOL_PATTERNS = [
+    ('chatgpt', 'ChatGPT'), ('gpt-4', 'ChatGPT'), ('gpt-3', 'ChatGPT'),
+    ('copilot', 'Microsoft Copilot'),
+    ('gemini', 'Google Gemini'), ('bard', 'Google Gemini'),
+    ('claude', 'Claude'),
+    ('cocounsel', 'Westlaw CoCounsel'), ('co-counsel', 'Westlaw CoCounsel'),
+    ('callidus', 'Callidus AI'),
+    ('grok', 'Grok'), ('perplexity', 'Perplexity'),
+    ('deepseek', 'DeepSeek'), ('llama', 'Llama'),
+]
+
+
+def normalize_tool(ai_tool):
+    """Canonical product name, but only when the string names exactly one tool.
+
+    Many source strings list several products as examples ("the court named
+    ChatGPT, Microsoft Copilot, and Claude … but declined to determine which");
+    attributing one would be wrong, so anything naming 0 or >1 tool -> ''.
+    """
+    low = (ai_tool or '').lower()
+    hits = {name for needle, name in _TOOL_PATTERNS if needle in low}
+    return next(iter(hits)) if len(hits) == 1 else ''
 
 
 def _applies_to(text):
@@ -189,6 +219,10 @@ def convert_case(case, idx=0):
         'applicableTo': _applicable_to(consequence),
         'sanction_types': sanction_types,
         '_rg_id': None,
+        'pending': bool(case.get('pending')),
+        'slug': case.get('slug', '') or '',
+        'ai_tool': normalize_tool(case.get('ai_tool', '')),
+        'last_verified': (case.get('last_verified', '') or '')[:10],
     }
     return normalize.normalize_record(rec)
 

@@ -97,6 +97,42 @@ def test_converted_record_passes_validator():
     assert schema.validate_record(rec) == []
 
 
+def test_pending_flag_carried_from_source():
+    rec = lag_convert.convert_case(dict(GEDDES, pending=True), 0)
+    assert rec['pending'] is True
+
+
+def test_slug_carried_from_source():
+    rec = lag_convert.convert_case(GEDDES, 0)
+    assert rec['slug'] == 'krista-geddes-v-loancare'
+
+
+def test_last_verified_carried_from_source():
+    rec = lag_convert.convert_case(GEDDES, 0)
+    assert rec['last_verified'] == '2026-05-14'
+
+
+def test_ai_tool_normalized_to_canonical_name():
+    assert lag_convert.normalize_tool('ChatGPT') == 'ChatGPT'
+    assert lag_convert.normalize_tool('Microsoft Copilot') == 'Microsoft Copilot'
+    assert lag_convert.normalize_tool('Google Gemini') == 'Google Gemini'
+    assert lag_convert.normalize_tool('Claude') == 'Claude'
+    assert lag_convert.normalize_tool('Westlaw CoCounsel') == 'Westlaw CoCounsel'
+
+
+def test_ai_tool_unspecified_becomes_empty():
+    assert lag_convert.normalize_tool('Unspecified generative AI') == ''
+    assert lag_convert.normalize_tool('Generative AI inferred from the citation pattern') == ''
+    rec = lag_convert.convert_case(GEDDES, 0)  # GEDDES ai_tool is unspecified
+    assert rec['ai_tool'] == ''
+    assert rec['ai_type'] == 'Gen AI'  # coarse enum still set
+
+
+def test_not_pending_by_default():
+    rec = lag_convert.convert_case(GEDDES, 0)
+    assert rec['pending'] is False
+
+
 def test_state_court_name_extraction():
     case = dict(GEDDES, court='Supreme Court of Texas', jurisdiction='Tex.')
     rec = lag_convert.convert_case(case, 0)
@@ -169,6 +205,36 @@ def test_prose_keeps_apostrophe_surname():
     assert lag_convert.extract_judge_prose(
         "Justice James d'Auguste granted summary judgment."
     ) == "Judge James d'Auguste"
+
+
+def test_prose_keeps_mc_mac_internal_capital():
+    assert lag_convert.extract_judge_prose('Judge McConnell ruled.') == 'Judge McConnell'
+    assert lag_convert.extract_judge_prose('Judge MacDonald held.') == 'Judge MacDonald'
+    assert lag_convert.extract_judge_prose(
+        'Magistrate Judge Kimberly McEvers issued.') == 'Judge Kimberly McEvers'
+
+
+def test_prose_keeps_uppercase_apostrophe_surname():
+    assert lag_convert.extract_judge_prose("Judge O'Hearn denied.") == "Judge O'Hearn"
+    assert lag_convert.extract_judge_prose("Justice D'Angelo ruled.") == "Judge D'Angelo"
+
+
+def test_prose_drops_trailing_non_name_word():
+    assert lag_convert.extract_judge_prose(
+        'Judge Smith District ruled.') == 'Judge Smith'
+
+
+def test_tool_unspecified_when_multiple_named():
+    # court listed several tools as examples -> no single attribution
+    assert lag_convert.normalize_tool(
+        'ChatGPT, Claude, Copilot, DeepSeek, Google Gemini, and Grok') == ''
+    assert lag_convert.normalize_tool(
+        'named ChatGPT, Microsoft Copilot, and Claude as examples') == ''
+
+
+def test_tool_single_still_resolves():
+    assert lag_convert.normalize_tool('Microsoft Office Copilot') == 'Microsoft Copilot'
+    assert lag_convert.normalize_tool('Microsoft Copilot') == 'Microsoft Copilot'
 
 
 def test_no_false_positive_judge_from_prose():
