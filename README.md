@@ -51,6 +51,12 @@ python3 scripts/orders_cli.py bar California
 
 Commands: `search`, `list`, `get`, `facets` (distinct values + counts), `stats`, `pdf`, `bar`. Filters (`--judge`, `--court`, `--state`, `--type`, `--consequence`, `--requires`, date range, `--has-pdf`, …) apply to `search`, `list`, and `facets` — so `facets` produces filtered cross-tabs like sanctions-by-court. `--requires <key>` queries the per-record requirements (`disclose`, `certify_if_ai`, `verify`, `prohibited`, …).
 
+## Claude skill
+
+`skills/ai-court-orders/SKILL.md` is a [Claude Code](https://claude.com/claude-code) skill that wraps the CLI above, so you can ask questions in plain English instead of remembering flags — *"what AI rules does the D.D.C. have?"*, *"which courts sanction attorneys most for AI misuse?"*, *"does Judge Wang have an AI standing order?"*. Claude translates the request into the right `orders_cli.py` query, parses the JSON, and answers with source links and PDFs.
+
+Install it by copying the skill directory into your Claude Code skills path (e.g. `~/.claude/skills/ai-court-orders/`), then invoke it with `/ai-court-orders <question>`.
+
 ## Data sources
 
 | Source | What it provides |
