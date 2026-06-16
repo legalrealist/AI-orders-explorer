@@ -18,7 +18,7 @@ import schema
 _STR_DEFAULT = {
     'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type', 'source',
     'jurisdiction', 'link', 'original_link', 'ai_type', 'applies_to', 'summary',
-    'pdf',
+    'pdf', 'slug', 'ai_tool', 'last_verified',
 }
 
 
@@ -93,6 +93,9 @@ def normalize_record(rec):
 
     if not isinstance(rec.get('unverified'), bool):
         rec['unverified'] = False
+
+    if not isinstance(rec.get('pending'), bool):
+        rec['pending'] = bool(rec.get('pending'))
 
     return rec
 

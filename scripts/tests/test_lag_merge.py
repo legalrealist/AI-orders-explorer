@@ -32,6 +32,24 @@ def test_legacy_key_match_marks_both_and_drops_lag():
     assert stats['matched_legacy'] == 1 and stats['rails_only'] == 0
 
 
+def test_pending_propagates_to_matched_record():
+    existing = [rg(0, '2026-04-22', 'California', 'Judge Cota')]
+    lagrecs = [lag(0, '2026-04-22', 'California', 'Judge Cota', pending=True)]
+    merged, _, _ = lag_merge.merge_lag(existing, lagrecs)
+    assert merged[0]['source'] == 'both'
+    assert merged[0]['pending'] is True
+
+
+def test_slug_and_tool_fill_matched_record():
+    existing = [rg(0, '2026-04-22', 'California', 'Judge Cota')]
+    lagrecs = [lag(0, '2026-04-22', 'California', 'Judge Cota',
+                   slug='a-v-b', ai_tool='ChatGPT', last_verified='2026-05-01')]
+    merged, _, _ = lag_merge.merge_lag(existing, lagrecs)
+    assert merged[0]['slug'] == 'a-v-b'
+    assert merged[0]['ai_tool'] == 'ChatGPT'
+    assert merged[0]['last_verified'] == '2026-05-01'
+
+
 def test_party_name_match_across_judge_formats():
     existing = [rg(0, '2026-04-22', 'California', 'Judge Jesse M. Furman',
                    name='Geddes v. LoanCare, LLC')]

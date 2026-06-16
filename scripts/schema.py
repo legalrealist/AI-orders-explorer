@@ -31,13 +31,14 @@ REQUIRED_KEYS = {
     'id', 'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type',
     'source', 'jurisdiction', 'link', 'original_link', 'link_source', 'pdf',
     'ai_type', 'applies_to', 'summary', 'reqs', 'consequence', 'applicableTo',
-    'sanction_types', '_rg_id', 'unverified',
+    'sanction_types', '_rg_id', 'unverified', 'pending', 'slug', 'ai_tool',
+    'last_verified',
 }
 
 _STR_KEYS = {
     'name', 'judge', 'court', 'state', 'state_abbr', 'date', 'type', 'source',
     'jurisdiction', 'link', 'original_link', 'ai_type', 'applies_to', 'summary',
-    'pdf',
+    'pdf', 'slug', 'ai_tool', 'last_verified',
 }
 
 
@@ -78,6 +79,9 @@ def validate_record(rec, idx=None):
 
     if 'unverified' in rec and not isinstance(rec['unverified'], bool):
         problems.append(f'{where}: unverified must be bool')
+
+    if 'pending' in rec and not isinstance(rec['pending'], bool):
+        problems.append(f'{where}: pending must be bool')
 
     problems.extend(_validate_reqs(rec.get('reqs'), where))
     problems.extend(_validate_sanction_types(rec.get('sanction_types'), where))

@@ -24,7 +24,8 @@ from datetime import date
 
 import linkrecover
 
-_FILLABLE = ('summary', 'link', 'original_link', 'judge', 'state', 'state_abbr')
+_FILLABLE = ('summary', 'link', 'original_link', 'judge', 'state', 'state_abbr',
+             'slug', 'ai_tool', 'last_verified')
 _PARTY_DATE_WINDOW_DAYS = 120
 
 _PARTY_RE = re.compile(
@@ -187,3 +188,5 @@ def _fill_gaps(rg_rec, lag_rec):
     if not st.get('amount_awarded') and lst.get('amount_awarded'):
         st['amount_awarded'] = lst['amount_awarded']
         rg_rec['sanction_types'] = st
+    if lag_rec.get('pending'):
+        rg_rec['pending'] = True

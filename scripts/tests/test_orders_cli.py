@@ -47,6 +47,45 @@ def test_filter_has_pdf_and_tag():
     assert {r['id'] for r in oc.apply_filters(RECS, {'tag': 'Disclosure'})} == {1}
 
 
+def test_filter_pending_and_final():
+    recs = [dict(RECS[0], id=0, pending=False),
+            dict(RECS[0], id=1, pending=True)]
+    assert {r['id'] for r in oc.apply_filters(recs, {'pending': True})} == {1}
+    assert {r['id'] for r in oc.apply_filters(recs, {'final': True})} == {0}
+
+
+def test_final_filter_treats_missing_pending_as_final():
+    # records without a pending key (legacy) count as final, not proposed
+    assert {r['id'] for r in oc.apply_filters(RECS, {'final': True})} == {0, 1, 2}
+    assert oc.apply_filters(RECS, {'pending': True}) == []
+
+
+def test_projection_includes_pending():
+    assert 'pending' in oc._project(dict(RECS[0], pending=True))
+
+
+def test_filter_by_ai_tool():
+    recs = [dict(RECS[0], id=0, ai_tool='ChatGPT'),
+            dict(RECS[0], id=1, ai_tool='Claude'),
+            dict(RECS[0], id=2, ai_tool='')]
+    assert {r['id'] for r in oc.apply_filters(recs, {'ai_tool': 'chatgpt'})} == {0}
+    assert {r['id'] for r in oc.apply_filters(recs, {'ai_tool': 'Claude'})} == {1}
+
+
+def test_projection_includes_slug_and_ai_tool():
+    p = oc._project(dict(RECS[0], slug='doe-v-roe', ai_tool='ChatGPT'))
+    assert p['slug'] == 'doe-v-roe' and p['ai_tool'] == 'ChatGPT'
+
+
+def test_get_by_slug(monkeypatch):
+    recs = [dict(RECS[0], id=7, slug='shore-v-dorel')]
+    monkeypatch.setattr(oc, 'load_orders', lambda: recs)
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        oc.main(['get', 'shore-v-dorel'])
+    assert json.loads(buf.getvalue())['slug'] == 'shore-v-dorel'
+
+
 def test_facet_counts():
     f = oc.facet(RECS, 'type')
     assert {x['value']: x['count'] for x in f} == {'Judicial Opinion': 2, 'Standing Order': 1}
