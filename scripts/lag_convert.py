@@ -44,6 +44,22 @@ _JURIS_STATE = {
 _JUDGE_RE = re.compile(r'\(([A-Z][A-Za-z.\'-]+(?:\s+[A-Z][A-Za-z.\'-]+)?),\s*'
                        r'(?:Chief\s+)?(?:Mag\.?\s*|Magistrate\s+)?(?:J|C)')
 
+# Fallback: a judge named in prose ("...Judge Timothy L. Brooks issued..."),
+# used when the structured citation carries no judge. Anchors on the word
+# Judge/Justice and captures the following name — first/last words, middle
+# initials, accented letters, apostrophe surnames ("d'Auguste"), and lowercase
+# nobiliary particles ("van Keulen") — stopping at the first ordinary word.
+_NAME_WORD = r"(?:[a-z]['’])?[A-ZÀ-Þ][a-zß-ÿ]+(?:['’\-][A-Za-zÀ-ÿ]+)*"
+_INITIAL = r"[A-Z]\."
+_PARTICLE = r"(?:van|von|de|del|della|di|da|du|le|la|der|den|ten|ter)"
+_PROSE_JUDGE_RE = re.compile(
+    r'\b(?:Judge|Justice)\s+'
+    rf'({_NAME_WORD}'
+    rf'(?:\s+(?:{_INITIAL}|{_PARTICLE}\s+{_NAME_WORD}|{_NAME_WORD}))*)')
+# Capitalized words that follow "Judge"/"Justice" but are not personal names.
+_NOT_JUDGE_NAME = {'Department', 'Court', 'Advocate', 'System', 'Building',
+                   'Center', 'Division', 'District'}
+
 
 def extract_state(court, jurisdiction):
     text = court or ''
@@ -62,6 +78,29 @@ def extract_judge(citation):
     if m:
         return 'Judge ' + m.group(1).strip()
     return ''
+
+
+def extract_judge_prose(text):
+    """Recover 'Judge <name>' from narrative prose when no citation judge."""
+    for m in _PROSE_JUDGE_RE.finditer(text or ''):
+        toks = m.group(1).split()
+        while len(toks) > 1 and re.fullmatch(r"[A-Z]\.?", toks[-1]):
+            toks.pop()  # never end a name on a dangling initial
+        if toks[0] in _NOT_JUDGE_NAME:
+            continue
+        return 'Judge ' + ' '.join(toks)
+    return ''
+
+
+def build_summary(case):
+    """Narrative description plus the outcome's final disposition."""
+    desc = (case.get('description') or '').strip()
+    outcome = (case.get('outcome') or '').strip()
+    if not outcome or outcome in desc:
+        return desc
+    if not desc:
+        return outcome
+    return desc + ' ' + outcome
 
 
 def _ai_type(ai_tool):
@@ -122,10 +161,16 @@ def convert_case(case, idx=0):
     consequence, sanction_types = _consequence_and_sanctions(case, applies_to)
     link = _choose_link(case)
 
+    judge = extract_judge(case.get('citation', ''))
+    if not judge:
+        judge = extract_judge_prose(
+            (case.get('description', '') or '') + ' '
+            + (case.get('outcome', '') or ''))
+
     rec = {
         'id': idx,
         'name': case.get('case_name', '') or '',
-        'judge': extract_judge(case.get('citation', '')),
+        'judge': judge,
         'court': court,
         'state': state,
         'state_abbr': state_abbr,
@@ -138,7 +183,7 @@ def convert_case(case, idx=0):
         'link_source': linkrecover.classify_link_source(link),
         'ai_type': _ai_type(case.get('ai_tool', '')),
         'applies_to': applies_to,
-        'summary': case.get('description', '') or '',
+        'summary': build_summary(case),
         'reqs': {},
         'consequence': consequence,
         'applicableTo': _applicable_to(consequence),
