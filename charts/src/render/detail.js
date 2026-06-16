@@ -4,6 +4,19 @@ import { esc, fmtDate, parseDate, cleanJudgeName } from '../utils/text.js';
 import { srcBadge } from './badges.js';
 import { SANCTION_TYPE_LABELS, REQ_ACTIONS } from '../constants.js';
 
+// Sources row for one timeline entry: self-hosted primary-source PDF (the
+// archived order/opinion), the public source link, the R&G original as a
+// fallback, and an `unverified` caveat when no open primary source confirms it.
+function entrySources(d){
+  var out='<div class="tl-links">';
+  if(d.pdf) out+='<a class="tl-pdf" href="'+esc(d.pdf)+'" target="_blank" rel="noopener">&#128196; Primary-source PDF</a>';
+  if(d.link) out+='<a class="jd-link" href="'+esc(d.link)+'" target="_blank" rel="noopener">View source &rarr;</a>';
+  if(d.original_link && d.original_link!==d.link) out+='<a class="jd-link tl-orig" href="'+esc(d.original_link)+'" target="_blank" rel="noopener">Original (R&amp;G) &rarr;</a>';
+  if(!d.pdf && !d.link) out+='<span class="tl-nolink">No primary source on file</span>';
+  if(d.unverified) out+='<span class="tl-unverified" title="No openly accessible primary source independently confirms this entry">&#9888;&#65039; unverified</span>';
+  return out+'</div>';
+}
+
 export function emptyDetailHtml(){
   var s=countStats(state.data);
   return '<div class="d-empty"><div style="font-size:32px;margin-bottom:12px;opacity:0.3">&#x2696;</div><div style="font-size:15px;margin-bottom:16px">Search for a judge or click from the list</div><div style="text-align:left;max-width:280px;margin:0 auto;font-size:13px;color:#94a3b8;line-height:1.8"><div><strong style="color:#2563eb">'+s.standing+'</strong> standing orders tracked</div><div><strong style="color:#dc2626">'+s.sanctions+'</strong> sanctions cases documented</div><div><strong style="color:#475569">'+s.jurisdictions+'</strong> jurisdictions covered</div><div style="margin-top:8px;font-size:12px;color:#cbd5e1">Search by judge, court, state, or case name</div></div></div>';
@@ -68,7 +81,7 @@ export function renderJudgeDetail(group){
         '<div class="tl-header"><span class="tl-badge '+typeClass+'">'+esc(typeLabel)+'</span>'+consq+stBadges+srcBadge(d.source)+'</div>'+
         '<div class="tl-name">'+esc(name)+'</div>'+
         (summ?'<div class="tl-summary">'+(summ.length>300?'<span class="tl-summ-short">'+esc(summ.slice(0,300))+'... <a href="#" class="tl-more" onclick="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'\';return false;">Show more</a></span><span class="tl-summ-full" style="display:none">'+esc(summ)+'</span>':esc(summ))+'</div>':'')+
-        (d.link?'<a class="jd-link" href="'+esc(d.link)+'" target="_blank" rel="noopener">View Source &rarr;</a>':'<span style="font-size:12px;color:#94a3b8;">No link available</span>')+
+        entrySources(d)+
       '</div></div>';
   });
   html+='</div></div>';
