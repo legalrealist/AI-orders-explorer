@@ -58,13 +58,23 @@ def _date10(value):
     return (value or '')[:10]
 
 
+def _norm_name(name):
+    return re.sub(r'[^a-z0-9]+', '', (name or '').lower())
+
+
 def build_source_index(results):
     """Index raw R&G `results` items for recovery lookups.
 
-    Returns (by_id, by_key) where by_key is (date, state, judge_norm) -> url.
+    Returns (by_id, by_key, by_name) where by_key is
+    (date, state, judge_norm) -> url and by_name is name_norm -> (id, url),
+    limited to *unambiguous* titles (a title mapping to more than one distinct
+    source URL is dropped, since many judges have multiple orders under one
+    title and a guess would attach the wrong document).
     """
     by_id = {}
     by_key = {}
+    name_first = {}
+    name_urls = {}
     for item in results:
         url = (item.get('linkToCourtOrder') or {}).get('url', '') or ''
         if not url:
@@ -78,7 +88,12 @@ def build_source_index(results):
         judge_norm = _norm_judge(' '.join(judges))
         if date and judge_norm:
             by_key.setdefault((date, state, judge_norm), url)
-    return by_id, by_key
+        nname = _norm_name((item.get('linkToCourtOrder') or {}).get('text', ''))
+        if nname:
+            name_first.setdefault(nname, (rid, url))
+            name_urls.setdefault(nname, set()).add(url)
+    by_name = {n: name_first[n] for n in name_first if len(name_urls[n]) == 1}
+    return by_id, by_key, by_name
 
 
 def recover(records, results):
@@ -86,8 +101,8 @@ def recover(records, results):
 
     Returns a small stats dict for reporting.
     """
-    by_id, by_key = build_source_index(results)
-    stats = {'by_id': 0, 'by_key': 0, 'from_self': 0, 'none': 0}
+    by_id, by_key, by_name = build_source_index(results)
+    stats = {'by_id': 0, 'by_key': 0, 'by_name': 0, 'from_self': 0, 'none': 0}
 
     for rec in records:
         link = rec.get('link', '') or ''
@@ -107,6 +122,15 @@ def recover(records, results):
             if key[0] and key[2] and key in by_key:
                 original = by_key[key]
                 stats['by_key'] += 1
+            else:
+                # Exact, unambiguous title match — restores provenance when the
+                # _rg_id linkage was lost and the date was stored coarsely.
+                src = by_name.get(_norm_name(rec.get('name', '')))
+                if src and src[1]:
+                    original = src[1]
+                    if not rec.get('_rg_id') and src[0]:
+                        rec['_rg_id'] = src[0]   # backfill the lost linkage
+                    stats['by_name'] += 1
 
         if not original:
             # No source match. Keep an already-set original_link (e.g. provenance

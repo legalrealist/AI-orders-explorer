@@ -27,6 +27,7 @@ def clean_record():
         'applicableTo': ['Generative AI Usage'],
         'sanction_types': {'amount_awarded': None, 'amount_sought': None, 'types': []},
         '_rg_id': 'abc-123',
+        'unverified': False,
     }
 
 

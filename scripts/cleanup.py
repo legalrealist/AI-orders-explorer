@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 
+import dedup
 import linkcheck
 import linkrecover
 import normalize
@@ -35,11 +36,13 @@ def clean(records, results, do_http=True, fetch=linkcheck.default_fetch,
           cache=None, rate_limit=0.0):
     """Run the full cleanup over records. Returns (records, problems, stats)."""
     stats = {}
+    records, stats['dedup'] = dedup.merge_duplicates(records)
     stats['recover'] = linkrecover.recover(records, results)
     normalize.normalize(records)
     if do_http:
         stats['linkcheck'] = linkcheck.validate_links(
             records, fetch=fetch, cache=cache, rate_limit=rate_limit)
+    stats['verify'] = normalize.mark_unverified(records)
     problems = schema.validate_dataset(records)
     return records, problems, stats
 
@@ -79,7 +82,9 @@ def main():
     records, problems, stats = clean(
         records, results, do_http=not args.no_http, cache=cache, rate_limit=0.25)
 
+    print('dedup:', stats['dedup'])
     print('recover:', stats['recover'])
+    print('verify:', stats.get('verify'))
     if 'linkcheck' in stats:
         print('linkcheck:', stats['linkcheck'])
 

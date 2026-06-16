@@ -65,6 +65,31 @@ def test_entry_with_no_source_link_gets_empty_original():
     assert schema.validate_record(entry) == []
 
 
+def test_title_match_restores_provenance_when_rg_id_lost():
+    # _rg_id is null and the date is stored coarsely, so id/date matching fail;
+    # the unambiguous title must still restore original_link and backfill _rg_id.
+    src = [rg_item(rid='rg-title', url='https://lexis/by-title/')]
+    src[0]['linkToCourtOrder']['text'] = 'D.D.C - Judge Example'
+    entry = {'name': 'D.D.C - Judge Example', 'judge': 'Judge Example',
+             'date': '2026-03', 'state': 'New York', 'link': '', '_rg_id': None}
+    linkrecover.recover([entry], src)
+    assert entry['original_link'] == 'https://lexis/by-title/'
+    assert entry['_rg_id'] == 'rg-title'
+
+
+def test_ambiguous_title_does_not_guess_a_link():
+    # Two different orders share one title -> the title is ambiguous and must be
+    # ignored, leaving original_link empty rather than attaching a wrong document.
+    a = rg_item(rid='a', url='https://lexis/a/')
+    b = rg_item(rid='b', url='https://lexis/b/')
+    a['linkToCourtOrder']['text'] = b['linkToCourtOrder']['text'] = 'Same Title'
+    entry = {'name': 'Same Title', 'judge': 'Judge X', 'date': '2099-01',
+             'state': 'Nowhere', 'link': '', '_rg_id': None}
+    linkrecover.recover([entry], [a, b])
+    assert entry['original_link'] == ''
+    assert not entry.get('_rg_id')
+
+
 def test_replace_lexis_links_skips_without_key(monkeypatch):
     # Characterization: with no CL_API_KEY, links are left as-is.
     monkeypatch.setattr(update, 'CL_API_KEY', '')

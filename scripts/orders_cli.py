@@ -125,7 +125,15 @@ def court_match(court, query):
     if _canon_court(court) == _canon_court(query):
         return True
     nq, nc = _ncourt(query), _ncourt(court)
-    return bool(nq) and nq in nc
+    if not nq:
+        return False
+    # A plain district alias ("sdny") must not leak into specialized courts
+    # (bankruptcy/appeals) via substring — those are distinct courts.
+    low_c = (court or '').lower()
+    if nq in COURT_ALIASES and ('bankr' in low_c or 'court of appeals' in low_c
+                                or 'appellate' in low_c):
+        return False
+    return nq in nc
 
 
 def _fetch_json(name):

@@ -106,6 +106,9 @@ def test_court_match_alias_and_substring():
     assert not oc.court_match('N.D. Cal.', 'S.D.N.Y.')
     # bankruptcy court for the same district must NOT match the district filter
     assert not oc.court_match('U.S. Bankruptcy Court, Southern District of New York', 'S.D.N.Y.')
+    assert not oc.court_match('Bankr. S.D.N.Y.', 'sdny')   # abbreviated form must not leak either
+    assert not oc.court_match('2d Cir.', 'sdny')
+    assert oc.court_match('Bankr. S.D.N.Y.', 'bankr')      # but a bankruptcy query still matches
 
 
 def test_filter_court_unifies_spellings():

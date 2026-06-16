@@ -42,6 +42,7 @@ sys.path.insert(0, SCRIPT_DIR)
 import lag_cases  # noqa: E402
 import lag_convert  # noqa: E402
 import lag_merge  # noqa: E402
+import dedup  # noqa: E402
 import linkrecover  # noqa: E402
 import normalize  # noqa: E402
 import schema  # noqa: E402
@@ -657,11 +658,13 @@ def main():
     # 6. Save (when R&G entries were added or LAG ingestion ran).
     n_added = len(new_entries)
     if n_added or lag_ingested:
-        # Durability: recover original links, normalize to canonical schema,
-        # and validate before writing. Preserves original_link (never destroyed
-        # by CL replacement) and reclassifies link_source.
+        # Durability: collapse same-order duplicates (R&G + LAG double-ingest),
+        # recover original links, normalize to canonical schema, flag records
+        # with no openly accessible primary source, and validate before writing.
+        existing, _dedup = dedup.merge_duplicates(existing)
         linkrecover.recover(existing, rg_entries)
         normalize.normalize(existing)
+        normalize.mark_unverified(existing)
         problems = schema.validate_dataset(existing)
         if problems:
             print(f'  ERROR: {len(problems)} schema problems after normalize — not writing.')
