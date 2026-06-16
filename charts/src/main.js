@@ -19,7 +19,7 @@ document.getElementById('exStats').innerHTML='<div style="padding:20px;color:#94
 wireEvents({ applyFilters: function(){ applyFilters(); encodeHashState(); }, applyBarFilters: function(){ applyBarFilters(); encodeHashState(); }, clearAllFilters: clearAllFilters });
 
 // Init
-fetch(state.dataBase + '/explorer_data.json')
+fetch(state.dataBase + '/explorer_data.json?v=' + (typeof __BUILD__!=='undefined'?__BUILD__:Date.now()))
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
   .then(function(data){
     state.data=data;
@@ -106,7 +106,7 @@ fetch(state.dataBase + '/explorer_data.json')
     encodeHashState();
 
     // Load bar opinions
-    fetch(state.dataBase + '/bar_opinions.json')
+    fetch(state.dataBase + '/bar_opinions.json?v=' + (typeof __BUILD__!=='undefined'?__BUILD__:Date.now()))
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(barData){
         state.barData=barData.items||barData;
