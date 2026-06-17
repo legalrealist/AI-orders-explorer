@@ -6,6 +6,8 @@ This is a searchable database of **900+ court orders and opinions on AI use in l
 
 **[Search the database →](https://legalhack.io/explorer)** | **[Charts & trends →](https://legalhack.io/data/charts)** | Companion to the [LegalRealist AI Landscape](https://legalrealist.ai) series ([analysis post](https://legalrealist.ai/posts/31-ai-court-orders-explorer/))
 
+![The explorer: a search bar over 929 court orders, headline counts (171 standing orders, 62 jurisdictions, 293 warnings, 399 sanctions), filters by order type/state/disclosure, and a scrollable list of orders with judge, court, and consequence](assets/explorer.png)
+
 ## What's in the data
 
 **929 entries** across **62 jurisdictions** (May 2023 – May 2026):
@@ -27,6 +29,10 @@ This is a searchable database of **900+ court orders and opinions on AI use in l
 | Sanctions on party | 102 |
 
 Each entry includes judge name, court, state, date, order type, AI type (generative AI vs other), who it applies to, a plain-English summary, disclosure/verification requirements, consequence, a source link, and — for 517 entries — a self-hosted PDF of the primary document.
+
+[**Charts & trends**](https://legalhack.io/data/charts) plots the dataset over time — cumulative standing orders vs. judicial opinions, and the sharp recent rise in AI-related sanctions and warnings:
+
+![Interactive charts: cumulative growth of standing orders vs. judicial opinions from mid-2023 to 2026, and a sanctions/warnings timeline rising steeply through 2025–2026](assets/charts.png)
 
 ## Querying from the command line
 
